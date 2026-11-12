@@ -3,7 +3,7 @@ SUPPLIER   ?= http://localhost:8001
 DASHBOARD  ?= http://localhost:8002
 FAIL_RATE  ?= 0.5
 
-.PHONY: help up down logs test smoke scenario inspector spike supplier-fail supplier-down supplier-up reset tunnel tunnel-down
+.PHONY: help up down logs test smoke scenario inspector spike supplier-fail supplier-down supplier-up reset tunnel tunnel-down tunnel-url status
 
 help:            ## list targets
 	@grep -E '^[a-z-]+:.*##' $(MAKEFILE_LIST) | sed 's/:.*##/ -/'
@@ -54,3 +54,13 @@ tunnel:          ## PUBLIC https URL (Cloudflare quick tunnel) for a Claude cust
 
 tunnel-down:     ## stop the public tunnel
 	docker compose --profile tunnel rm -sf tunnel
+
+tunnel-url:      ## print the current tunnel's connector URL (without restarting it)
+	@docker compose --profile tunnel logs tunnel 2>&1 | grep -o 'https://[a-z0-9-]*\.trycloudflare\.com' | grep -v '//api\.' | tail -1 | sed 's#$$#/mcp#' | grep . || echo "No tunnel running - start one with: make tunnel"
+
+status:          ## containers, health checks, breaker state, tunnel URL
+	@docker compose --profile tunnel ps --format '  {{.Service}}\t{{.Status}}'
+	@curl -sf $(SUPPLIER)/health >/dev/null && echo "  supplier  OK" || echo "  supplier  DOWN"
+	@curl -sf $(DASHBOARD)/api/metrics | grep -o '"state":"[a-z_]*"' | sed 's/^/  breaker   /' || echo "  dashboard DOWN"
+	@docker compose exec -T redis redis-cli ping 2>/dev/null | sed 's/^/  redis     /' || echo "  redis     DOWN"
+	@$(MAKE) --no-print-directory tunnel-url

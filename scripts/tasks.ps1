@@ -14,7 +14,41 @@ function Post($url, $body) {
     else { Invoke-RestMethod -Method Post -Uri $url | ConvertTo-Json -Compress }
 }
 
+function Get-TunnelUrl {
+    # The tunnel's own hostname from its logs; api.trycloudflare.com is Cloudflare's API, never the tunnel.
+    $logs = docker compose --profile tunnel logs tunnel 2>&1 | Out-String
+    $m = [regex]::Matches($logs, 'https://[a-z0-9-]+\.trycloudflare\.com') |
+         Where-Object { $_.Value -ne "https://api.trycloudflare.com" } | Select-Object -Last 1
+    if ($m) { return $m.Value } else { return $null }
+}
+
+function Check($name, $url) {
+    try { Invoke-RestMethod -Uri $url -TimeoutSec 3 | Out-Null; Write-Host ("  {0,-14} OK    {1}" -f $name, $url) -ForegroundColor Green }
+    catch { Write-Host ("  {0,-14} DOWN  {1}" -f $name, $url) -ForegroundColor Red }
+}
+
 switch ($Target) {
+    "status" {
+        Write-Host "Containers:"; docker compose --profile tunnel ps --format "  {{.Service}}`t{{.Status}}"
+        Write-Host "Health:"
+        Check "supplier" "$Supplier/health"
+        Check "dashboard" "$Dashboard/api/metrics"
+        $ping = docker compose exec -T redis redis-cli ping 2>$null
+        if ($ping -eq "PONG") { Write-Host "  redis          OK" -ForegroundColor Green } else { Write-Host "  redis          DOWN" -ForegroundColor Red }
+        try {
+            $s = Invoke-RestMethod -Uri "$Supplier/health" -TimeoutSec 3
+            Write-Host "  supplier mode: down=$($s.down) failure_rate=$($s.failure_rate)"
+            $b = (Invoke-RestMethod -Uri "$Dashboard/api/metrics" -TimeoutSec 3).breaker
+            Write-Host "  circuit breaker: $($b.state)"
+        } catch {}
+        $t = Get-TunnelUrl
+        $running = docker compose --profile tunnel ps -q tunnel 2>$null
+        if ($running -and $t) { Write-Host "Tunnel: RUNNING  $t/mcp" -ForegroundColor Yellow } else { Write-Host "Tunnel: off" }
+    }
+    "tunnel-url" {
+        $t = Get-TunnelUrl
+        if ($t) { Write-Host "Connector URL:  $t/mcp" -ForegroundColor Green } else { Write-Host "No tunnel running - start one with: .\make tunnel" }
+    }
     "up"            { docker compose up -d --build; Write-Host "Dashboard: $Dashboard   MCP (HTTP): http://localhost:8000/mcp" }
     "down"          { docker compose down }
     "logs"          { docker compose logs -f --tail=50 }
@@ -55,7 +89,8 @@ switch ($Target) {
     }
     "tunnel-down"   { docker compose --profile tunnel rm -sf tunnel }
     default {
-        Write-Host "Targets: up, down, logs, test, smoke, scenario, inspector, spike,"
-        Write-Host "         supplier-fail [-FailRate 0.5], supplier-down, supplier-up, reset, tunnel, tunnel-down"
+        Write-Host "Targets: up, down, status, logs, test, smoke, scenario, inspector, spike,"
+        Write-Host "         supplier-fail [-FailRate 0.5], supplier-down, supplier-up, reset,"
+        Write-Host "         tunnel, tunnel-url, tunnel-down       (full guide: docs\RUNBOOK.md)"
     }
 }

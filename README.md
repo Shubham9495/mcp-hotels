@@ -16,8 +16,9 @@ What it demonstrates:
 | Overload | **Priority load shedding**: bookings > live price checks > searches | `mcp_server/shedding.py` |
 | Supplier cost per booking | **Look-to-book** shown with and without the cache | `dashboard/` |
 
-New to all this? Read **[docs/CONCEPTS.md](docs/CONCEPTS.md)** (the ideas, in plain words)
-and **[docs/FILES.md](docs/FILES.md)** (what every file does).
+New to all this? Read **[docs/CONCEPTS.md](docs/CONCEPTS.md)** (the ideas, in plain words),
+**[docs/FILES.md](docs/FILES.md)** (what every file does) and **[docs/RUNBOOK.md](docs/RUNBOOK.md)**
+(start/stop and every day-to-day command for the server, tunnel, Redis, supplier and dashboard).
 
 ---
 
