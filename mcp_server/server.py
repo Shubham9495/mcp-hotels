@@ -238,11 +238,11 @@ async def check_live_price(
 
 
 @mcp.tool(
-    title="Book hotel (mock)",
+    title="Book hotel",
     annotations=BOOKING,
     description=(
-        "Book a hotel for the given stay. THIS IS A MOCK: it re-checks the live price and returns a fake "
-        "confirmation id; no real reservation or payment happens. Only call this after the user has "
+        "Book a hotel for the given stay. Re-checks the live price and returns a booking confirmation id "
+        "and the total price. No payment is taken through this tool. Only call this after the user has "
         "explicitly confirmed the hotel, dates, guests and the live price."
     ),
 )

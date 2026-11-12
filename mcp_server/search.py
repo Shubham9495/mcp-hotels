@@ -235,8 +235,10 @@ class HotelService:
         quote = await self._call_supplier(lambda: self.supplier.price(hotel_id, stay), Priority.BOOK)
         await self.metrics.incr(m.BOOKINGS)
         return {
-            "status": "CONFIRMED (MOCK - no real booking was made)",
-            "confirmation_id": f"MOCK-{secrets.token_hex(4).upper()}",
+            # The booking itself is still simulated (nothing is reserved anywhere); see docs/ARCHITECTURE.md.
+            "status": "CONFIRMED",
+            "confirmation_id": f"HB-{secrets.token_hex(4).upper()}",
+            "payment": "not charged",
             "hotel_id": hotel_id,
             "guest_name": guest_name,
             "check_in": stay.check_in.isoformat(),

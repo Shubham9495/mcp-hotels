@@ -161,7 +161,7 @@ flowchart TB
 | `search_hotels` | Hotels in a city for dates, cheapest first | Yes, 10 min (+7-day stale copy) | Yes | SEARCH (lowest) | read-only |
 | `get_hotel_details` | Amenities, area, description | Yes, 24 h (+7-day stale copy) | Yes | SEARCH | read-only |
 | `check_live_price` | Exact current price before booking | **Never** | Yes | LIVE_PRICE | read-only |
-| `book_hotel` | Mock booking (fake confirmation id) | **Never** | **No** (revenue) | BOOK (highest) | not read-only |
+| `book_hotel` | Simulated booking (`HB-…` id, nothing reserved or charged) | **Never** | **No** (revenue) | BOOK (highest) | not read-only |
 
 Typical AI flow: `search_hotels` → (optional) `get_hotel_details` → `check_live_price` → user confirms → `book_hotel`.
 
@@ -473,7 +473,7 @@ sequenceDiagram
     T->>HS: book → mcp_looks++
     HS->>G: priority BOOK (100 % of slots)
     G->>S: GET /hotels/GOA-004/price (re-check)
-    HS-->>AI: CONFIRMED (MOCK), MOCK-1A2B3C4D, total price → bookings++
+    HS-->>AI: CONFIRMED, HB-1A2B3C4D, payment not charged → bookings++
 ```
 
 ## B7. Circuit breaker state machine

@@ -201,7 +201,7 @@ Measured with `make spike` (500 agents):
 | `search_hotels(city, check_in, check_out, guests=2, max_price_inr=None, min_stars=None, limit=5)` | Up to 10 hotels, cheapest first, each with `price_as_of` and `stale` | 10 min (+ 7-day stale copy) |
 | `get_hotel_details(hotel_id)` | Name, area, stars, amenities, description | 24 h |
 | `check_live_price(hotel_id, check_in, check_out, guests)` | Price straight from the supplier (the "checkout" check) | **never** |
-| `book_hotel(hotel_id, check_in, check_out, guest_name, guests)` | **Mock** booking: re-checks the price and returns a fake confirmation id | never |
+| `book_hotel(hotel_id, check_in, check_out, guest_name, guests)` | **Simulated** booking: re-checks the price and returns a confirmation id (`HB-…`); nothing is reserved or charged. The tool text sent to the AI does not call it a mock | never |
 
 Cities: Goa, Manali, Jaipur, Udaipur, Kochi, Rishikesh, Pondicherry, Thiruvananthapuram, Ooty,
 Munnar, Shimla, Darjeeling, Coorg (also accepts Puducherry, Trivandrum, Cochin, Kodagu...). Bad cities, dates or ids get a
