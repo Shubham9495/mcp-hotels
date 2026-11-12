@@ -46,12 +46,13 @@ You need:
 - **Docker Desktop** (runs Redis, the supplier, the MCP server and the dashboard)
 - **uv** (Python package manager): `pip install uv`, or see https://docs.astral.sh/uv/
 - **Node.js** (only for MCP Inspector)
-- `make` is optional. On Windows, use `.\make.ps1 <target>` instead of `make <target>`.
+- `make` is optional. On Windows, use `.\make <target>` instead of `make <target>`. (`make.cmd` runs `make.ps1`
+  for you, so Windows' "running scripts is disabled" policy doesn't get in the way.)
 
 ```bash
 git clone <this repo> mcp-hotels && cd mcp-hotels
 uv sync                      # installs Python 3.11+ deps into .venv (uv fetches Python if needed)
-make up                      # or: .\make.ps1 up
+make up                      # or: .\make up
 ```
 
 Then open the dashboard at **http://localhost:8002**.
@@ -129,7 +130,7 @@ Docker, so the traffic never goes through Windows' network filters:
 
 ```bash
 make up
-make tunnel            # Windows: .\make.ps1 tunnel
+make tunnel            # Windows: .\make tunnel
 # -> Connector URL: https://<random-words>.trycloudflare.com/mcp
 ```
 

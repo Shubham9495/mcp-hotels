@@ -1,5 +1,5 @@
 # Windows equivalent of the Makefile (no `make` needed).
-#   .\make.ps1 up        .\make.ps1 spike        .\make.ps1 supplier-down
+#   .\make up        .\make spike        .\make supplier-down
 param(
     [Parameter(Position = 0)][string]$Target = "help",
     [double]$FailRate = 0.5
@@ -39,7 +39,7 @@ switch ($Target) {
             Write-Host ""
             Write-Host "Connector URL:  $url/mcp" -ForegroundColor Green
             Write-Host "Add it at claude.ai -> Settings -> Connectors -> Add custom connector."
-            Write-Host "Stop it with:   .\make.ps1 tunnel-down"
+            Write-Host "Stop it with:   .\make tunnel-down"
         } else {
             Write-Host "No URL yet - check: docker compose logs tunnel"
         }

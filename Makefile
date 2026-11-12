@@ -1,4 +1,4 @@
-# mcp-hotels demo commands. On Windows without `make`, use:  .\make.ps1 <target>
+# mcp-hotels demo commands. On Windows without `make`, use:  .\make <target>
 SUPPLIER   ?= http://localhost:8001
 DASHBOARD  ?= http://localhost:8002
 FAIL_RATE  ?= 0.5

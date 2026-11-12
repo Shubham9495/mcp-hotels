@@ -18,7 +18,7 @@ look-to-book ratio kept low by caching.
 
 ## Commands
 - `uv sync` · `uv run pytest -q` · `make up|down|spike|scenario|smoke|inspector|supplier-down|supplier-up`
-- Windows without make: `.\make.ps1 <target>`
+- Windows without make: `.\make <target>`
 - stdio server: `uv run mcp-hotels`; HTTP: `uv run mcp-hotels --http --workers 4`
 
 ## Conventions
