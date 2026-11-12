@@ -18,6 +18,7 @@ import uvicorn
 from mcp.server.mcpserver import Context, MCPServer
 from mcp.server.mcpserver.exceptions import ToolError
 from mcp.server.transport_security import TransportSecuritySettings
+from mcp_types import ToolAnnotations
 from starlette.applications import Starlette
 
 from mcp_server import metrics as m
@@ -99,6 +100,11 @@ class _ServiceHolder:
 
 SERVICE = _ServiceHolder
 
+# Tool hints for clients (ChatGPT asks for confirmation on tools that are not read-only).
+# The data is a closed mock catalogue, so nothing reaches the open world.
+READ_ONLY = ToolAnnotations(read_only_hint=True, open_world_hint=False)
+BOOKING = ToolAnnotations(read_only_hint=False, destructive_hint=False, idempotent_hint=False, open_world_hint=False)
+
 # Bookings are never rate limited: they are the revenue the whole system exists for.
 RATE_LIMITED_TOOLS = frozenset({"search_hotels", "get_hotel_details", "check_live_price"})
 
@@ -158,6 +164,7 @@ async def run_tool(tool: str, ctx: Context, coro: Coroutine[Any, Any, dict[str, 
 
 @mcp.tool(
     title="Search hotels",
+    annotations=READ_ONLY,
     description=(
         "Search available hotels in one city for a date range. Returns up to `limit` hotels (max 10), "
         "cheapest first, each with id, name, area, stars, rating, price_per_night_inr, total_price_inr, "
@@ -191,6 +198,7 @@ async def search_hotels(
 
 @mcp.tool(
     title="Get hotel details",
+    annotations=READ_ONLY,
     description=(
         "Get static details for one hotel by id (e.g. 'GOA-001'): name, city, area, stars, rating, "
         "amenities and a short description. Does not include prices."
@@ -205,6 +213,7 @@ async def get_hotel_details(hotel_id: str, ctx: Context) -> dict[str, Any]:
 
 @mcp.tool(
     title="Check live price",
+    annotations=READ_ONLY,
     description=(
         "Get the real-time price for one hotel and stay directly from the supplier, never from cache. "
         "Use this right before booking, or when the user wants to confirm a price shown by search_hotels "
@@ -223,6 +232,7 @@ async def check_live_price(
 
 @mcp.tool(
     title="Book hotel (mock)",
+    annotations=BOOKING,
     description=(
         "Book a hotel for the given stay. THIS IS A MOCK: it re-checks the live price and returns a fake "
         "confirmation id; no real reservation or payment happens. Only call this after the user has "
@@ -268,6 +278,7 @@ def main() -> None:
         mcp.run("stdio")
         return
     settings = Settings()
+    access_log = os.getenv("MCP_ACCESS_LOG", "false").lower() in ("1", "true", "yes")
     # Each worker is a separate process. Cache, rate limits, breaker and metrics live in Redis,
     # so they are shared; single-flight coalescing and load shedding are per worker.
     uvicorn.run(
@@ -276,7 +287,9 @@ def main() -> None:
         host=args.host or settings.http_host,
         port=args.port or settings.http_port,
         workers=args.workers or int(os.getenv("MCP_WORKERS", "1")),
-        log_level="warning",
+        # MCP_ACCESS_LOG=true logs one line per HTTP request (handy to see if a connector reaches us)
+        log_level="info" if access_log else "warning",
+        access_log=access_log,
     )
 
 
