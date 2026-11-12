@@ -1,3 +1,3 @@
 @echo off
-rem Runs make.ps1 without changing the system execution policy:  .\make up   .\make tunnel
-powershell -NoProfile -ExecutionPolicy Bypass -File "%~dp0make.ps1" %*
+rem Windows task runner:  .\make up   .\make tunnel   (runs scripts\tasks.ps1 without changing the execution policy)
+powershell -NoProfile -ExecutionPolicy Bypass -File "%~dp0scripts\tasks.ps1" %*

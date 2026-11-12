@@ -1,10 +1,11 @@
-# Windows equivalent of the Makefile (no `make` needed).
+# Windows equivalent of the Makefile (no `make` needed). Run it via make.cmd in the repo root.
 #   .\make up        .\make spike        .\make supplier-down
 param(
     [Parameter(Position = 0)][string]$Target = "help",
     [double]$FailRate = 0.5
 )
 $ErrorActionPreference = "Stop"
+Set-Location (Split-Path -Parent $PSScriptRoot)   # repo root
 $Supplier = "http://localhost:8001"
 $Dashboard = "http://localhost:8002"
 

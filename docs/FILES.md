@@ -42,8 +42,7 @@ When Claude asks *"hotels in Goa this weekend"*, the code runs in this order:
 | `docker-compose.yml` | Describes the services (redis, supplier, mcp, dashboard, plus the on-demand `loadtest` and `tunnel`), their ports and settings. `docker compose up` reads it. `tunnel` runs Cloudflare's `cloudflared` to give the MCP server a temporary public HTTPS URL for a Claude custom connector (`make tunnel` / `make tunnel-down`). |
 | `Dockerfile` | Recipe for the container image all the Python services share: install dependencies with uv, copy the code. |
 | `Makefile` | Short commands for the demo (`make up`, `make spike`, `make supplier-down`…). |
-| `make.ps1` | The same commands for Windows PowerShell, where `make` usually isn't installed. |
-| `make.cmd` | Tiny wrapper so you can type `.\make up` on Windows: it runs `make.ps1` with the execution policy bypassed for that one command, without changing any system setting. |
+| `make.cmd` | Windows version of the Makefile commands: type `.\make up`, `.\make spike`... It runs `scripts	asks.ps1` with the execution policy bypassed for that one command, without changing any system setting. |
 | `.env.example` | Every configurable setting with its default. Copy to `.env` to change values. |
 | `.gitignore` | Files git should never commit (virtualenv, caches, `.env`, local certificates). |
 | `.dockerignore` | Files Docker should not copy into images (keeps builds small and fast). |
@@ -91,6 +90,7 @@ When Claude asks *"hotels in Goa this weekend"*, the code runs in this order:
 
 | File | Purpose |
 |---|---|
+| `scripts/tasks.ps1` | The PowerShell code behind `.\make` on Windows (same targets as the Makefile). |
 | `scripts/gen_hotels.py` | Regenerates `supplier/data/hotels.json` (fixed random seed, so the output is always the same). |
 | `scripts/smoke.py` | Connects as a real MCP client and calls every tool once, including two calls that should fail politely. Quick "is everything wired up?" check (`make smoke`). |
 | `scripts/scenario.py` | Scripted version of the failure story: warm cache → rate limit → supplier down → breaker opens → cached/stale answers → supplier up → recovery (`make scenario`). |
