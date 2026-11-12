@@ -5,7 +5,7 @@ from __future__ import annotations
 from dataclasses import dataclass
 from datetime import date
 
-from mcp_server.config import SUPPORTED_CITIES
+from mcp_server.config import CITY_ALIASES, SUPPORTED_CITIES
 
 MAX_NIGHTS = 30
 MAX_DAYS_AHEAD = 365
@@ -28,10 +28,12 @@ class Stay:
 
 
 def normalize_city(city: str) -> str:
-    wanted = city.strip().lower()
+    wanted = " ".join(city.strip().lower().split())
     for supported in SUPPORTED_CITIES:
         if supported.lower() == wanted:
             return supported
+    if wanted in CITY_ALIASES:
+        return CITY_ALIASES[wanted]
     raise InvalidInput(
         f"Sorry, '{city}' isn't covered. Supported cities: {', '.join(SUPPORTED_CITIES)}."
     )

@@ -8,7 +8,7 @@ look-to-book ratio kept low by caching.
 **All data is MOCK. Never scrape or call any real travel site or external travel API.**
 
 ## Layout
-- `supplier/`: mock supplier API (FastAPI, port 8001) + `data/hotels.json` (60 fake hotels)
+- `supplier/`: mock supplier API (FastAPI, port 8001) + `data/hotels.json` (130 fake hotels, 13 cities)
 - `mcp_server/`: MCP server (mcp SDK v2 `MCPServer`, formerly FastMCP; stdio or HTTP on 8000)
   - `server.py` tool definitions only (thin) · `search.py` cache/breaker/shedding orchestration
   - `cache.py` Redis cache + SingleFlight · `ratelimit.py` · `breaker.py` · `shedding.py`

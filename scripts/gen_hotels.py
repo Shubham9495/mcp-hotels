@@ -34,6 +34,42 @@ CITIES: dict[str, dict[str, list[str]]] = {
         "areas": ["Tapovan", "Laxman Jhula", "Ram Jhula", "Shivpuri", "Swarg Ashram", "Muni Ki Reti"],
         "themes": ["Ganga Ghat", "Yoga Nest", "Riverstone", "Himalayan Song", "Ashram Garden", "Rapids", "Bodhi"],
     },
+    # Added later. New cities go at the END so the hotels above stay identical (same seed, same order).
+    "Pondicherry": {
+        "code": ["PDY"],
+        "areas": ["White Town", "Promenade Beach", "Auroville", "Serenity Beach", "Heritage Town", "Paradise Beach"],
+        "themes": ["French Quarter", "Bougainvillea", "Promenade", "Auro Garden", "Seawall", "Rue Romain", "Tamil Courtyard"],
+    },
+    "Thiruvananthapuram": {
+        "code": ["TVM"],
+        "areas": ["Kovalam", "Varkala", "Vellayambalam", "Kowdiar", "Poovar", "Shanghumugham"],
+        "themes": ["Lighthouse", "Cliffside", "Travancore", "Palm Lagoon", "Kovalam Bay", "Coconut Coast", "Anantha"],
+    },
+    "Ooty": {
+        "code": ["OOT"],
+        "areas": ["Charing Cross", "Fern Hill", "Lovedale", "Coonoor Road", "Ooty Lake", "Elk Hill"],
+        "themes": ["Nilgiri", "Tea Garden", "Eucalyptus", "Blue Mountain", "Rose Garden", "Toy Train", "Misty Valley"],
+    },
+    "Munnar": {
+        "code": ["MNR"],
+        "areas": ["Chithirapuram", "Pallivasal", "Devikulam", "Anachal", "Pothamedu", "Mattupetty"],
+        "themes": ["Tea Estate", "Cardamom Hills", "Cloud Nine", "Neelakurinji", "Plantation", "High Range", "Spice Trail"],
+    },
+    "Shimla": {
+        "code": ["SML"],
+        "areas": ["The Ridge", "Mall Road", "Jakhoo", "Kufri", "Chotta Shimla", "Mashobra"],
+        "themes": ["Colonial", "Cedar Ridge", "Snow Peak", "Viceregal", "Pine Valley", "Himachal", "Toy Train"],
+    },
+    "Darjeeling": {
+        "code": ["DJL"],
+        "areas": ["Chowrasta", "Mall Road", "Ghoom", "Lebong", "Happy Valley", "Jalapahar"],
+        "themes": ["Kanchenjunga", "Tea Garden", "Himalayan", "Toy Train", "Monastery View", "Tiger Hill", "Rhododendron"],
+    },
+    "Coorg": {
+        "code": ["CRG"],
+        "areas": ["Madikeri", "Virajpet", "Kushalnagar", "Somwarpet", "Abbey Falls", "Siddapur"],
+        "themes": ["Coffee Estate", "Misty Hills", "Kodava", "Cauvery", "Pepper Vine", "Rainforest", "Plantation"],
+    },
 }
 
 KINDS = ["Resort", "Hotel", "Boutique Stay", "Inn", "Retreat", "Suites", "Homestay"]
@@ -58,7 +94,7 @@ def make_hotel(rng: random.Random, city: str, idx: int, used_names: set[str]) ->
     amenities = sorted(rng.sample(AMENITIES, k=3 + stars))
     rating = round(min(5.0, max(3.0, rng.gauss(3.4 + stars * 0.25, 0.3))), 1)
     return {
-        "id": f"{city[:3].upper()}-{idx:03d}",
+        "id": f"{spec.get('code', [city[:3].upper()])[0]}-{idx:03d}",
         "name": name,
         "city": city,
         "area": area,

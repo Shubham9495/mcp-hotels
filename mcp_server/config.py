@@ -5,7 +5,21 @@ from __future__ import annotations
 import os
 from dataclasses import dataclass, field
 
-SUPPORTED_CITIES: tuple[str, ...] = ("Goa", "Manali", "Jaipur", "Udaipur", "Kochi", "Rishikesh")
+SUPPORTED_CITIES: tuple[str, ...] = (
+    "Goa", "Manali", "Jaipur", "Udaipur", "Kochi", "Rishikesh",
+    "Pondicherry", "Thiruvananthapuram", "Ooty", "Munnar", "Shimla", "Darjeeling", "Coorg",
+)
+
+# Other names people (and models) use for the same places -> canonical name above.
+CITY_ALIASES: dict[str, str] = {
+    "puducherry": "Pondicherry", "pondy": "Pondicherry",
+    "trivandrum": "Thiruvananthapuram", "kovalam": "Thiruvananthapuram", "varkala": "Thiruvananthapuram",
+    "udhagamandalam": "Ooty", "ootacamund": "Ooty", "udagamandalam": "Ooty",
+    "kodagu": "Coorg", "madikeri": "Coorg",
+    "cochin": "Kochi", "fort kochi": "Kochi",
+    "north goa": "Goa", "south goa": "Goa", "panaji": "Goa", "panjim": "Goa",
+    "simla": "Shimla",
+}
 
 
 def _env_int(name: str, default: int) -> int:

@@ -1119,5 +1119,1318 @@
       "Spa"
     ],
     "description": "A fictional 3-star homestay in Shivpuri, Rishikesh. Demo data only."
+  },
+  {
+    "id": "PDY-001",
+    "name": "The French Quarter Retreat",
+    "city": "Pondicherry",
+    "area": "White Town",
+    "stars": 5,
+    "rating": 4.4,
+    "base_price_inr": 7750,
+    "amenities": [
+      "Bar",
+      "Gym",
+      "Parking",
+      "Pet friendly",
+      "Restaurant",
+      "Rooftop terrace",
+      "Room service",
+      "Spa"
+    ],
+    "description": "A fictional 5-star retreat in White Town, Pondicherry. Demo data only."
+  },
+  {
+    "id": "PDY-002",
+    "name": "The French Quarter Boutique Stay",
+    "city": "Pondicherry",
+    "area": "Paradise Beach",
+    "stars": 3,
+    "rating": 3.9,
+    "base_price_inr": 3300,
+    "amenities": [
+      "Air conditioning",
+      "Airport shuttle",
+      "Bar",
+      "Gym",
+      "Room service",
+      "Spa"
+    ],
+    "description": "A fictional 3-star stay in Paradise Beach, Pondicherry. Demo data only."
+  },
+  {
+    "id": "PDY-003",
+    "name": "The Seawall Boutique Stay",
+    "city": "Pondicherry",
+    "area": "Paradise Beach",
+    "stars": 4,
+    "rating": 4.5,
+    "base_price_inr": 5250,
+    "amenities": [
+      "Airport shuttle",
+      "Bar",
+      "Gym",
+      "Parking",
+      "Pet friendly",
+      "Rooftop terrace",
+      "Swimming pool"
+    ],
+    "description": "A fictional 4-star stay in Paradise Beach, Pondicherry. Demo data only."
+  },
+  {
+    "id": "PDY-004",
+    "name": "The French Quarter Suites",
+    "city": "Pondicherry",
+    "area": "Paradise Beach",
+    "stars": 4,
+    "rating": 4.9,
+    "base_price_inr": 7400,
+    "amenities": [
+      "Airport shuttle",
+      "Bar",
+      "Free Wi-Fi",
+      "Parking",
+      "Pet friendly",
+      "Spa",
+      "Swimming pool"
+    ],
+    "description": "A fictional 4-star suites in Paradise Beach, Pondicherry. Demo data only."
+  },
+  {
+    "id": "PDY-005",
+    "name": "The Bougainvillea Boutique Stay",
+    "city": "Pondicherry",
+    "area": "Promenade Beach",
+    "stars": 3,
+    "rating": 4.5,
+    "base_price_inr": 3600,
+    "amenities": [
+      "Airport shuttle",
+      "Free Wi-Fi",
+      "Parking",
+      "Pet friendly",
+      "Rooftop terrace",
+      "Swimming pool"
+    ],
+    "description": "A fictional 3-star stay in Promenade Beach, Pondicherry. Demo data only."
+  },
+  {
+    "id": "PDY-006",
+    "name": "The Bougainvillea Suites",
+    "city": "Pondicherry",
+    "area": "Serenity Beach",
+    "stars": 5,
+    "rating": 4.6,
+    "base_price_inr": 10500,
+    "amenities": [
+      "Airport shuttle",
+      "Bar",
+      "Breakfast included",
+      "Free Wi-Fi",
+      "Parking",
+      "Room service",
+      "Spa",
+      "Swimming pool"
+    ],
+    "description": "A fictional 5-star suites in Serenity Beach, Pondicherry. Demo data only."
+  },
+  {
+    "id": "PDY-007",
+    "name": "The Tamil Courtyard Inn",
+    "city": "Pondicherry",
+    "area": "White Town",
+    "stars": 3,
+    "rating": 4.4,
+    "base_price_inr": 2800,
+    "amenities": [
+      "Bar",
+      "Breakfast included",
+      "Free Wi-Fi",
+      "Restaurant",
+      "Room service",
+      "Swimming pool"
+    ],
+    "description": "A fictional 3-star inn in White Town, Pondicherry. Demo data only."
+  },
+  {
+    "id": "PDY-008",
+    "name": "The French Quarter Hotel",
+    "city": "Pondicherry",
+    "area": "Serenity Beach",
+    "stars": 3,
+    "rating": 4.5,
+    "base_price_inr": 3100,
+    "amenities": [
+      "Parking",
+      "Pet friendly",
+      "Restaurant",
+      "Rooftop terrace",
+      "Room service",
+      "Spa"
+    ],
+    "description": "A fictional 3-star hotel in Serenity Beach, Pondicherry. Demo data only."
+  },
+  {
+    "id": "PDY-009",
+    "name": "The Auro Garden Boutique Stay",
+    "city": "Pondicherry",
+    "area": "Serenity Beach",
+    "stars": 5,
+    "rating": 4.6,
+    "base_price_inr": 11400,
+    "amenities": [
+      "Airport shuttle",
+      "Breakfast included",
+      "Free Wi-Fi",
+      "Gym",
+      "Parking",
+      "Pet friendly",
+      "Room service",
+      "Spa"
+    ],
+    "description": "A fictional 5-star stay in Serenity Beach, Pondicherry. Demo data only."
+  },
+  {
+    "id": "PDY-010",
+    "name": "The Bougainvillea Retreat",
+    "city": "Pondicherry",
+    "area": "White Town",
+    "stars": 2,
+    "rating": 4.0,
+    "base_price_inr": 1200,
+    "amenities": [
+      "Airport shuttle",
+      "Bar",
+      "Pet friendly",
+      "Restaurant",
+      "Room service"
+    ],
+    "description": "A fictional 2-star retreat in White Town, Pondicherry. Demo data only."
+  },
+  {
+    "id": "TVM-001",
+    "name": "The Cliffside Boutique Stay",
+    "city": "Thiruvananthapuram",
+    "area": "Shanghumugham",
+    "stars": 4,
+    "rating": 4.6,
+    "base_price_inr": 4600,
+    "amenities": [
+      "Air conditioning",
+      "Airport shuttle",
+      "Bar",
+      "Breakfast included",
+      "Rooftop terrace",
+      "Room service",
+      "Spa"
+    ],
+    "description": "A fictional 4-star stay in Shanghumugham, Thiruvananthapuram. Demo data only."
+  },
+  {
+    "id": "TVM-002",
+    "name": "The Travancore Homestay",
+    "city": "Thiruvananthapuram",
+    "area": "Kovalam",
+    "stars": 3,
+    "rating": 4.3,
+    "base_price_inr": 2450,
+    "amenities": [
+      "Air conditioning",
+      "Airport shuttle",
+      "Bar",
+      "Pet friendly",
+      "Room service",
+      "Swimming pool"
+    ],
+    "description": "A fictional 3-star homestay in Kovalam, Thiruvananthapuram. Demo data only."
+  },
+  {
+    "id": "TVM-003",
+    "name": "The Palm Lagoon Suites",
+    "city": "Thiruvananthapuram",
+    "area": "Kowdiar",
+    "stars": 3,
+    "rating": 3.6,
+    "base_price_inr": 3700,
+    "amenities": [
+      "Airport shuttle",
+      "Bar",
+      "Breakfast included",
+      "Parking",
+      "Pet friendly",
+      "Room service"
+    ],
+    "description": "A fictional 3-star suites in Kowdiar, Thiruvananthapuram. Demo data only."
+  },
+  {
+    "id": "TVM-004",
+    "name": "The Travancore Retreat",
+    "city": "Thiruvananthapuram",
+    "area": "Kovalam",
+    "stars": 3,
+    "rating": 3.8,
+    "base_price_inr": 3350,
+    "amenities": [
+      "Air conditioning",
+      "Airport shuttle",
+      "Free Wi-Fi",
+      "Pet friendly",
+      "Room service",
+      "Spa"
+    ],
+    "description": "A fictional 3-star retreat in Kovalam, Thiruvananthapuram. Demo data only."
+  },
+  {
+    "id": "TVM-005",
+    "name": "The Lighthouse Homestay",
+    "city": "Thiruvananthapuram",
+    "area": "Kowdiar",
+    "stars": 4,
+    "rating": 4.7,
+    "base_price_inr": 5900,
+    "amenities": [
+      "Air conditioning",
+      "Airport shuttle",
+      "Bar",
+      "Gym",
+      "Parking",
+      "Restaurant",
+      "Swimming pool"
+    ],
+    "description": "A fictional 4-star homestay in Kowdiar, Thiruvananthapuram. Demo data only."
+  },
+  {
+    "id": "TVM-006",
+    "name": "The Travancore Inn",
+    "city": "Thiruvananthapuram",
+    "area": "Shanghumugham",
+    "stars": 3,
+    "rating": 3.4,
+    "base_price_inr": 3550,
+    "amenities": [
+      "Airport shuttle",
+      "Bar",
+      "Breakfast included",
+      "Gym",
+      "Restaurant",
+      "Swimming pool"
+    ],
+    "description": "A fictional 3-star inn in Shanghumugham, Thiruvananthapuram. Demo data only."
+  },
+  {
+    "id": "TVM-007",
+    "name": "The Palm Lagoon Homestay",
+    "city": "Thiruvananthapuram",
+    "area": "Kovalam",
+    "stars": 4,
+    "rating": 4.1,
+    "base_price_inr": 4000,
+    "amenities": [
+      "Air conditioning",
+      "Airport shuttle",
+      "Bar",
+      "Breakfast included",
+      "Gym",
+      "Pet friendly",
+      "Restaurant"
+    ],
+    "description": "A fictional 4-star homestay in Kovalam, Thiruvananthapuram. Demo data only."
+  },
+  {
+    "id": "TVM-008",
+    "name": "The Coconut Coast Homestay",
+    "city": "Thiruvananthapuram",
+    "area": "Kowdiar",
+    "stars": 4,
+    "rating": 4.6,
+    "base_price_inr": 4200,
+    "amenities": [
+      "Air conditioning",
+      "Bar",
+      "Free Wi-Fi",
+      "Gym",
+      "Parking",
+      "Restaurant",
+      "Spa"
+    ],
+    "description": "A fictional 4-star homestay in Kowdiar, Thiruvananthapuram. Demo data only."
+  },
+  {
+    "id": "TVM-009",
+    "name": "The Kovalam Bay Hotel",
+    "city": "Thiruvananthapuram",
+    "area": "Kowdiar",
+    "stars": 5,
+    "rating": 5.0,
+    "base_price_inr": 11150,
+    "amenities": [
+      "Airport shuttle",
+      "Bar",
+      "Breakfast included",
+      "Free Wi-Fi",
+      "Pet friendly",
+      "Rooftop terrace",
+      "Spa",
+      "Swimming pool"
+    ],
+    "description": "A fictional 5-star hotel in Kowdiar, Thiruvananthapuram. Demo data only."
+  },
+  {
+    "id": "TVM-010",
+    "name": "The Anantha Resort",
+    "city": "Thiruvananthapuram",
+    "area": "Kovalam",
+    "stars": 4,
+    "rating": 4.4,
+    "base_price_inr": 7400,
+    "amenities": [
+      "Air conditioning",
+      "Airport shuttle",
+      "Bar",
+      "Parking",
+      "Room service",
+      "Spa",
+      "Swimming pool"
+    ],
+    "description": "A fictional 4-star resort in Kovalam, Thiruvananthapuram. Demo data only."
+  },
+  {
+    "id": "OOT-001",
+    "name": "The Blue Mountain Inn",
+    "city": "Ooty",
+    "area": "Ooty Lake",
+    "stars": 3,
+    "rating": 4.3,
+    "base_price_inr": 3800,
+    "amenities": [
+      "Parking",
+      "Restaurant",
+      "Rooftop terrace",
+      "Room service",
+      "Spa",
+      "Swimming pool"
+    ],
+    "description": "A fictional 3-star inn in Ooty Lake, Ooty. Demo data only."
+  },
+  {
+    "id": "OOT-002",
+    "name": "The Misty Valley Inn",
+    "city": "Ooty",
+    "area": "Ooty Lake",
+    "stars": 3,
+    "rating": 4.0,
+    "base_price_inr": 3100,
+    "amenities": [
+      "Air conditioning",
+      "Airport shuttle",
+      "Bar",
+      "Free Wi-Fi",
+      "Rooftop terrace",
+      "Swimming pool"
+    ],
+    "description": "A fictional 3-star inn in Ooty Lake, Ooty. Demo data only."
+  },
+  {
+    "id": "OOT-003",
+    "name": "The Rose Garden Inn",
+    "city": "Ooty",
+    "area": "Ooty Lake",
+    "stars": 3,
+    "rating": 4.4,
+    "base_price_inr": 2950,
+    "amenities": [
+      "Bar",
+      "Gym",
+      "Parking",
+      "Restaurant",
+      "Rooftop terrace",
+      "Spa"
+    ],
+    "description": "A fictional 3-star inn in Ooty Lake, Ooty. Demo data only."
+  },
+  {
+    "id": "OOT-004",
+    "name": "The Tea Garden Homestay",
+    "city": "Ooty",
+    "area": "Charing Cross",
+    "stars": 4,
+    "rating": 4.4,
+    "base_price_inr": 4150,
+    "amenities": [
+      "Bar",
+      "Gym",
+      "Pet friendly",
+      "Restaurant",
+      "Room service",
+      "Spa",
+      "Swimming pool"
+    ],
+    "description": "A fictional 4-star homestay in Charing Cross, Ooty. Demo data only."
+  },
+  {
+    "id": "OOT-005",
+    "name": "The Tea Garden Retreat",
+    "city": "Ooty",
+    "area": "Lovedale",
+    "stars": 5,
+    "rating": 4.3,
+    "base_price_inr": 10000,
+    "amenities": [
+      "Air conditioning",
+      "Bar",
+      "Breakfast included",
+      "Free Wi-Fi",
+      "Gym",
+      "Parking",
+      "Pet friendly",
+      "Rooftop terrace"
+    ],
+    "description": "A fictional 5-star retreat in Lovedale, Ooty. Demo data only."
+  },
+  {
+    "id": "OOT-006",
+    "name": "The Nilgiri Inn",
+    "city": "Ooty",
+    "area": "Lovedale",
+    "stars": 4,
+    "rating": 4.6,
+    "base_price_inr": 6550,
+    "amenities": [
+      "Air conditioning",
+      "Breakfast included",
+      "Gym",
+      "Restaurant",
+      "Rooftop terrace",
+      "Room service",
+      "Swimming pool"
+    ],
+    "description": "A fictional 4-star inn in Lovedale, Ooty. Demo data only."
+  },
+  {
+    "id": "OOT-007",
+    "name": "The Toy Train Homestay",
+    "city": "Ooty",
+    "area": "Ooty Lake",
+    "stars": 4,
+    "rating": 5.0,
+    "base_price_inr": 7100,
+    "amenities": [
+      "Airport shuttle",
+      "Breakfast included",
+      "Free Wi-Fi",
+      "Gym",
+      "Pet friendly",
+      "Room service",
+      "Spa"
+    ],
+    "description": "A fictional 4-star homestay in Ooty Lake, Ooty. Demo data only."
+  },
+  {
+    "id": "OOT-008",
+    "name": "The Toy Train Suites",
+    "city": "Ooty",
+    "area": "Coonoor Road",
+    "stars": 5,
+    "rating": 5.0,
+    "base_price_inr": 12300,
+    "amenities": [
+      "Airport shuttle",
+      "Free Wi-Fi",
+      "Gym",
+      "Parking",
+      "Pet friendly",
+      "Restaurant",
+      "Room service",
+      "Swimming pool"
+    ],
+    "description": "A fictional 5-star suites in Coonoor Road, Ooty. Demo data only."
+  },
+  {
+    "id": "OOT-009",
+    "name": "The Eucalyptus Boutique Stay",
+    "city": "Ooty",
+    "area": "Fern Hill",
+    "stars": 4,
+    "rating": 4.2,
+    "base_price_inr": 6750,
+    "amenities": [
+      "Air conditioning",
+      "Free Wi-Fi",
+      "Parking",
+      "Restaurant",
+      "Rooftop terrace",
+      "Room service",
+      "Swimming pool"
+    ],
+    "description": "A fictional 4-star stay in Fern Hill, Ooty. Demo data only."
+  },
+  {
+    "id": "OOT-010",
+    "name": "The Tea Garden Inn",
+    "city": "Ooty",
+    "area": "Fern Hill",
+    "stars": 5,
+    "rating": 4.5,
+    "base_price_inr": 15100,
+    "amenities": [
+      "Air conditioning",
+      "Airport shuttle",
+      "Bar",
+      "Free Wi-Fi",
+      "Gym",
+      "Pet friendly",
+      "Room service",
+      "Spa"
+    ],
+    "description": "A fictional 5-star inn in Fern Hill, Ooty. Demo data only."
+  },
+  {
+    "id": "MNR-001",
+    "name": "The Cloud Nine Suites",
+    "city": "Munnar",
+    "area": "Chithirapuram",
+    "stars": 4,
+    "rating": 4.5,
+    "base_price_inr": 5550,
+    "amenities": [
+      "Air conditioning",
+      "Airport shuttle",
+      "Bar",
+      "Gym",
+      "Restaurant",
+      "Room service",
+      "Spa"
+    ],
+    "description": "A fictional 4-star suites in Chithirapuram, Munnar. Demo data only."
+  },
+  {
+    "id": "MNR-002",
+    "name": "The Spice Trail Inn",
+    "city": "Munnar",
+    "area": "Anachal",
+    "stars": 3,
+    "rating": 4.0,
+    "base_price_inr": 3850,
+    "amenities": [
+      "Air conditioning",
+      "Airport shuttle",
+      "Free Wi-Fi",
+      "Gym",
+      "Rooftop terrace",
+      "Room service"
+    ],
+    "description": "A fictional 3-star inn in Anachal, Munnar. Demo data only."
+  },
+  {
+    "id": "MNR-003",
+    "name": "The High Range Inn",
+    "city": "Munnar",
+    "area": "Pothamedu",
+    "stars": 3,
+    "rating": 4.2,
+    "base_price_inr": 3800,
+    "amenities": [
+      "Air conditioning",
+      "Airport shuttle",
+      "Bar",
+      "Free Wi-Fi",
+      "Pet friendly",
+      "Room service"
+    ],
+    "description": "A fictional 3-star inn in Pothamedu, Munnar. Demo data only."
+  },
+  {
+    "id": "MNR-004",
+    "name": "The Cloud Nine Hotel",
+    "city": "Munnar",
+    "area": "Pothamedu",
+    "stars": 4,
+    "rating": 4.2,
+    "base_price_inr": 7200,
+    "amenities": [
+      "Air conditioning",
+      "Airport shuttle",
+      "Breakfast included",
+      "Free Wi-Fi",
+      "Pet friendly",
+      "Room service",
+      "Swimming pool"
+    ],
+    "description": "A fictional 4-star hotel in Pothamedu, Munnar. Demo data only."
+  },
+  {
+    "id": "MNR-005",
+    "name": "The Neelakurinji Resort",
+    "city": "Munnar",
+    "area": "Mattupetty",
+    "stars": 4,
+    "rating": 4.7,
+    "base_price_inr": 5450,
+    "amenities": [
+      "Airport shuttle",
+      "Breakfast included",
+      "Gym",
+      "Pet friendly",
+      "Restaurant",
+      "Rooftop terrace",
+      "Swimming pool"
+    ],
+    "description": "A fictional 4-star resort in Mattupetty, Munnar. Demo data only."
+  },
+  {
+    "id": "MNR-006",
+    "name": "The Plantation Retreat",
+    "city": "Munnar",
+    "area": "Pallivasal",
+    "stars": 5,
+    "rating": 4.9,
+    "base_price_inr": 11150,
+    "amenities": [
+      "Airport shuttle",
+      "Bar",
+      "Breakfast included",
+      "Free Wi-Fi",
+      "Gym",
+      "Parking",
+      "Pet friendly",
+      "Rooftop terrace"
+    ],
+    "description": "A fictional 5-star retreat in Pallivasal, Munnar. Demo data only."
+  },
+  {
+    "id": "MNR-007",
+    "name": "The Spice Trail Suites",
+    "city": "Munnar",
+    "area": "Anachal",
+    "stars": 4,
+    "rating": 4.1,
+    "base_price_inr": 6750,
+    "amenities": [
+      "Breakfast included",
+      "Free Wi-Fi",
+      "Gym",
+      "Parking",
+      "Restaurant",
+      "Rooftop terrace",
+      "Swimming pool"
+    ],
+    "description": "A fictional 4-star suites in Anachal, Munnar. Demo data only."
+  },
+  {
+    "id": "MNR-008",
+    "name": "The High Range Suites",
+    "city": "Munnar",
+    "area": "Anachal",
+    "stars": 3,
+    "rating": 4.1,
+    "base_price_inr": 3450,
+    "amenities": [
+      "Air conditioning",
+      "Bar",
+      "Breakfast included",
+      "Free Wi-Fi",
+      "Gym",
+      "Spa"
+    ],
+    "description": "A fictional 3-star suites in Anachal, Munnar. Demo data only."
+  },
+  {
+    "id": "MNR-009",
+    "name": "The Plantation Boutique Stay",
+    "city": "Munnar",
+    "area": "Pallivasal",
+    "stars": 5,
+    "rating": 4.7,
+    "base_price_inr": 15550,
+    "amenities": [
+      "Air conditioning",
+      "Airport shuttle",
+      "Bar",
+      "Breakfast included",
+      "Free Wi-Fi",
+      "Pet friendly",
+      "Restaurant",
+      "Rooftop terrace"
+    ],
+    "description": "A fictional 5-star stay in Pallivasal, Munnar. Demo data only."
+  },
+  {
+    "id": "MNR-010",
+    "name": "The Tea Estate Resort",
+    "city": "Munnar",
+    "area": "Pothamedu",
+    "stars": 3,
+    "rating": 4.2,
+    "base_price_inr": 3400,
+    "amenities": [
+      "Bar",
+      "Gym",
+      "Parking",
+      "Pet friendly",
+      "Restaurant",
+      "Swimming pool"
+    ],
+    "description": "A fictional 3-star resort in Pothamedu, Munnar. Demo data only."
+  },
+  {
+    "id": "SML-001",
+    "name": "The Himachal Suites",
+    "city": "Shimla",
+    "area": "Kufri",
+    "stars": 3,
+    "rating": 4.4,
+    "base_price_inr": 3100,
+    "amenities": [
+      "Air conditioning",
+      "Airport shuttle",
+      "Bar",
+      "Breakfast included",
+      "Restaurant",
+      "Room service"
+    ],
+    "description": "A fictional 3-star suites in Kufri, Shimla. Demo data only."
+  },
+  {
+    "id": "SML-002",
+    "name": "The Viceregal Hotel",
+    "city": "Shimla",
+    "area": "The Ridge",
+    "stars": 5,
+    "rating": 4.7,
+    "base_price_inr": 9500,
+    "amenities": [
+      "Air conditioning",
+      "Breakfast included",
+      "Free Wi-Fi",
+      "Gym",
+      "Parking",
+      "Pet friendly",
+      "Restaurant",
+      "Swimming pool"
+    ],
+    "description": "A fictional 5-star hotel in The Ridge, Shimla. Demo data only."
+  },
+  {
+    "id": "SML-003",
+    "name": "The Toy Train Homestay",
+    "city": "Shimla",
+    "area": "Mashobra",
+    "stars": 4,
+    "rating": 3.9,
+    "base_price_inr": 7200,
+    "amenities": [
+      "Air conditioning",
+      "Free Wi-Fi",
+      "Parking",
+      "Pet friendly",
+      "Restaurant",
+      "Room service",
+      "Spa"
+    ],
+    "description": "A fictional 4-star homestay in Mashobra, Shimla. Demo data only."
+  },
+  {
+    "id": "SML-004",
+    "name": "The Pine Valley Hotel",
+    "city": "Shimla",
+    "area": "Chotta Shimla",
+    "stars": 2,
+    "rating": 4.7,
+    "base_price_inr": 1950,
+    "amenities": [
+      "Air conditioning",
+      "Gym",
+      "Rooftop terrace",
+      "Room service",
+      "Spa"
+    ],
+    "description": "A fictional 2-star hotel in Chotta Shimla, Shimla. Demo data only."
+  },
+  {
+    "id": "SML-005",
+    "name": "The Cedar Ridge Homestay",
+    "city": "Shimla",
+    "area": "The Ridge",
+    "stars": 5,
+    "rating": 4.8,
+    "base_price_inr": 13350,
+    "amenities": [
+      "Air conditioning",
+      "Airport shuttle",
+      "Free Wi-Fi",
+      "Gym",
+      "Parking",
+      "Pet friendly",
+      "Rooftop terrace",
+      "Swimming pool"
+    ],
+    "description": "A fictional 5-star homestay in The Ridge, Shimla. Demo data only."
+  },
+  {
+    "id": "SML-006",
+    "name": "The Cedar Ridge Retreat",
+    "city": "Shimla",
+    "area": "Mall Road",
+    "stars": 3,
+    "rating": 4.0,
+    "base_price_inr": 3700,
+    "amenities": [
+      "Airport shuttle",
+      "Breakfast included",
+      "Free Wi-Fi",
+      "Parking",
+      "Restaurant",
+      "Swimming pool"
+    ],
+    "description": "A fictional 3-star retreat in Mall Road, Shimla. Demo data only."
+  },
+  {
+    "id": "SML-007",
+    "name": "The Colonial Inn",
+    "city": "Shimla",
+    "area": "Jakhoo",
+    "stars": 4,
+    "rating": 4.9,
+    "base_price_inr": 6650,
+    "amenities": [
+      "Airport shuttle",
+      "Bar",
+      "Breakfast included",
+      "Parking",
+      "Rooftop terrace",
+      "Room service",
+      "Spa"
+    ],
+    "description": "A fictional 4-star inn in Jakhoo, Shimla. Demo data only."
+  },
+  {
+    "id": "SML-008",
+    "name": "The Pine Valley Boutique Stay",
+    "city": "Shimla",
+    "area": "The Ridge",
+    "stars": 4,
+    "rating": 4.5,
+    "base_price_inr": 5800,
+    "amenities": [
+      "Air conditioning",
+      "Bar",
+      "Breakfast included",
+      "Free Wi-Fi",
+      "Gym",
+      "Pet friendly",
+      "Restaurant"
+    ],
+    "description": "A fictional 4-star stay in The Ridge, Shimla. Demo data only."
+  },
+  {
+    "id": "SML-009",
+    "name": "The Colonial Resort",
+    "city": "Shimla",
+    "area": "Mall Road",
+    "stars": 3,
+    "rating": 3.9,
+    "base_price_inr": 2800,
+    "amenities": [
+      "Airport shuttle",
+      "Breakfast included",
+      "Gym",
+      "Parking",
+      "Room service",
+      "Swimming pool"
+    ],
+    "description": "A fictional 3-star resort in Mall Road, Shimla. Demo data only."
+  },
+  {
+    "id": "SML-010",
+    "name": "The Viceregal Retreat",
+    "city": "Shimla",
+    "area": "The Ridge",
+    "stars": 4,
+    "rating": 4.7,
+    "base_price_inr": 4900,
+    "amenities": [
+      "Breakfast included",
+      "Parking",
+      "Pet friendly",
+      "Restaurant",
+      "Rooftop terrace",
+      "Room service",
+      "Spa"
+    ],
+    "description": "A fictional 4-star retreat in The Ridge, Shimla. Demo data only."
+  },
+  {
+    "id": "DJL-001",
+    "name": "The Toy Train Boutique Stay",
+    "city": "Darjeeling",
+    "area": "Lebong",
+    "stars": 5,
+    "rating": 4.5,
+    "base_price_inr": 15250,
+    "amenities": [
+      "Bar",
+      "Breakfast included",
+      "Gym",
+      "Pet friendly",
+      "Restaurant",
+      "Rooftop terrace",
+      "Room service",
+      "Swimming pool"
+    ],
+    "description": "A fictional 5-star stay in Lebong, Darjeeling. Demo data only."
+  },
+  {
+    "id": "DJL-002",
+    "name": "The Kanchenjunga Resort",
+    "city": "Darjeeling",
+    "area": "Chowrasta",
+    "stars": 5,
+    "rating": 4.8,
+    "base_price_inr": 12900,
+    "amenities": [
+      "Airport shuttle",
+      "Breakfast included",
+      "Free Wi-Fi",
+      "Gym",
+      "Parking",
+      "Restaurant",
+      "Rooftop terrace",
+      "Swimming pool"
+    ],
+    "description": "A fictional 5-star resort in Chowrasta, Darjeeling. Demo data only."
+  },
+  {
+    "id": "DJL-003",
+    "name": "The Tiger Hill Resort",
+    "city": "Darjeeling",
+    "area": "Jalapahar",
+    "stars": 4,
+    "rating": 4.2,
+    "base_price_inr": 6650,
+    "amenities": [
+      "Air conditioning",
+      "Airport shuttle",
+      "Free Wi-Fi",
+      "Gym",
+      "Restaurant",
+      "Rooftop terrace",
+      "Room service"
+    ],
+    "description": "A fictional 4-star resort in Jalapahar, Darjeeling. Demo data only."
+  },
+  {
+    "id": "DJL-004",
+    "name": "The Toy Train Hotel",
+    "city": "Darjeeling",
+    "area": "Ghoom",
+    "stars": 5,
+    "rating": 4.6,
+    "base_price_inr": 7900,
+    "amenities": [
+      "Airport shuttle",
+      "Bar",
+      "Breakfast included",
+      "Gym",
+      "Parking",
+      "Restaurant",
+      "Room service",
+      "Spa"
+    ],
+    "description": "A fictional 5-star hotel in Ghoom, Darjeeling. Demo data only."
+  },
+  {
+    "id": "DJL-005",
+    "name": "The Monastery View Suites",
+    "city": "Darjeeling",
+    "area": "Ghoom",
+    "stars": 5,
+    "rating": 4.9,
+    "base_price_inr": 14050,
+    "amenities": [
+      "Air conditioning",
+      "Airport shuttle",
+      "Breakfast included",
+      "Free Wi-Fi",
+      "Gym",
+      "Parking",
+      "Rooftop terrace",
+      "Swimming pool"
+    ],
+    "description": "A fictional 5-star suites in Ghoom, Darjeeling. Demo data only."
+  },
+  {
+    "id": "DJL-006",
+    "name": "The Kanchenjunga Hotel",
+    "city": "Darjeeling",
+    "area": "Chowrasta",
+    "stars": 4,
+    "rating": 4.1,
+    "base_price_inr": 5350,
+    "amenities": [
+      "Air conditioning",
+      "Breakfast included",
+      "Parking",
+      "Pet friendly",
+      "Restaurant",
+      "Room service",
+      "Spa"
+    ],
+    "description": "A fictional 4-star hotel in Chowrasta, Darjeeling. Demo data only."
+  },
+  {
+    "id": "DJL-007",
+    "name": "The Tea Garden Boutique Stay",
+    "city": "Darjeeling",
+    "area": "Ghoom",
+    "stars": 3,
+    "rating": 4.4,
+    "base_price_inr": 3550,
+    "amenities": [
+      "Breakfast included",
+      "Free Wi-Fi",
+      "Pet friendly",
+      "Rooftop terrace",
+      "Room service",
+      "Swimming pool"
+    ],
+    "description": "A fictional 3-star stay in Ghoom, Darjeeling. Demo data only."
+  },
+  {
+    "id": "DJL-008",
+    "name": "The Kanchenjunga Boutique Stay",
+    "city": "Darjeeling",
+    "area": "Lebong",
+    "stars": 4,
+    "rating": 4.7,
+    "base_price_inr": 6050,
+    "amenities": [
+      "Airport shuttle",
+      "Bar",
+      "Pet friendly",
+      "Restaurant",
+      "Rooftop terrace",
+      "Room service",
+      "Spa"
+    ],
+    "description": "A fictional 4-star stay in Lebong, Darjeeling. Demo data only."
+  },
+  {
+    "id": "DJL-009",
+    "name": "The Toy Train Resort",
+    "city": "Darjeeling",
+    "area": "Jalapahar",
+    "stars": 3,
+    "rating": 3.8,
+    "base_price_inr": 2200,
+    "amenities": [
+      "Airport shuttle",
+      "Bar",
+      "Free Wi-Fi",
+      "Parking",
+      "Room service",
+      "Spa"
+    ],
+    "description": "A fictional 3-star resort in Jalapahar, Darjeeling. Demo data only."
+  },
+  {
+    "id": "DJL-010",
+    "name": "The Tea Garden Homestay",
+    "city": "Darjeeling",
+    "area": "Ghoom",
+    "stars": 3,
+    "rating": 4.4,
+    "base_price_inr": 2550,
+    "amenities": [
+      "Airport shuttle",
+      "Bar",
+      "Breakfast included",
+      "Free Wi-Fi",
+      "Gym",
+      "Restaurant"
+    ],
+    "description": "A fictional 3-star homestay in Ghoom, Darjeeling. Demo data only."
+  },
+  {
+    "id": "CRG-001",
+    "name": "The Misty Hills Inn",
+    "city": "Coorg",
+    "area": "Virajpet",
+    "stars": 4,
+    "rating": 4.4,
+    "base_price_inr": 5850,
+    "amenities": [
+      "Air conditioning",
+      "Bar",
+      "Breakfast included",
+      "Gym",
+      "Parking",
+      "Restaurant",
+      "Rooftop terrace"
+    ],
+    "description": "A fictional 4-star inn in Virajpet, Coorg. Demo data only."
+  },
+  {
+    "id": "CRG-002",
+    "name": "The Coffee Estate Homestay",
+    "city": "Coorg",
+    "area": "Somwarpet",
+    "stars": 3,
+    "rating": 3.8,
+    "base_price_inr": 3000,
+    "amenities": [
+      "Air conditioning",
+      "Airport shuttle",
+      "Breakfast included",
+      "Pet friendly",
+      "Restaurant",
+      "Room service"
+    ],
+    "description": "A fictional 3-star homestay in Somwarpet, Coorg. Demo data only."
+  },
+  {
+    "id": "CRG-003",
+    "name": "The Coffee Estate Boutique Stay",
+    "city": "Coorg",
+    "area": "Abbey Falls",
+    "stars": 3,
+    "rating": 4.2,
+    "base_price_inr": 3250,
+    "amenities": [
+      "Bar",
+      "Breakfast included",
+      "Gym",
+      "Pet friendly",
+      "Restaurant",
+      "Room service"
+    ],
+    "description": "A fictional 3-star stay in Abbey Falls, Coorg. Demo data only."
+  },
+  {
+    "id": "CRG-004",
+    "name": "The Coffee Estate Inn",
+    "city": "Coorg",
+    "area": "Siddapur",
+    "stars": 5,
+    "rating": 5.0,
+    "base_price_inr": 10650,
+    "amenities": [
+      "Airport shuttle",
+      "Breakfast included",
+      "Gym",
+      "Parking",
+      "Restaurant",
+      "Rooftop terrace",
+      "Spa",
+      "Swimming pool"
+    ],
+    "description": "A fictional 5-star inn in Siddapur, Coorg. Demo data only."
+  },
+  {
+    "id": "CRG-005",
+    "name": "The Plantation Boutique Stay",
+    "city": "Coorg",
+    "area": "Siddapur",
+    "stars": 3,
+    "rating": 4.2,
+    "base_price_inr": 3750,
+    "amenities": [
+      "Airport shuttle",
+      "Breakfast included",
+      "Pet friendly",
+      "Rooftop terrace",
+      "Spa",
+      "Swimming pool"
+    ],
+    "description": "A fictional 3-star stay in Siddapur, Coorg. Demo data only."
+  },
+  {
+    "id": "CRG-006",
+    "name": "The Rainforest Resort",
+    "city": "Coorg",
+    "area": "Siddapur",
+    "stars": 3,
+    "rating": 4.3,
+    "base_price_inr": 3950,
+    "amenities": [
+      "Air conditioning",
+      "Bar",
+      "Gym",
+      "Pet friendly",
+      "Rooftop terrace",
+      "Room service"
+    ],
+    "description": "A fictional 3-star resort in Siddapur, Coorg. Demo data only."
+  },
+  {
+    "id": "CRG-007",
+    "name": "The Rainforest Boutique Stay",
+    "city": "Coorg",
+    "area": "Madikeri",
+    "stars": 3,
+    "rating": 4.1,
+    "base_price_inr": 3100,
+    "amenities": [
+      "Air conditioning",
+      "Airport shuttle",
+      "Bar",
+      "Free Wi-Fi",
+      "Rooftop terrace",
+      "Room service"
+    ],
+    "description": "A fictional 3-star stay in Madikeri, Coorg. Demo data only."
+  },
+  {
+    "id": "CRG-008",
+    "name": "The Cauvery Resort",
+    "city": "Coorg",
+    "area": "Kushalnagar",
+    "stars": 2,
+    "rating": 4.0,
+    "base_price_inr": 1550,
+    "amenities": [
+      "Air conditioning",
+      "Breakfast included",
+      "Parking",
+      "Rooftop terrace",
+      "Room service"
+    ],
+    "description": "A fictional 2-star resort in Kushalnagar, Coorg. Demo data only."
+  },
+  {
+    "id": "CRG-009",
+    "name": "The Cauvery Retreat",
+    "city": "Coorg",
+    "area": "Siddapur",
+    "stars": 4,
+    "rating": 4.5,
+    "base_price_inr": 4400,
+    "amenities": [
+      "Airport shuttle",
+      "Bar",
+      "Free Wi-Fi",
+      "Gym",
+      "Pet friendly",
+      "Room service",
+      "Spa"
+    ],
+    "description": "A fictional 4-star retreat in Siddapur, Coorg. Demo data only."
+  },
+  {
+    "id": "CRG-010",
+    "name": "The Plantation Homestay",
+    "city": "Coorg",
+    "area": "Siddapur",
+    "stars": 3,
+    "rating": 4.2,
+    "base_price_inr": 3600,
+    "amenities": [
+      "Air conditioning",
+      "Breakfast included",
+      "Free Wi-Fi",
+      "Parking",
+      "Spa",
+      "Swimming pool"
+    ],
+    "description": "A fictional 3-star homestay in Siddapur, Coorg. Demo data only."
   }
 ]

@@ -202,7 +202,8 @@ Measured with `make spike` (500 agents):
 | `check_live_price(hotel_id, check_in, check_out, guests)` | Price straight from the supplier (the "checkout" check) | **never** |
 | `book_hotel(hotel_id, check_in, check_out, guest_name, guests)` | **Mock** booking: re-checks the price and returns a fake confirmation id | never |
 
-Cities: Goa, Manali, Jaipur, Udaipur, Kochi, Rishikesh. Bad cities, dates or ids get a
+Cities: Goa, Manali, Jaipur, Udaipur, Kochi, Rishikesh, Pondicherry, Thiruvananthapuram, Ooty,
+Munnar, Shimla, Darjeeling, Coorg (also accepts Puducherry, Trivandrum, Cochin, Kodagu...). Bad cities, dates or ids get a
 friendly error the model can read and fix.
 
 ---

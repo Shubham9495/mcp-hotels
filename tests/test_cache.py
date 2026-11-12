@@ -152,3 +152,25 @@ async def test_bookings_counter(service: HotelService, stay: Stay, n_books: int)
     for _ in range(n_books):
         await service.book("GOA-001", stay, "Test")
     assert (await service.metrics.totals())[m.BOOKINGS] == n_books
+
+
+def test_new_cities_and_aliases_normalize() -> None:
+    from mcp_server.validation import normalize_city
+
+    assert normalize_city("  pondicherry ") == "Pondicherry"
+    assert normalize_city("Puducherry") == "Pondicherry"
+    assert normalize_city("TRIVANDRUM") == "Thiruvananthapuram"
+    assert normalize_city("fort  kochi") == "Kochi"
+    assert normalize_city("Kodagu") == "Coorg"
+
+
+def test_every_supported_city_has_hotels() -> None:
+    import json
+    from pathlib import Path
+
+    from mcp_server.config import SUPPORTED_CITIES
+
+    hotels = json.loads((Path(__file__).parent.parent / "supplier/data/hotels.json").read_text(encoding="utf-8"))
+    ids = [h["id"] for h in hotels]
+    assert len(ids) == len(set(ids))
+    assert {h["city"] for h in hotels} == set(SUPPORTED_CITIES)

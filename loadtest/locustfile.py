@@ -43,7 +43,8 @@ POPULAR: list[tuple[str, str, str, int | None]] = [
     ("Manali", *stay(DEC, 3), 8000),
     ("Jaipur", *stay(FRI + timedelta(days=7), 2), None),
 ]
-CITIES = ["Goa", "Manali", "Jaipur", "Udaipur", "Kochi", "Rishikesh"]
+CITIES = ["Goa", "Manali", "Jaipur", "Udaipur", "Kochi", "Rishikesh", "Pondicherry",
+          "Thiruvananthapuram", "Ooty", "Munnar", "Shimla", "Darjeeling", "Coorg"]
 _ids = itertools.count(1)
 
 
