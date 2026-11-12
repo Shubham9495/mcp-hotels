@@ -86,7 +86,21 @@ and the supplier running in Docker. Open *Settings → Developer → Edit Config
 ```
 
 Change the path to wherever you cloned the repo. If Claude Desktop can't find `uv`, put the
-full path to `uv.exe` in `command` (run `where uv` to find it). Restart Claude Desktop, and
+full path to `uv.exe` in `command` (run `where uv` to find it).
+
+**If the server log shows `invalid peer certificate: UnknownIssuer`** (antivirus or corporate
+HTTPS inspection), `uv run` is trying to download build tools at startup. Skip `uv` entirely
+and start the already-installed executable from the project's virtualenv (run `uv sync` once first):
+
+```json
+{
+  "mcpServers": {
+    "hotels": {
+      "command": "E:\\AI-Lab\\MCP-Hotels\\.venv\\Scripts\\mcp-hotels.exe"
+    }
+  }
+}
+``` Restart Claude Desktop, and
 the four hotel tools appear under the tools icon.
 
 ### Claude Code
