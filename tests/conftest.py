@@ -7,10 +7,12 @@ from typing import Any
 import fakeredis
 import pytest
 
+from mcp_server.breaker import CircuitBreaker
 from mcp_server.cache import RedisCache
 from mcp_server.config import Settings
 from mcp_server.metrics import Metrics
 from mcp_server.search import HotelService, SupplierError
+from mcp_server.shedding import LoadShedder
 from mcp_server.validation import Stay
 
 
@@ -63,7 +65,12 @@ def settings() -> Settings:
 
 @pytest.fixture
 def service(settings: Settings, supplier: FakeSupplier, redis: fakeredis.FakeAsyncRedis) -> HotelService:
-    return HotelService(settings, supplier, RedisCache(redis, settings.stale_ttl_s), Metrics(redis))  # type: ignore[arg-type]
+    return HotelService(  # type: ignore[arg-type]
+        settings, supplier, RedisCache(redis, settings.stale_ttl_s), Metrics(redis),
+        CircuitBreaker(redis, "supplier", settings.breaker_failure_threshold, settings.breaker_window_s,
+                       settings.breaker_cooldown_s),
+        LoadShedder(settings.supplier_max_inflight),
+    )
 
 
 @pytest.fixture

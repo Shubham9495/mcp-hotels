@@ -18,10 +18,13 @@ from mcp.server.transport_security import TransportSecuritySettings
 from redis.asyncio import Redis
 
 from mcp_server import metrics as m
+from mcp_server.breaker import CircuitBreaker
 from mcp_server.cache import RedisCache
 from mcp_server.config import SUPPORTED_CITIES, Settings
 from mcp_server.metrics import Metrics
-from mcp_server.search import HotelNotFound, HotelService, SupplierClient, SupplierError
+from mcp_server.ratelimit import RateLimiter
+from mcp_server.search import HotelNotFound, HotelService, SupplierClient, SupplierError, SupplierUnavailable
+from mcp_server.shedding import LoadShedder
 from mcp_server.validation import InvalidInput, normalize_city, normalize_hotel_id, validate_stay
 
 log = logging.getLogger("mcp_hotels")
@@ -42,25 +45,54 @@ mcp = MCPServer(
 
 
 class _ServiceHolder:
-    """Process-wide singleton, created on first use (works for stdio and HTTP alike)."""
+    """Process-wide singletons, created on first use (works for stdio and HTTP alike)."""
 
     service: HotelService | None = None
+    limiter: RateLimiter | None = None
+
+    @classmethod
+    def _build(cls) -> None:
+        settings = Settings()
+        redis = Redis.from_url(settings.redis_url, decode_responses=True)
+        cls.service = HotelService(
+            settings,
+            SupplierClient(settings.supplier_url, settings.supplier_timeout_s),
+            RedisCache(redis, settings.stale_ttl_s),
+            Metrics(redis),
+            CircuitBreaker(
+                redis, "supplier", settings.breaker_failure_threshold,
+                settings.breaker_window_s, settings.breaker_cooldown_s,
+            ),
+            LoadShedder(settings.supplier_max_inflight),
+        )
+        cls.limiter = RateLimiter(redis, settings.rate_capacity, settings.rate_refill_per_s)
 
     @classmethod
     def get(cls) -> HotelService:
         if cls.service is None:
-            settings = Settings()
-            redis = Redis.from_url(settings.redis_url, decode_responses=True)
-            cls.service = HotelService(
-                settings,
-                SupplierClient(settings.supplier_url, settings.supplier_timeout_s),
-                RedisCache(redis, settings.stale_ttl_s),
-                Metrics(redis),
-            )
+            cls._build()
+        assert cls.service is not None
         return cls.service
+
+    @classmethod
+    def rate_limiter(cls) -> RateLimiter:
+        if cls.limiter is None:
+            cls._build()
+        assert cls.limiter is not None
+        return cls.limiter
 
 
 SERVICE = _ServiceHolder
+
+# Bookings are never rate limited: they are the revenue the whole system exists for.
+RATE_LIMITED_TOOLS = frozenset({"search_hotels", "get_hotel_details", "check_live_price"})
+
+UNAVAILABLE_MESSAGES: dict[str, str] = {
+    "search_hotels": "No cached results exist for this exact search and the supplier can't be reached",
+    "get_hotel_details": "Hotel details aren't cached and the supplier can't be reached",
+    "check_live_price": "The live price can't be confirmed right now - do not book on a cached price",
+    "book_hotel": "The booking could not be completed and nothing was booked",
+}
 
 
 def client_id_from(ctx: Context) -> str:
@@ -77,19 +109,32 @@ def client_id_from(ctx: Context) -> str:
     return "stdio"
 
 
-async def run_tool(tool: str, coro: Coroutine[Any, Any, dict[str, Any]]) -> dict[str, Any]:
-    """Count the request, then translate service exceptions into friendly tool errors."""
+async def run_tool(tool: str, ctx: Context, coro: Coroutine[Any, Any, dict[str, Any]]) -> dict[str, Any]:
+    """Count, rate-limit, run, and translate service exceptions into friendly tool errors."""
     metrics = SERVICE.get().metrics
     await metrics.incr(m.MCP_REQUESTS)
     await metrics.incr(f"{m.MCP_REQUESTS}:{tool}")
+
+    if tool in RATE_LIMITED_TOOLS:
+        decision = await SERVICE.rate_limiter().acquire(client_id_from(ctx))
+        if not decision.allowed:
+            coro.close()
+            await metrics.incr(m.RATE_LIMITED)
+            raise ToolError(
+                f"Rate limited: too many requests from this client. Retry after {decision.retry_after_whole_s} s."
+            )
     try:
         return await coro
     except InvalidInput as exc:
         raise ToolError(str(exc)) from None
     except HotelNotFound:
         raise ToolError("No hotel with that id. Use search_hotels to find valid ids (e.g. 'GOA-001').") from None
+    except SupplierUnavailable as exc:
+        raise ToolError(
+            f"{UNAVAILABLE_MESSAGES[tool]} ({exc.reason}). Retry after {exc.retry_after_s} s."
+        ) from None
     except SupplierError as exc:
-        raise ToolError(f"The hotel supplier is unavailable right now ({exc}). Please try again shortly.") from None
+        raise ToolError(f"{UNAVAILABLE_MESSAGES[tool]} ({exc}). Please try again shortly.") from None
 
 
 @mcp.tool(
@@ -122,7 +167,7 @@ async def search_hotels(
             raise InvalidInput("min_stars must be between 1 and 5.")
         return await SERVICE.get().search(clean_city, stay, max_price_inr, min_stars, max(1, min(limit, 10)))
 
-    return await run_tool("search_hotels", go())
+    return await run_tool("search_hotels", ctx, go())
 
 
 @mcp.tool(
@@ -136,7 +181,7 @@ async def get_hotel_details(hotel_id: str, ctx: Context) -> dict[str, Any]:
     async def go() -> dict[str, Any]:
         return await SERVICE.get().details(normalize_hotel_id(hotel_id))
 
-    return await run_tool("get_hotel_details", go())
+    return await run_tool("get_hotel_details", ctx, go())
 
 
 @mcp.tool(
@@ -154,7 +199,7 @@ async def check_live_price(
         stay = validate_stay(check_in, check_out, guests)
         return await SERVICE.get().live_price(normalize_hotel_id(hotel_id), stay)
 
-    return await run_tool("check_live_price", go())
+    return await run_tool("check_live_price", ctx, go())
 
 
 @mcp.tool(
@@ -175,7 +220,7 @@ async def book_hotel(
             raise InvalidInput("guest_name is required (max 100 characters).")
         return await SERVICE.get().book(normalize_hotel_id(hotel_id), stay, name)
 
-    return await run_tool("book_hotel", go())
+    return await run_tool("book_hotel", ctx, go())
 
 
 def main() -> None:
