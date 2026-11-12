@@ -46,9 +46,9 @@ reset:           ## zero dashboard counters
 	curl -s -X POST $(DASHBOARD)/api/reset; echo
 
 tunnel:          ## PUBLIC https URL (Cloudflare quick tunnel) for a Claude custom connector - no auth!
-	docker compose --profile tunnel up -d --no-deps tunnel
+	docker compose --profile tunnel up -d --no-deps --force-recreate tunnel
 	@for i in $$(seq 1 30); do \
-	  url=$$(docker compose logs tunnel 2>&1 | grep -o 'https://[a-z0-9-]*\.trycloudflare\.com' | head -1); \
+	  url=$$(docker compose logs tunnel 2>&1 | grep -o 'https://[a-z0-9-]*\.trycloudflare\.com' | grep -v '//api\.' | head -1); \
 	  if [ -n "$$url" ]; then echo "Connector URL: $$url/mcp  (stop with: make tunnel-down)"; exit 0; fi; sleep 2; \
 	done; echo "No URL yet - check: docker compose logs tunnel"
 

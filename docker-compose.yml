@@ -66,4 +66,9 @@ services:
     profiles: ["tunnel"]
     restart: "no"
     command: tunnel --no-autoupdate --url http://mcp:8000 --http-host-header mcp:8000
+    # Trust the system roots plus any extra root CAs in docker/extra-ca/ (needed when antivirus
+    # or a corporate proxy inspects HTTPS; harmless otherwise).
+    environment:
+      SSL_CERT_DIR: /etc/ssl/certs:/extra-ca
+    volumes: ["./docker/extra-ca:/extra-ca:ro"]
     depends_on: [mcp]

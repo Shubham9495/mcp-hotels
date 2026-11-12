@@ -28,11 +28,16 @@ switch ($Target) {
     "reset"         { Post "$Dashboard/api/reset" $null }
     "tunnel" {
         Write-Host "Starting a PUBLIC Cloudflare quick tunnel to the MCP server (no auth - mock data only)..."
-        docker compose --profile tunnel up -d --no-deps tunnel
+        docker compose --profile tunnel up -d --no-deps --force-recreate tunnel
         $url = $null
+        $failed = $false
         foreach ($i in 1..30) {
-            $m = docker compose logs tunnel 2>&1 | Select-String -Pattern 'https://[a-z0-9-]+\.trycloudflare\.com' | Select-Object -First 1
-            if ($m) { $url = $m.Matches[0].Value; break }
+            $logs = docker compose logs tunnel 2>&1 | Out-String
+            # The tunnel's own hostname; api.trycloudflare.com is Cloudflare's API, never the tunnel.
+            $m = [regex]::Matches($logs, 'https://[a-z0-9-]+\.trycloudflare\.com') |
+                 Where-Object { $_.Value -ne "https://api.trycloudflare.com" } | Select-Object -First 1
+            if ($m) { $url = $m.Value; break }
+            if ($logs -match 'failed to request quick Tunnel|ERR ') { $failed = $true; break }
             Start-Sleep -Seconds 2
         }
         if ($url) {
@@ -40,6 +45,9 @@ switch ($Target) {
             Write-Host "Connector URL:  $url/mcp" -ForegroundColor Green
             Write-Host "Add it at claude.ai -> Settings -> Connectors -> Add custom connector."
             Write-Host "Stop it with:   .\make tunnel-down"
+        } elseif ($failed) {
+            Write-Host "The tunnel failed to start. Last log lines:" -ForegroundColor Red
+            docker compose logs --tail 5 tunnel
         } else {
             Write-Host "No URL yet - check: docker compose logs tunnel"
         }
