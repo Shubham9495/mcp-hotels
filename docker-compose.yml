@@ -26,3 +26,12 @@ services:
     <<: *app
     command: uvicorn supplier.app:app --host 0.0.0.0 --port 8001
     ports: ["8001:8001"]
+
+  mcp:
+    <<: *app
+    command: mcp-hotels --http
+    environment:
+      REDIS_URL: redis://redis:6379/0
+      SUPPLIER_URL: http://supplier:8001
+      MCP_HTTP_HOST: 0.0.0.0
+    ports: ["8000:8000"]

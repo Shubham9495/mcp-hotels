@@ -10,5 +10,6 @@ RUN uv sync --frozen --no-dev --no-install-project
 COPY supplier ./supplier
 COPY mcp_server ./mcp_server
 COPY dashboard ./dashboard
+COPY scripts ./scripts
 RUN uv sync --frozen --no-dev
 ENV PATH="/app/.venv/bin:$PATH"
