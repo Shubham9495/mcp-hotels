@@ -1,0 +1,28 @@
+# All services use mock data only. Ports: MCP 8000, supplier 8001, dashboard 8002, Redis 6379.
+x-app: &app
+  build: .
+  restart: unless-stopped
+  env_file:
+    - path: .env
+      required: false
+  environment:
+    REDIS_URL: redis://redis:6379/0
+    SUPPLIER_URL: http://supplier:8001
+  depends_on:
+    redis:
+      condition: service_healthy
+
+services:
+  redis:
+    image: redis:7-alpine
+    ports: ["6379:6379"]
+    healthcheck:
+      test: ["CMD", "redis-cli", "ping"]
+      interval: 2s
+      timeout: 2s
+      retries: 15
+
+  supplier:
+    <<: *app
+    command: uvicorn supplier.app:app --host 0.0.0.0 --port 8001
+    ports: ["8001:8001"]

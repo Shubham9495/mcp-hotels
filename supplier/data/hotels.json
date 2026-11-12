@@ -1,0 +1,1123 @@
+[
+  {
+    "id": "GOA-001",
+    "name": "The Tide Resort",
+    "city": "Goa",
+    "area": "Candolim",
+    "stars": 4,
+    "rating": 4.6,
+    "base_price_inr": 6050,
+    "amenities": [
+      "Air conditioning",
+      "Breakfast included",
+      "Free Wi-Fi",
+      "Parking",
+      "Restaurant",
+      "Spa",
+      "Swimming pool"
+    ],
+    "description": "A fictional 4-star resort in Candolim, Goa. Demo data only."
+  },
+  {
+    "id": "GOA-002",
+    "name": "The Sands Retreat",
+    "city": "Goa",
+    "area": "Colva",
+    "stars": 3,
+    "rating": 4.2,
+    "base_price_inr": 3600,
+    "amenities": [
+      "Airport shuttle",
+      "Bar",
+      "Free Wi-Fi",
+      "Room service",
+      "Spa",
+      "Swimming pool"
+    ],
+    "description": "A fictional 3-star retreat in Colva, Goa. Demo data only."
+  },
+  {
+    "id": "GOA-003",
+    "name": "The Saltwater Boutique Stay",
+    "city": "Goa",
+    "area": "Candolim",
+    "stars": 3,
+    "rating": 4.0,
+    "base_price_inr": 2700,
+    "amenities": [
+      "Air conditioning",
+      "Breakfast included",
+      "Gym",
+      "Restaurant",
+      "Rooftop terrace",
+      "Room service"
+    ],
+    "description": "A fictional 3-star stay in Candolim, Goa. Demo data only."
+  },
+  {
+    "id": "GOA-004",
+    "name": "The Sands Suites",
+    "city": "Goa",
+    "area": "Baga",
+    "stars": 4,
+    "rating": 4.6,
+    "base_price_inr": 4250,
+    "amenities": [
+      "Air conditioning",
+      "Airport shuttle",
+      "Breakfast included",
+      "Gym",
+      "Parking",
+      "Restaurant",
+      "Spa"
+    ],
+    "description": "A fictional 4-star suites in Baga, Goa. Demo data only."
+  },
+  {
+    "id": "GOA-005",
+    "name": "The Sunset Shack Homestay",
+    "city": "Goa",
+    "area": "Baga",
+    "stars": 3,
+    "rating": 4.3,
+    "base_price_inr": 3550,
+    "amenities": [
+      "Airport shuttle",
+      "Bar",
+      "Breakfast included",
+      "Gym",
+      "Restaurant",
+      "Spa"
+    ],
+    "description": "A fictional 3-star homestay in Baga, Goa. Demo data only."
+  },
+  {
+    "id": "GOA-006",
+    "name": "The Lagoon Suites",
+    "city": "Goa",
+    "area": "Baga",
+    "stars": 5,
+    "rating": 4.9,
+    "base_price_inr": 11900,
+    "amenities": [
+      "Air conditioning",
+      "Parking",
+      "Pet friendly",
+      "Restaurant",
+      "Rooftop terrace",
+      "Room service",
+      "Spa",
+      "Swimming pool"
+    ],
+    "description": "A fictional 5-star suites in Baga, Goa. Demo data only."
+  },
+  {
+    "id": "GOA-007",
+    "name": "The Sunset Shack Suites",
+    "city": "Goa",
+    "area": "Calangute",
+    "stars": 3,
+    "rating": 4.3,
+    "base_price_inr": 3950,
+    "amenities": [
+      "Airport shuttle",
+      "Breakfast included",
+      "Free Wi-Fi",
+      "Gym",
+      "Restaurant",
+      "Spa"
+    ],
+    "description": "A fictional 3-star suites in Calangute, Goa. Demo data only."
+  },
+  {
+    "id": "GOA-008",
+    "name": "The Konkan Breeze Hotel",
+    "city": "Goa",
+    "area": "Colva",
+    "stars": 4,
+    "rating": 5.0,
+    "base_price_inr": 6250,
+    "amenities": [
+      "Air conditioning",
+      "Airport shuttle",
+      "Bar",
+      "Gym",
+      "Rooftop terrace",
+      "Spa",
+      "Swimming pool"
+    ],
+    "description": "A fictional 4-star hotel in Colva, Goa. Demo data only."
+  },
+  {
+    "id": "GOA-009",
+    "name": "The Saltwater Retreat",
+    "city": "Goa",
+    "area": "Candolim",
+    "stars": 3,
+    "rating": 4.3,
+    "base_price_inr": 3550,
+    "amenities": [
+      "Bar",
+      "Breakfast included",
+      "Free Wi-Fi",
+      "Parking",
+      "Room service",
+      "Swimming pool"
+    ],
+    "description": "A fictional 3-star retreat in Candolim, Goa. Demo data only."
+  },
+  {
+    "id": "GOA-010",
+    "name": "The Tide Inn",
+    "city": "Goa",
+    "area": "Morjim",
+    "stars": 3,
+    "rating": 4.3,
+    "base_price_inr": 3750,
+    "amenities": [
+      "Airport shuttle",
+      "Breakfast included",
+      "Free Wi-Fi",
+      "Parking",
+      "Pet friendly",
+      "Rooftop terrace"
+    ],
+    "description": "A fictional 3-star inn in Morjim, Goa. Demo data only."
+  },
+  {
+    "id": "MAN-001",
+    "name": "The Rohtang View Boutique Stay",
+    "city": "Manali",
+    "area": "Solang",
+    "stars": 3,
+    "rating": 4.0,
+    "base_price_inr": 3450,
+    "amenities": [
+      "Airport shuttle",
+      "Bar",
+      "Free Wi-Fi",
+      "Parking",
+      "Rooftop terrace",
+      "Swimming pool"
+    ],
+    "description": "A fictional 3-star stay in Solang, Manali. Demo data only."
+  },
+  {
+    "id": "MAN-002",
+    "name": "The Snowline Homestay",
+    "city": "Manali",
+    "area": "Aleo",
+    "stars": 4,
+    "rating": 4.4,
+    "base_price_inr": 5300,
+    "amenities": [
+      "Airport shuttle",
+      "Free Wi-Fi",
+      "Gym",
+      "Parking",
+      "Pet friendly",
+      "Spa",
+      "Swimming pool"
+    ],
+    "description": "A fictional 4-star homestay in Aleo, Manali. Demo data only."
+  },
+  {
+    "id": "MAN-003",
+    "name": "The Beas Riverside Resort",
+    "city": "Manali",
+    "area": "Vashisht",
+    "stars": 3,
+    "rating": 4.4,
+    "base_price_inr": 2300,
+    "amenities": [
+      "Air conditioning",
+      "Airport shuttle",
+      "Breakfast included",
+      "Free Wi-Fi",
+      "Rooftop terrace",
+      "Spa"
+    ],
+    "description": "A fictional 3-star resort in Vashisht, Manali. Demo data only."
+  },
+  {
+    "id": "MAN-004",
+    "name": "The Cedar Nest Retreat",
+    "city": "Manali",
+    "area": "Mall Road",
+    "stars": 4,
+    "rating": 4.6,
+    "base_price_inr": 6200,
+    "amenities": [
+      "Air conditioning",
+      "Airport shuttle",
+      "Bar",
+      "Breakfast included",
+      "Parking",
+      "Restaurant",
+      "Swimming pool"
+    ],
+    "description": "A fictional 4-star retreat in Mall Road, Manali. Demo data only."
+  },
+  {
+    "id": "MAN-005",
+    "name": "The Cedar Nest Suites",
+    "city": "Manali",
+    "area": "Prini",
+    "stars": 4,
+    "rating": 4.4,
+    "base_price_inr": 4050,
+    "amenities": [
+      "Air conditioning",
+      "Airport shuttle",
+      "Bar",
+      "Free Wi-Fi",
+      "Gym",
+      "Parking",
+      "Restaurant"
+    ],
+    "description": "A fictional 4-star suites in Prini, Manali. Demo data only."
+  },
+  {
+    "id": "MAN-006",
+    "name": "The Apple Orchard Retreat",
+    "city": "Manali",
+    "area": "Mall Road",
+    "stars": 3,
+    "rating": 4.3,
+    "base_price_inr": 4050,
+    "amenities": [
+      "Air conditioning",
+      "Breakfast included",
+      "Free Wi-Fi",
+      "Pet friendly",
+      "Rooftop terrace",
+      "Spa"
+    ],
+    "description": "A fictional 3-star retreat in Mall Road, Manali. Demo data only."
+  },
+  {
+    "id": "MAN-007",
+    "name": "The Pinecrest Homestay",
+    "city": "Manali",
+    "area": "Aleo",
+    "stars": 3,
+    "rating": 4.0,
+    "base_price_inr": 3350,
+    "amenities": [
+      "Air conditioning",
+      "Airport shuttle",
+      "Bar",
+      "Rooftop terrace",
+      "Spa",
+      "Swimming pool"
+    ],
+    "description": "A fictional 3-star homestay in Aleo, Manali. Demo data only."
+  },
+  {
+    "id": "MAN-008",
+    "name": "The Beas Riverside Hotel",
+    "city": "Manali",
+    "area": "Solang",
+    "stars": 4,
+    "rating": 3.8,
+    "base_price_inr": 5900,
+    "amenities": [
+      "Breakfast included",
+      "Gym",
+      "Pet friendly",
+      "Restaurant",
+      "Rooftop terrace",
+      "Room service",
+      "Spa"
+    ],
+    "description": "A fictional 4-star hotel in Solang, Manali. Demo data only."
+  },
+  {
+    "id": "MAN-009",
+    "name": "The Pinecrest Suites",
+    "city": "Manali",
+    "area": "Prini",
+    "stars": 4,
+    "rating": 4.5,
+    "base_price_inr": 5700,
+    "amenities": [
+      "Breakfast included",
+      "Free Wi-Fi",
+      "Gym",
+      "Parking",
+      "Restaurant",
+      "Rooftop terrace",
+      "Spa"
+    ],
+    "description": "A fictional 4-star suites in Prini, Manali. Demo data only."
+  },
+  {
+    "id": "MAN-010",
+    "name": "The Deodar Lodge Boutique Stay",
+    "city": "Manali",
+    "area": "Old Manali",
+    "stars": 4,
+    "rating": 4.7,
+    "base_price_inr": 7050,
+    "amenities": [
+      "Bar",
+      "Breakfast included",
+      "Free Wi-Fi",
+      "Parking",
+      "Pet friendly",
+      "Rooftop terrace",
+      "Room service"
+    ],
+    "description": "A fictional 4-star stay in Old Manali, Manali. Demo data only."
+  },
+  {
+    "id": "JAI-001",
+    "name": "The Mirror Palace Hotel",
+    "city": "Jaipur",
+    "area": "MI Road",
+    "stars": 3,
+    "rating": 4.4,
+    "base_price_inr": 4050,
+    "amenities": [
+      "Air conditioning",
+      "Bar",
+      "Free Wi-Fi",
+      "Restaurant",
+      "Spa",
+      "Swimming pool"
+    ],
+    "description": "A fictional 3-star hotel in MI Road, Jaipur. Demo data only."
+  },
+  {
+    "id": "JAI-002",
+    "name": "The Mirror Palace Homestay",
+    "city": "Jaipur",
+    "area": "MI Road",
+    "stars": 4,
+    "rating": 4.4,
+    "base_price_inr": 4850,
+    "amenities": [
+      "Air conditioning",
+      "Bar",
+      "Parking",
+      "Pet friendly",
+      "Rooftop terrace",
+      "Spa",
+      "Swimming pool"
+    ],
+    "description": "A fictional 4-star homestay in MI Road, Jaipur. Demo data only."
+  },
+  {
+    "id": "JAI-003",
+    "name": "The Pink Courtyard Retreat",
+    "city": "Jaipur",
+    "area": "C-Scheme",
+    "stars": 4,
+    "rating": 4.5,
+    "base_price_inr": 4750,
+    "amenities": [
+      "Air conditioning",
+      "Bar",
+      "Free Wi-Fi",
+      "Gym",
+      "Pet friendly",
+      "Room service",
+      "Swimming pool"
+    ],
+    "description": "A fictional 4-star retreat in C-Scheme, Jaipur. Demo data only."
+  },
+  {
+    "id": "JAI-004",
+    "name": "The Pink Courtyard Suites",
+    "city": "Jaipur",
+    "area": "MI Road",
+    "stars": 5,
+    "rating": 4.6,
+    "base_price_inr": 12650,
+    "amenities": [
+      "Air conditioning",
+      "Breakfast included",
+      "Free Wi-Fi",
+      "Gym",
+      "Pet friendly",
+      "Rooftop terrace",
+      "Room service",
+      "Spa"
+    ],
+    "description": "A fictional 5-star suites in MI Road, Jaipur. Demo data only."
+  },
+  {
+    "id": "JAI-005",
+    "name": "The Rajwada Hotel",
+    "city": "Jaipur",
+    "area": "Amer Road",
+    "stars": 4,
+    "rating": 5.0,
+    "base_price_inr": 4000,
+    "amenities": [
+      "Airport shuttle",
+      "Bar",
+      "Pet friendly",
+      "Restaurant",
+      "Room service",
+      "Spa",
+      "Swimming pool"
+    ],
+    "description": "A fictional 4-star hotel in Amer Road, Jaipur. Demo data only."
+  },
+  {
+    "id": "JAI-006",
+    "name": "The Jharokha Retreat",
+    "city": "Jaipur",
+    "area": "C-Scheme",
+    "stars": 5,
+    "rating": 4.3,
+    "base_price_inr": 11500,
+    "amenities": [
+      "Airport shuttle",
+      "Bar",
+      "Breakfast included",
+      "Free Wi-Fi",
+      "Parking",
+      "Pet friendly",
+      "Spa",
+      "Swimming pool"
+    ],
+    "description": "A fictional 5-star retreat in C-Scheme, Jaipur. Demo data only."
+  },
+  {
+    "id": "JAI-007",
+    "name": "The Rajwada Boutique Stay",
+    "city": "Jaipur",
+    "area": "Malviya Nagar",
+    "stars": 3,
+    "rating": 4.3,
+    "base_price_inr": 3950,
+    "amenities": [
+      "Airport shuttle",
+      "Free Wi-Fi",
+      "Parking",
+      "Pet friendly",
+      "Rooftop terrace",
+      "Room service"
+    ],
+    "description": "A fictional 3-star stay in Malviya Nagar, Jaipur. Demo data only."
+  },
+  {
+    "id": "JAI-008",
+    "name": "The Haveli Boutique Stay",
+    "city": "Jaipur",
+    "area": "C-Scheme",
+    "stars": 3,
+    "rating": 4.1,
+    "base_price_inr": 3650,
+    "amenities": [
+      "Airport shuttle",
+      "Parking",
+      "Pet friendly",
+      "Room service",
+      "Spa",
+      "Swimming pool"
+    ],
+    "description": "A fictional 3-star stay in C-Scheme, Jaipur. Demo data only."
+  },
+  {
+    "id": "JAI-009",
+    "name": "The Lotus Bagh Suites",
+    "city": "Jaipur",
+    "area": "Malviya Nagar",
+    "stars": 5,
+    "rating": 4.6,
+    "base_price_inr": 11750,
+    "amenities": [
+      "Air conditioning",
+      "Airport shuttle",
+      "Bar",
+      "Breakfast included",
+      "Free Wi-Fi",
+      "Parking",
+      "Pet friendly",
+      "Restaurant"
+    ],
+    "description": "A fictional 5-star suites in Malviya Nagar, Jaipur. Demo data only."
+  },
+  {
+    "id": "JAI-010",
+    "name": "The Haveli Suites",
+    "city": "Jaipur",
+    "area": "Civil Lines",
+    "stars": 4,
+    "rating": 4.5,
+    "base_price_inr": 4100,
+    "amenities": [
+      "Airport shuttle",
+      "Breakfast included",
+      "Free Wi-Fi",
+      "Parking",
+      "Restaurant",
+      "Room service",
+      "Swimming pool"
+    ],
+    "description": "A fictional 4-star suites in Civil Lines, Jaipur. Demo data only."
+  },
+  {
+    "id": "UDA-001",
+    "name": "The Sajjan Retreat Boutique Stay",
+    "city": "Udaipur",
+    "area": "Fateh Sagar",
+    "stars": 4,
+    "rating": 4.5,
+    "base_price_inr": 4400,
+    "amenities": [
+      "Air conditioning",
+      "Airport shuttle",
+      "Free Wi-Fi",
+      "Gym",
+      "Pet friendly",
+      "Restaurant",
+      "Swimming pool"
+    ],
+    "description": "A fictional 4-star stay in Fateh Sagar, Udaipur. Demo data only."
+  },
+  {
+    "id": "UDA-002",
+    "name": "The Aravalli Homestay",
+    "city": "Udaipur",
+    "area": "Ambamata",
+    "stars": 4,
+    "rating": 4.6,
+    "base_price_inr": 4100,
+    "amenities": [
+      "Air conditioning",
+      "Parking",
+      "Pet friendly",
+      "Rooftop terrace",
+      "Room service",
+      "Spa",
+      "Swimming pool"
+    ],
+    "description": "A fictional 4-star homestay in Ambamata, Udaipur. Demo data only."
+  },
+  {
+    "id": "UDA-003",
+    "name": "The Ghat House Suites",
+    "city": "Udaipur",
+    "area": "Ambamata",
+    "stars": 5,
+    "rating": 4.8,
+    "base_price_inr": 15000,
+    "amenities": [
+      "Air conditioning",
+      "Airport shuttle",
+      "Breakfast included",
+      "Free Wi-Fi",
+      "Pet friendly",
+      "Rooftop terrace",
+      "Spa",
+      "Swimming pool"
+    ],
+    "description": "A fictional 5-star suites in Ambamata, Udaipur. Demo data only."
+  },
+  {
+    "id": "UDA-004",
+    "name": "The Aravalli Boutique Stay",
+    "city": "Udaipur",
+    "area": "Fateh Sagar",
+    "stars": 5,
+    "rating": 4.5,
+    "base_price_inr": 12050,
+    "amenities": [
+      "Air conditioning",
+      "Free Wi-Fi",
+      "Gym",
+      "Pet friendly",
+      "Restaurant",
+      "Rooftop terrace",
+      "Spa",
+      "Swimming pool"
+    ],
+    "description": "A fictional 5-star stay in Fateh Sagar, Udaipur. Demo data only."
+  },
+  {
+    "id": "UDA-005",
+    "name": "The Aravalli Suites",
+    "city": "Udaipur",
+    "area": "Shobhagpura",
+    "stars": 4,
+    "rating": 4.6,
+    "base_price_inr": 4400,
+    "amenities": [
+      "Airport shuttle",
+      "Breakfast included",
+      "Free Wi-Fi",
+      "Gym",
+      "Parking",
+      "Rooftop terrace",
+      "Swimming pool"
+    ],
+    "description": "A fictional 4-star suites in Shobhagpura, Udaipur. Demo data only."
+  },
+  {
+    "id": "UDA-006",
+    "name": "The City of Lakes Inn",
+    "city": "Udaipur",
+    "area": "Hanuman Ghat",
+    "stars": 3,
+    "rating": 4.1,
+    "base_price_inr": 2700,
+    "amenities": [
+      "Breakfast included",
+      "Parking",
+      "Restaurant",
+      "Rooftop terrace",
+      "Room service",
+      "Spa"
+    ],
+    "description": "A fictional 3-star inn in Hanuman Ghat, Udaipur. Demo data only."
+  },
+  {
+    "id": "UDA-007",
+    "name": "The Lakeview Suites",
+    "city": "Udaipur",
+    "area": "Lal Ghat",
+    "stars": 4,
+    "rating": 5.0,
+    "base_price_inr": 6550,
+    "amenities": [
+      "Air conditioning",
+      "Free Wi-Fi",
+      "Gym",
+      "Parking",
+      "Restaurant",
+      "Rooftop terrace",
+      "Spa"
+    ],
+    "description": "A fictional 4-star suites in Lal Ghat, Udaipur. Demo data only."
+  },
+  {
+    "id": "UDA-008",
+    "name": "The Sajjan Retreat Resort",
+    "city": "Udaipur",
+    "area": "Hanuman Ghat",
+    "stars": 4,
+    "rating": 4.2,
+    "base_price_inr": 5200,
+    "amenities": [
+      "Air conditioning",
+      "Airport shuttle",
+      "Gym",
+      "Parking",
+      "Restaurant",
+      "Rooftop terrace",
+      "Room service"
+    ],
+    "description": "A fictional 4-star resort in Hanuman Ghat, Udaipur. Demo data only."
+  },
+  {
+    "id": "UDA-009",
+    "name": "The City of Lakes Hotel",
+    "city": "Udaipur",
+    "area": "Shobhagpura",
+    "stars": 3,
+    "rating": 4.1,
+    "base_price_inr": 2750,
+    "amenities": [
+      "Air conditioning",
+      "Airport shuttle",
+      "Restaurant",
+      "Rooftop terrace",
+      "Room service",
+      "Swimming pool"
+    ],
+    "description": "A fictional 3-star hotel in Shobhagpura, Udaipur. Demo data only."
+  },
+  {
+    "id": "UDA-010",
+    "name": "The Ghat House Inn",
+    "city": "Udaipur",
+    "area": "Lal Ghat",
+    "stars": 4,
+    "rating": 4.4,
+    "base_price_inr": 5900,
+    "amenities": [
+      "Air conditioning",
+      "Airport shuttle",
+      "Bar",
+      "Gym",
+      "Rooftop terrace",
+      "Room service",
+      "Spa"
+    ],
+    "description": "A fictional 4-star inn in Lal Ghat, Udaipur. Demo data only."
+  },
+  {
+    "id": "KOC-001",
+    "name": "The Harbour Light Homestay",
+    "city": "Kochi",
+    "area": "Cherai",
+    "stars": 4,
+    "rating": 4.6,
+    "base_price_inr": 5250,
+    "amenities": [
+      "Airport shuttle",
+      "Breakfast included",
+      "Gym",
+      "Parking",
+      "Restaurant",
+      "Rooftop terrace",
+      "Room service"
+    ],
+    "description": "A fictional 4-star homestay in Cherai, Kochi. Demo data only."
+  },
+  {
+    "id": "KOC-002",
+    "name": "The Spice Route Homestay",
+    "city": "Kochi",
+    "area": "Fort Kochi",
+    "stars": 3,
+    "rating": 4.1,
+    "base_price_inr": 3000,
+    "amenities": [
+      "Air conditioning",
+      "Bar",
+      "Breakfast included",
+      "Free Wi-Fi",
+      "Room service",
+      "Spa"
+    ],
+    "description": "A fictional 3-star homestay in Fort Kochi, Kochi. Demo data only."
+  },
+  {
+    "id": "KOC-003",
+    "name": "The Coir House Retreat",
+    "city": "Kochi",
+    "area": "Cherai",
+    "stars": 3,
+    "rating": 4.6,
+    "base_price_inr": 4000,
+    "amenities": [
+      "Bar",
+      "Free Wi-Fi",
+      "Restaurant",
+      "Rooftop terrace",
+      "Spa",
+      "Swimming pool"
+    ],
+    "description": "A fictional 3-star retreat in Cherai, Kochi. Demo data only."
+  },
+  {
+    "id": "KOC-004",
+    "name": "The Backwater Homestay",
+    "city": "Kochi",
+    "area": "Mattancherry",
+    "stars": 4,
+    "rating": 4.0,
+    "base_price_inr": 4450,
+    "amenities": [
+      "Bar",
+      "Free Wi-Fi",
+      "Parking",
+      "Pet friendly",
+      "Restaurant",
+      "Rooftop terrace",
+      "Spa"
+    ],
+    "description": "A fictional 4-star homestay in Mattancherry, Kochi. Demo data only."
+  },
+  {
+    "id": "KOC-005",
+    "name": "The Monsoon Hotel",
+    "city": "Kochi",
+    "area": "Cherai",
+    "stars": 5,
+    "rating": 4.5,
+    "base_price_inr": 15250,
+    "amenities": [
+      "Airport shuttle",
+      "Bar",
+      "Gym",
+      "Parking",
+      "Pet friendly",
+      "Restaurant",
+      "Rooftop terrace",
+      "Room service"
+    ],
+    "description": "A fictional 5-star hotel in Cherai, Kochi. Demo data only."
+  },
+  {
+    "id": "KOC-006",
+    "name": "The Monsoon Boutique Stay",
+    "city": "Kochi",
+    "area": "Cherai",
+    "stars": 4,
+    "rating": 4.5,
+    "base_price_inr": 6900,
+    "amenities": [
+      "Air conditioning",
+      "Airport shuttle",
+      "Bar",
+      "Free Wi-Fi",
+      "Parking",
+      "Rooftop terrace",
+      "Spa"
+    ],
+    "description": "A fictional 4-star stay in Cherai, Kochi. Demo data only."
+  },
+  {
+    "id": "KOC-007",
+    "name": "The Chinese Nets Hotel",
+    "city": "Kochi",
+    "area": "Marine Drive",
+    "stars": 3,
+    "rating": 4.0,
+    "base_price_inr": 2300,
+    "amenities": [
+      "Air conditioning",
+      "Breakfast included",
+      "Parking",
+      "Restaurant",
+      "Spa",
+      "Swimming pool"
+    ],
+    "description": "A fictional 3-star hotel in Marine Drive, Kochi. Demo data only."
+  },
+  {
+    "id": "KOC-008",
+    "name": "The Monsoon Inn",
+    "city": "Kochi",
+    "area": "Kakkanad",
+    "stars": 3,
+    "rating": 3.7,
+    "base_price_inr": 3950,
+    "amenities": [
+      "Free Wi-Fi",
+      "Pet friendly",
+      "Restaurant",
+      "Rooftop terrace",
+      "Room service",
+      "Spa"
+    ],
+    "description": "A fictional 3-star inn in Kakkanad, Kochi. Demo data only."
+  },
+  {
+    "id": "KOC-009",
+    "name": "The Harbour Light Retreat",
+    "city": "Kochi",
+    "area": "Fort Kochi",
+    "stars": 3,
+    "rating": 3.9,
+    "base_price_inr": 3150,
+    "amenities": [
+      "Air conditioning",
+      "Airport shuttle",
+      "Gym",
+      "Parking",
+      "Restaurant",
+      "Spa"
+    ],
+    "description": "A fictional 3-star retreat in Fort Kochi, Kochi. Demo data only."
+  },
+  {
+    "id": "KOC-010",
+    "name": "The Backwater Inn",
+    "city": "Kochi",
+    "area": "Cherai",
+    "stars": 3,
+    "rating": 4.2,
+    "base_price_inr": 4050,
+    "amenities": [
+      "Air conditioning",
+      "Bar",
+      "Free Wi-Fi",
+      "Restaurant",
+      "Rooftop terrace",
+      "Swimming pool"
+    ],
+    "description": "A fictional 3-star inn in Cherai, Kochi. Demo data only."
+  },
+  {
+    "id": "RIS-001",
+    "name": "The Himalayan Song Retreat",
+    "city": "Rishikesh",
+    "area": "Tapovan",
+    "stars": 4,
+    "rating": 4.4,
+    "base_price_inr": 5850,
+    "amenities": [
+      "Air conditioning",
+      "Bar",
+      "Breakfast included",
+      "Free Wi-Fi",
+      "Restaurant",
+      "Room service",
+      "Swimming pool"
+    ],
+    "description": "A fictional 4-star retreat in Tapovan, Rishikesh. Demo data only."
+  },
+  {
+    "id": "RIS-002",
+    "name": "The Riverstone Boutique Stay",
+    "city": "Rishikesh",
+    "area": "Shivpuri",
+    "stars": 4,
+    "rating": 4.7,
+    "base_price_inr": 6200,
+    "amenities": [
+      "Airport shuttle",
+      "Bar",
+      "Breakfast included",
+      "Free Wi-Fi",
+      "Gym",
+      "Restaurant",
+      "Rooftop terrace"
+    ],
+    "description": "A fictional 4-star stay in Shivpuri, Rishikesh. Demo data only."
+  },
+  {
+    "id": "RIS-003",
+    "name": "The Ganga Ghat Boutique Stay",
+    "city": "Rishikesh",
+    "area": "Tapovan",
+    "stars": 3,
+    "rating": 4.4,
+    "base_price_inr": 2650,
+    "amenities": [
+      "Air conditioning",
+      "Free Wi-Fi",
+      "Parking",
+      "Pet friendly",
+      "Rooftop terrace",
+      "Spa"
+    ],
+    "description": "A fictional 3-star stay in Tapovan, Rishikesh. Demo data only."
+  },
+  {
+    "id": "RIS-004",
+    "name": "The Yoga Nest Inn",
+    "city": "Rishikesh",
+    "area": "Swarg Ashram",
+    "stars": 4,
+    "rating": 4.0,
+    "base_price_inr": 7350,
+    "amenities": [
+      "Airport shuttle",
+      "Bar",
+      "Breakfast included",
+      "Gym",
+      "Restaurant",
+      "Spa",
+      "Swimming pool"
+    ],
+    "description": "A fictional 4-star inn in Swarg Ashram, Rishikesh. Demo data only."
+  },
+  {
+    "id": "RIS-005",
+    "name": "The Yoga Nest Boutique Stay",
+    "city": "Rishikesh",
+    "area": "Tapovan",
+    "stars": 3,
+    "rating": 4.6,
+    "base_price_inr": 3450,
+    "amenities": [
+      "Air conditioning",
+      "Airport shuttle",
+      "Pet friendly",
+      "Restaurant",
+      "Room service",
+      "Spa"
+    ],
+    "description": "A fictional 3-star stay in Tapovan, Rishikesh. Demo data only."
+  },
+  {
+    "id": "RIS-006",
+    "name": "The Yoga Nest Resort",
+    "city": "Rishikesh",
+    "area": "Ram Jhula",
+    "stars": 4,
+    "rating": 4.6,
+    "base_price_inr": 5750,
+    "amenities": [
+      "Air conditioning",
+      "Airport shuttle",
+      "Breakfast included",
+      "Free Wi-Fi",
+      "Gym",
+      "Pet friendly",
+      "Room service"
+    ],
+    "description": "A fictional 4-star resort in Ram Jhula, Rishikesh. Demo data only."
+  },
+  {
+    "id": "RIS-007",
+    "name": "The Rapids Boutique Stay",
+    "city": "Rishikesh",
+    "area": "Muni Ki Reti",
+    "stars": 2,
+    "rating": 3.6,
+    "base_price_inr": 2100,
+    "amenities": [
+      "Bar",
+      "Breakfast included",
+      "Free Wi-Fi",
+      "Gym",
+      "Restaurant"
+    ],
+    "description": "A fictional 2-star stay in Muni Ki Reti, Rishikesh. Demo data only."
+  },
+  {
+    "id": "RIS-008",
+    "name": "The Bodhi Inn",
+    "city": "Rishikesh",
+    "area": "Shivpuri",
+    "stars": 4,
+    "rating": 4.5,
+    "base_price_inr": 5750,
+    "amenities": [
+      "Air conditioning",
+      "Airport shuttle",
+      "Bar",
+      "Parking",
+      "Pet friendly",
+      "Spa",
+      "Swimming pool"
+    ],
+    "description": "A fictional 4-star inn in Shivpuri, Rishikesh. Demo data only."
+  },
+  {
+    "id": "RIS-009",
+    "name": "The Bodhi Suites",
+    "city": "Rishikesh",
+    "area": "Ram Jhula",
+    "stars": 4,
+    "rating": 4.2,
+    "base_price_inr": 4100,
+    "amenities": [
+      "Air conditioning",
+      "Airport shuttle",
+      "Bar",
+      "Breakfast included",
+      "Rooftop terrace",
+      "Room service",
+      "Spa"
+    ],
+    "description": "A fictional 4-star suites in Ram Jhula, Rishikesh. Demo data only."
+  },
+  {
+    "id": "RIS-010",
+    "name": "The Himalayan Song Homestay",
+    "city": "Rishikesh",
+    "area": "Shivpuri",
+    "stars": 3,
+    "rating": 4.0,
+    "base_price_inr": 3300,
+    "amenities": [
+      "Air conditioning",
+      "Airport shuttle",
+      "Gym",
+      "Parking",
+      "Pet friendly",
+      "Spa"
+    ],
+    "description": "A fictional 3-star homestay in Shivpuri, Rishikesh. Demo data only."
+  }
+]
