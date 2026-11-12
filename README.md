@@ -46,7 +46,7 @@ You need:
 - **Docker Desktop** (runs Redis, the supplier, the MCP server and the dashboard)
 - **uv** (Python package manager): `pip install uv`, or see https://docs.astral.sh/uv/
 - **Node.js** (only for MCP Inspector)
-- `make` is optional. On Windows, use `.\make <target>` instead of `make <target>`. (`make.cmd` runs `scripts	asks.ps1`
+- `make` is optional. On Windows, use `.\make <target>` instead of `make <target>`. (`make.cmd` runs `scripts/tasks.ps1`
   for you, so Windows' "running scripts is disabled" policy doesn't get in the way.)
 
 ```bash

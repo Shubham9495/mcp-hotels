@@ -42,7 +42,7 @@ When Claude asks *"hotels in Goa this weekend"*, the code runs in this order:
 | `docker-compose.yml` | Describes the services (redis, supplier, mcp, dashboard, plus the on-demand `loadtest` and `tunnel`), their ports and settings. `docker compose up` reads it. `tunnel` runs Cloudflare's `cloudflared` to give the MCP server a temporary public HTTPS URL for a Claude custom connector (`make tunnel` / `make tunnel-down`). |
 | `Dockerfile` | Recipe for the container image all the Python services share: install dependencies with uv, copy the code. |
 | `Makefile` | Short commands for the demo (`make up`, `make spike`, `make supplier-down`…). |
-| `make.cmd` | Windows version of the Makefile commands: type `.\make up`, `.\make spike`... It runs `scripts	asks.ps1` with the execution policy bypassed for that one command, without changing any system setting. |
+| `make.cmd` | Windows version of the Makefile commands: type `.\make up`, `.\make spike`... It runs `scripts/tasks.ps1` with the execution policy bypassed for that one command, without changing any system setting. |
 | `.env.example` | Every configurable setting with its default. Copy to `.env` to change values. |
 | `.gitignore` | Files git should never commit (virtualenv, caches, `.env`, local certificates). |
 | `.dockerignore` | Files Docker should not copy into images (keeps builds small and fast). |
