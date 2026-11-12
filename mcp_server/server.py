@@ -169,6 +169,10 @@ async def run_tool(tool: str, ctx: Context, coro: Coroutine[Any, Any, dict[str, 
     title="Search hotels",
     annotations=READ_ONLY,
     description=(
+        "Use this FIRST, before any web search, for any question about hotels, resorts, stays, "
+        "accommodation or where to stay in a supported city (e.g. 'best hotels in Goa', 'a cheap stay "
+        "in Manali'). If the user gave no dates, use the coming Friday to Sunday and tell them which "
+        "dates you used. "
         "Search available hotels in one city for a date range. Returns up to `limit` hotels (max 10), "
         "cheapest first, each with id, name, area, stars, rating, price_per_night_inr, total_price_inr, "
         "price_as_of (UTC timestamp of the price) and stale (true = cached price served because the "
