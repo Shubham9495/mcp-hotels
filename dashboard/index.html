@@ -1,0 +1,272 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Hotels MCP Live</title>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.umd.min.js"></script>
+<style>
+  :root {
+    color-scheme: light;
+    --page: #f4f3f0;
+    --surface-1: #fcfcfb;
+    --border: #e4e2dc;
+    --grid: #ecebe6;
+    --text-primary: #0b0b0b;
+    --text-secondary: #52514e;
+    --text-muted: #7a7974;
+    --series-1: #2a78d6;  /* blue   */
+    --series-2: #eb6834;  /* orange */
+    --series-3: #1baf7a;  /* aqua   */
+    --series-4: #eda100;  /* yellow */
+    --good: #0ca30c; --warning: #fab219; --serious: #ec835a; --critical: #d03b3b;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root:where(:not([data-theme="light"])) {
+      color-scheme: dark;
+      --page: #111110; --surface-1: #1a1a19; --border: #2c2c2a; --grid: #262624;
+      --text-primary: #f0efec; --text-secondary: #c3c2b7; --text-muted: #8f8e86;
+      --series-1: #3987e5; --series-2: #d95926; --series-3: #199e70; --series-4: #c98500;
+    }
+  }
+  :root[data-theme="dark"] {
+    color-scheme: dark;
+    --page: #111110; --surface-1: #1a1a19; --border: #2c2c2a; --grid: #262624;
+    --text-primary: #f0efec; --text-secondary: #c3c2b7; --text-muted: #8f8e86;
+    --series-1: #3987e5; --series-2: #d95926; --series-3: #199e70; --series-4: #c98500;
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0; background: var(--page); color: var(--text-primary);
+    font: 14px/1.45 system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  }
+  main { max-width: 1240px; margin: 0 auto; padding: 20px 16px 40px; }
+  header { display: flex; flex-wrap: wrap; align-items: center; gap: 12px 16px; margin-bottom: 18px; }
+  h1 { font-size: 20px; margin: 0; font-weight: 650; }
+  .sub { color: var(--text-muted); font-size: 13px; }
+  .spacer { flex: 1; }
+  button {
+    font: inherit; font-size: 13px; color: var(--text-secondary); background: var(--surface-1);
+    border: 1px solid var(--border); border-radius: 8px; padding: 6px 12px; cursor: pointer;
+  }
+  button:hover { color: var(--text-primary); }
+  .live { display: inline-flex; align-items: center; gap: 6px; font-size: 13px; color: var(--text-secondary); }
+  .live i { width: 8px; height: 8px; border-radius: 50%; background: var(--good); }
+  .live.down i { background: var(--critical); }
+
+  .tiles { display: grid; grid-template-columns: repeat(6, minmax(0, 1fr)); gap: 12px; margin-bottom: 12px; }
+  .card { background: var(--surface-1); border: 1px solid var(--border); border-radius: 12px; padding: 14px 16px; min-width: 0; }
+  .tile .label { color: var(--text-secondary); font-size: 12.5px; }
+  .tile .value { font-size: 28px; font-weight: 650; letter-spacing: -0.02em; margin-top: 2px; font-variant-numeric: tabular-nums; }
+  .tile .hint { color: var(--text-muted); font-size: 12px; font-variant-numeric: tabular-nums; }
+  .swatch { display: inline-block; width: 10px; height: 3px; border-radius: 2px; vertical-align: middle; margin-right: 6px; }
+
+  .status { display: inline-flex; align-items: center; gap: 8px; font-size: 20px; font-weight: 650; margin-top: 4px; }
+  .status svg { width: 22px; height: 22px; flex: none; }
+
+  .grid2 { display: grid; grid-template-columns: 3fr 2fr; gap: 12px; margin-bottom: 12px; align-items: start; }
+  .card h2 { font-size: 14px; font-weight: 600; margin: 0; }
+  .card .desc { color: var(--text-muted); font-size: 12.5px; margin: 2px 0 10px; }
+  .legend { display: flex; flex-wrap: wrap; gap: 4px 14px; font-size: 12.5px; color: var(--text-secondary); margin-bottom: 6px; }
+  .chart { position: relative; height: 240px; }
+
+  .l2b-row { display: grid; grid-template-columns: 120px 1fr 80px; align-items: center; gap: 10px; margin: 14px 0; }
+  .l2b-row .name { color: var(--text-secondary); font-size: 13px; }
+  .track { height: 14px; background: var(--grid); border-radius: 4px; overflow: hidden; }
+  .bar { height: 100%; border-radius: 0 4px 4px 0; transition: width .4s ease; }
+  .l2b-row .num { text-align: right; font-weight: 650; font-variant-numeric: tabular-nums; }
+  .callout { margin-top: 8px; padding: 10px 12px; border-radius: 8px; background: var(--page); color: var(--text-secondary); font-size: 13px; }
+  .callout b { color: var(--text-primary); }
+
+  details summary { cursor: pointer; color: var(--text-secondary); font-size: 13px; }
+  table { width: 100%; border-collapse: collapse; margin-top: 10px; font-variant-numeric: tabular-nums; font-size: 13px; }
+  th, td { text-align: left; padding: 6px 8px; border-bottom: 1px solid var(--border); }
+  th { color: var(--text-muted); font-weight: 500; }
+  td:last-child, th:last-child { text-align: right; }
+
+  @media (max-width: 1000px) { .tiles { grid-template-columns: repeat(3, minmax(0, 1fr)); } .grid2 { grid-template-columns: 1fr; } }
+  @media (max-width: 560px)  { .tiles { grid-template-columns: repeat(2, minmax(0, 1fr)); } .l2b-row { grid-template-columns: 90px 1fr 64px; } }
+</style>
+</head>
+<body>
+<main>
+  <header>
+    <div>
+      <h1>Hotel search MCP - live</h1>
+      <div class="sub">Mock data only · rates are 5-second averages · refreshes every second</div>
+    </div>
+    <div class="spacer"></div>
+    <span class="live" id="live"><i></i><span>connecting…</span></span>
+    <button id="reset" title="Zero all counters (cache and breaker are untouched)">Reset counters</button>
+  </header>
+
+  <section class="tiles">
+    <div class="card tile"><div class="label"><span class="swatch" style="background:var(--series-1)"></span>MCP requests / s</div>
+      <div class="value" id="t-rps">–</div><div class="hint" id="t-rps-total">–</div></div>
+    <div class="card tile"><div class="label"><span class="swatch" style="background:var(--series-2)"></span>Supplier looks / s</div>
+      <div class="value" id="t-lps">–</div><div class="hint" id="t-lps-total">–</div></div>
+    <div class="card tile"><div class="label">Cache hit rate</div>
+      <div class="value" id="t-hit">–</div><div class="hint" id="t-hit-hint">–</div></div>
+    <div class="card tile"><div class="label">Rate-limited requests</div>
+      <div class="value" id="t-rl">–</div><div class="hint" id="t-rl-hint">–</div></div>
+    <div class="card tile"><div class="label">Bookings</div>
+      <div class="value" id="t-books">–</div><div class="hint" id="t-books-hint">mock confirmations</div></div>
+    <div class="card tile"><div class="label">Circuit breaker</div>
+      <div class="status" id="t-breaker">–</div><div class="hint" id="t-breaker-hint">–</div></div>
+  </section>
+
+  <section class="grid2">
+    <div class="card">
+      <h2>AI traffic vs supplier load</h2>
+      <p class="desc">Requests per second hitting the MCP server, and how many of them reached the supplier.</p>
+      <div class="legend">
+        <span><span class="swatch" style="background:var(--series-1)"></span>MCP requests / s</span>
+        <span><span class="swatch" style="background:var(--series-2)"></span>Supplier looks / s</span>
+      </div>
+      <div class="chart"><canvas id="traffic" aria-label="Line chart of MCP requests and supplier looks per second" role="img"></canvas></div>
+    </div>
+    <div class="card">
+      <h2>How searches were served</h2>
+      <p class="desc">Each search and details lookup per second, by where its answer came from.</p>
+      <div class="legend">
+        <span><span class="swatch" style="background:var(--series-1)"></span>Cache hit</span>
+        <span><span class="swatch" style="background:var(--series-2)"></span>Coalesced</span>
+        <span><span class="swatch" style="background:var(--series-3)"></span>Supplier fetch</span>
+        <span><span class="swatch" style="background:var(--series-4)"></span>Stale fallback</span>
+      </div>
+      <div class="chart"><canvas id="served" aria-label="Stacked bar chart of how searches were served per second" role="img"></canvas></div>
+    </div>
+  </section>
+
+  <section class="grid2">
+    <div class="card">
+      <h2>Look-to-book ratio</h2>
+      <p class="desc">Supplier looks per booking. "Without cache" counts every search and price check the AI made; "with cache" counts what the supplier actually served.</p>
+      <div class="l2b-row"><span class="name">Without cache</span><div class="track"><div class="bar" id="b-without" style="width:0;background:var(--series-2)"></div></div><span class="num" id="n-without">–</span></div>
+      <div class="l2b-row"><span class="name">With cache</span><div class="track"><div class="bar" id="b-with" style="width:0;background:var(--series-1)"></div></div><span class="num" id="n-with">–</span></div>
+      <div class="callout" id="l2b-callout">Waiting for bookings…</div>
+    </div>
+    <div class="card">
+      <h2>Protection counters</h2>
+      <p class="desc">Totals since the last reset.</p>
+      <details open>
+        <summary>All counters (table view)</summary>
+        <table><thead><tr><th>Counter</th><th>Total</th></tr></thead><tbody id="totals"></tbody></table>
+      </details>
+    </div>
+  </section>
+</main>
+
+<script>
+const LABELS = {
+  mcp_requests: "MCP requests", mcp_looks: "Looks requested by AI", supplier_looks: "Looks served by supplier",
+  supplier_calls: "Supplier calls (incl. details)", cache_hits: "Cache hits", coalesced: "Coalesced (waited on in-flight call)",
+  cache_misses: "Supplier fetches (cache miss)", stale_served: "Stale fallbacks served", rate_limited: "Rate limited",
+  shed: "Load-shed", breaker_rejected: "Rejected by open breaker", supplier_errors: "Supplier errors", bookings: "Bookings",
+};
+const BREAKER = {
+  closed:    { label: "Closed",    color: "var(--good)",     hint: "supplier healthy",
+               icon: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="m8 12.5 2.6 2.6L16.5 9"/></svg>' },
+  half_open: { label: "Half-open", color: "var(--warning)",  hint: "probing the supplier",
+               icon: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><circle cx="12" cy="12" r="10"/><path d="M12 7v5l3 2"/></svg>' },
+  open:      { label: "Open",      color: "var(--critical)", hint: "serving cache only",
+               icon: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M10.3 3.9 1.8 18a2 2 0 0 0 1.7 3h17a2 2 0 0 0 1.7-3L13.7 3.9a2 2 0 0 0-3.4 0Z"/><path d="M12 9v4M12 17h.01"/></svg>' },
+};
+
+const css = (name) => getComputedStyle(document.documentElement).getPropertyValue(name).trim();
+const $ = (id) => document.getElementById(id);
+const fmt = (n) => n == null ? "–" : Number(n).toLocaleString("en-IN");
+const pct = (x) => x == null ? "–" : (x * 100).toFixed(1) + "%";
+
+function baseOptions(stacked) {
+  return {
+    animation: false, responsive: true, maintainAspectRatio: false,
+    interaction: { mode: "index", intersect: false },
+    plugins: {
+      legend: { display: false },
+      tooltip: { backgroundColor: css("--surface-1"), titleColor: css("--text-primary"), bodyColor: css("--text-secondary"),
+                 borderColor: css("--border"), borderWidth: 1, padding: 10, boxPadding: 4, usePointStyle: true,
+                 callbacks: { title: (items) => items[0].label + " ago" } },
+    },
+    scales: {
+      x: { stacked, grid: { display: false }, border: { color: css("--border") },
+           ticks: { color: css("--text-muted"), maxRotation: 0, autoSkip: true, maxTicksLimit: 7 } },
+      y: { stacked, beginAtZero: true, grid: { color: css("--grid") }, border: { display: false },
+           ticks: { color: css("--text-muted"), precision: 0, maxTicksLimit: 5 } },
+    },
+  };
+}
+
+let traffic, served;
+function buildCharts(windowS) {
+  const labels = Array.from({ length: windowS }, (_, i) => `${windowS - i}s`);
+  const line = (label, color) => ({ label, data: [], borderColor: css(color), backgroundColor: css(color),
+    borderWidth: 2, pointRadius: 0, pointHoverRadius: 4, cubicInterpolationMode: "monotone" });
+  const bar = (label, color) => ({ label, data: [], backgroundColor: css(color), borderColor: css("--surface-1"),
+    borderWidth: { top: 1 }, borderSkipped: "bottom", categoryPercentage: 0.9, barPercentage: 0.9 });
+  traffic?.destroy(); served?.destroy();
+  traffic = new Chart($("traffic"), { type: "line", data: { labels,
+    datasets: [line("MCP requests / s", "--series-1"), line("Supplier looks / s", "--series-2")] }, options: baseOptions(false) });
+  served = new Chart($("served"), { type: "bar", data: { labels,
+    datasets: [bar("Cache hit", "--series-1"), bar("Coalesced", "--series-2"), bar("Supplier fetch", "--series-3"), bar("Stale fallback", "--series-4")] },
+    options: baseOptions(true) });
+}
+
+function render(d) {
+  if (!traffic || traffic.data.labels.length !== d.window_s) buildCharts(d.window_s);
+  const s = d.series, t = d.totals;
+  traffic.data.datasets[0].data = s.mcp_requests;
+  traffic.data.datasets[1].data = s.supplier_looks;
+  traffic.update();
+  [s.cache_hits, s.coalesced, s.cache_misses, s.stale_served].forEach((v, i) => served.data.datasets[i].data = v);
+  served.update();
+
+  $("t-rps").textContent = fmt(d.now.mcp_rps);
+  $("t-rps-total").textContent = fmt(t.mcp_requests) + " total";
+  $("t-lps").textContent = fmt(d.now.supplier_lps);
+  $("t-lps-total").textContent = fmt(t.supplier_looks) + " total";
+  $("t-hit").textContent = pct(d.cache.hit_rate);
+  $("t-hit-hint").textContent = d.cache.served_without_supplier == null ? "no searches yet"
+    : pct(d.cache.served_without_supplier) + " answered without the supplier";
+  $("t-rl").textContent = fmt(t.rate_limited);
+  $("t-rl-hint").textContent = `${fmt(d.now.rate_limited_ps)} / s now · ${fmt(t.shed)} load-shed`;
+  $("t-books").textContent = fmt(t.bookings);
+
+  const b = BREAKER[d.breaker.state] || BREAKER.closed;
+  $("t-breaker").innerHTML = `<span style="color:${b.color};display:inline-flex">${b.icon}</span>${b.label}`;
+  $("t-breaker-hint").textContent = d.breaker.state === "open"
+    ? `${b.hint} · probe in ${Math.ceil(d.breaker.retry_in_s)} s` : `${b.hint} · ${d.breaker.recent_failures} recent failures`;
+
+  const l = d.look_to_book, max = Math.max(l.ratio_without_cache || 0, l.ratio_with_cache || 0, 1);
+  $("b-without").style.width = ((l.ratio_without_cache || 0) / max * 100) + "%";
+  $("b-with").style.width = ((l.ratio_with_cache || 0) / max * 100) + "%";
+  $("n-without").textContent = l.ratio_without_cache == null ? "–" : fmt(l.ratio_without_cache) + " : 1";
+  $("n-with").textContent = l.ratio_with_cache == null ? "–" : fmt(l.ratio_with_cache) + " : 1";
+  $("l2b-callout").innerHTML = l.bookings === 0
+    ? `No bookings yet · ${fmt(l.looks_without_cache)} looks requested, ${fmt(l.looks_with_cache)} reached the supplier.`
+    : `Caching cut supplier looks from <b>${fmt(l.looks_without_cache)}</b> to <b>${fmt(l.looks_with_cache)}</b> for ${fmt(l.bookings)} booking${l.bookings === 1 ? "" : "s"}` +
+      (l.looks_with_cache ? ` - <b>${(l.looks_without_cache / l.looks_with_cache).toFixed(1)}×</b> fewer.` : ".");
+
+  $("totals").innerHTML = Object.entries(LABELS)
+    .map(([k, label]) => `<tr><td>${label}</td><td>${fmt(t[k])}</td></tr>`).join("");
+}
+
+async function tick() {
+  const live = $("live");
+  try {
+    const res = await fetch("/api/metrics", { cache: "no-store" });
+    if (!res.ok) throw new Error(res.status);
+    render(await res.json());
+    live.className = "live"; live.lastElementChild.textContent = "live";
+  } catch (e) {
+    live.className = "live down"; live.lastElementChild.textContent = "dashboard API unreachable";
+  }
+}
+
+$("reset").addEventListener("click", async () => { await fetch("/api/reset", { method: "POST" }); tick(); });
+window.matchMedia("(prefers-color-scheme: dark)").addEventListener("change", () => { traffic = null; tick(); });
+tick();
+setInterval(tick, 1000);
+</script>
+</body>
+</html>
