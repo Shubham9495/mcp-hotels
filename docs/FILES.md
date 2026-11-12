@@ -117,4 +117,7 @@ When Claude asks *"hotels in Goa this weekend"*, the code runs in this order:
 | `docs/FILES.md` | This file. |
 | `docs/CONCEPTS.md` | Beginner explanations of MCP and each resilience technique used here. |
 | `docs/ARCHITECTURE.md` | System design: high-level (context, containers, components, decisions) and low-level (classes, sequences, state machine, Redis keys, APIs, config, failure modes). |
+| `docs/MCP-GUIDE.md` | Where MCP is handled here, what happens when an AI calls a tool, and how to build an MCP server for another app. |
+| `examples/minimal_server.py` | A complete ~50-line MCP server (restaurant finder) to copy for a new app. |
+| `examples/try_minimal_server.py` | Starts the example server and calls its tools, like an AI app would. |
 | `docs/RUNBOOK.md` | How to start, stop and handle each part (MCP server, tunnel, Redis, supplier, dashboard), plus a fix-it table. |

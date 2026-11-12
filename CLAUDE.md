@@ -14,7 +14,7 @@ look-to-book ratio kept low by caching.
   - `cache.py` Redis cache + SingleFlight · `ratelimit.py` · `breaker.py` · `shedding.py`
   - `metrics.py` counter names + Redis counters · `config.py` env settings · `validation.py`
 - `dashboard/`: metrics page (port 8002) · `loadtest/locustfile.py` · `scripts/` · `tests/`
-- File-by-file guide: `docs/FILES.md`; concepts: `docs/CONCEPTS.md`; operations: `docs/RUNBOOK.md`; design: `docs/ARCHITECTURE.md`
+- File-by-file guide: `docs/FILES.md`; concepts: `docs/CONCEPTS.md`; operations: `docs/RUNBOOK.md`; design: `docs/ARCHITECTURE.md`; MCP how-to + template: `docs/MCP-GUIDE.md`, `examples/`
 
 ## Commands
 - `uv sync` · `uv run pytest -q` · `make up|down|spike|scenario|smoke|inspector|supplier-down|supplier-up`
