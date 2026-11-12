@@ -49,3 +49,7 @@ class Settings:
     allowed_hosts: list[str] = field(
         default_factory=lambda: _env_list("MCP_ALLOWED_HOSTS", "localhost:*,127.0.0.1:*,mcp:*")
     )
+    # Browser-style Origin headers accepted in addition to the allowed hosts (Claude's connector backend).
+    extra_allowed_origins: list[str] = field(
+        default_factory=lambda: _env_list("MCP_ALLOWED_ORIGINS", "https://claude.ai,https://claude.com")
+    )

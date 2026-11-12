@@ -26,8 +26,27 @@ switch ($Target) {
     "supplier-down" { Post "$Supplier/admin/down" $null }
     "supplier-up"   { Post "$Supplier/admin/up" $null }
     "reset"         { Post "$Dashboard/api/reset" $null }
+    "tunnel" {
+        Write-Host "Starting a PUBLIC Cloudflare quick tunnel to the MCP server (no auth - mock data only)..."
+        docker compose --profile tunnel up -d --no-deps tunnel
+        $url = $null
+        foreach ($i in 1..30) {
+            $m = docker compose logs tunnel 2>&1 | Select-String -Pattern 'https://[a-z0-9-]+\.trycloudflare\.com' | Select-Object -First 1
+            if ($m) { $url = $m.Matches[0].Value; break }
+            Start-Sleep -Seconds 2
+        }
+        if ($url) {
+            Write-Host ""
+            Write-Host "Connector URL:  $url/mcp" -ForegroundColor Green
+            Write-Host "Add it at claude.ai -> Settings -> Connectors -> Add custom connector."
+            Write-Host "Stop it with:   .\make.ps1 tunnel-down"
+        } else {
+            Write-Host "No URL yet - check: docker compose logs tunnel"
+        }
+    }
+    "tunnel-down"   { docker compose --profile tunnel rm -sf tunnel }
     default {
         Write-Host "Targets: up, down, logs, test, smoke, scenario, inspector, spike,"
-        Write-Host "         supplier-fail [-FailRate 0.5], supplier-down, supplier-up, reset"
+        Write-Host "         supplier-fail [-FailRate 0.5], supplier-down, supplier-up, reset, tunnel, tunnel-down"
     }
 }

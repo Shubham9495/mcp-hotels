@@ -111,12 +111,14 @@ UNAVAILABLE_MESSAGES: dict[str, str] = {
 
 
 def client_id_from(ctx: Context) -> str:
-    """Rate-limit identity: X-Client-Id header, else MCP session id, else remote IP, else 'stdio'."""
+    """Rate-limit identity: X-Client-Id, else MCP session id, else caller IP (Cloudflare header or socket), else 'stdio'."""
     headers = ctx.headers or {}
     if cid := headers.get("x-client-id"):
         return cid[:64]
     if sid := headers.get("mcp-session-id"):
         return f"session:{sid[:64]}"
+    if cf_ip := headers.get("cf-connecting-ip"):  # real caller IP when reached via a Cloudflare tunnel
+        return f"ip:{cf_ip[:64]}"
     request = getattr(ctx.request_context, "request", None)
     client = getattr(request, "client", None)
     if client is not None and getattr(client, "host", None):
@@ -250,7 +252,7 @@ def http_app() -> Starlette:
         transport_security=TransportSecuritySettings(
             enable_dns_rebinding_protection=True,
             allowed_hosts=settings.allowed_hosts,
-            allowed_origins=[f"http://{h}" for h in settings.allowed_hosts],
+            allowed_origins=[f"http://{h}" for h in settings.allowed_hosts] + settings.extra_allowed_origins,
         ),
     )
 

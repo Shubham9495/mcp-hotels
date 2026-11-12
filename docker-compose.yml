@@ -55,3 +55,15 @@ services:
       -f /mnt/locust/locustfile.py --headless --host http://mcp:8000
       --only-summary --stop-timeout 5
     depends_on: [mcp]
+
+  # `make tunnel` - public HTTPS URL for using the server as a Claude custom connector.
+  # Runs inside Docker so traffic to the MCP server never leaves the Docker network.
+  # Quick tunnel: no Cloudflare account needed, new random hostname on every start.
+  # The Host header is rewritten to mcp:8000 so the server's DNS-rebinding check accepts it.
+  # NO AUTHENTICATION: anyone with the URL can call the (mock) tools. Stop it when done.
+  tunnel:
+    image: cloudflare/cloudflared:2026.10.0
+    profiles: ["tunnel"]
+    restart: "no"
+    command: tunnel --no-autoupdate --url http://mcp:8000 --http-host-header mcp:8000
+    depends_on: [mcp]

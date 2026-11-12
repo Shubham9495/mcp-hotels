@@ -123,20 +123,33 @@ make inspector            # opens a browser UI connected over stdio
 
 ### Optional: use it as a remote connector (ngrok / Cloudflare Tunnel)
 
-To use the server from claude.ai as a custom connector, it needs a public HTTPS URL:
+To use the server from claude.ai or the Claude mobile app as a custom connector, it needs a
+public HTTPS URL. A Cloudflare quick tunnel is built in (no account needed). It runs inside
+Docker, so the traffic never goes through Windows' network filters:
 
 ```bash
-cloudflared tunnel --url http://localhost:8000      # prints https://<random>.trycloudflare.com
-# or
-ngrok http 8000                                     # prints https://<random>.ngrok-free.app
+make up
+make tunnel            # Windows: .\make.ps1 tunnel
+# -> Connector URL: https://<random-words>.trycloudflare.com/mcp
 ```
 
-1. Allow that hostname: add it to `MCP_ALLOWED_HOSTS` in `.env`, for example
-   `MCP_ALLOWED_HOSTS=localhost:*,127.0.0.1:*,mcp:*,abc123.trycloudflare.com`, then run `make up`.
-2. In Claude, add a custom connector with the URL `https://<your-tunnel-host>/mcp`.
+1. On **claude.ai in a web browser**, go to **Settings → Connectors → Add custom connector**, give
+   it a name (e.g. "Mock Hotels"), and paste the connector URL. No OAuth settings are needed.
+2. Connectors added on claude.ai also appear in the **Claude mobile app** on the same account.
+   Turn it on in a chat and ask for a hotel. Your PC must stay on, with Docker running.
+3. When you're done: `make tunnel-down`. Each `make tunnel` gets a **new random URL**, so update
+   the connector after restarting the tunnel.
+
+How it works: Claude's servers call the tunnel URL, and Cloudflare forwards the request to the
+`mcp` container. The tunnel rewrites the Host header to `mcp:8000`, so the server's
+DNS-rebinding check accepts it. `Origin: https://claude.ai` is allowed (`MCP_ALLOWED_ORIGINS`),
+and rate limits use the caller's real IP from Cloudflare's `Cf-Connecting-Ip` header.
+
+Using ngrok instead (`ngrok http 8000`): add the ngrok hostname to `MCP_ALLOWED_HOSTS` in
+`.env`, then run `make up`.
 
 ⚠️ This demo server has **no authentication**. Anyone with the URL can call it. The data is
-fake, but stop the tunnel when you're done.
+fake and rate limits apply, but stop the tunnel when you're done.
 
 ---
 

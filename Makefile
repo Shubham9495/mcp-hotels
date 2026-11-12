@@ -3,7 +3,7 @@ SUPPLIER   ?= http://localhost:8001
 DASHBOARD  ?= http://localhost:8002
 FAIL_RATE  ?= 0.5
 
-.PHONY: help up down logs test smoke scenario inspector spike supplier-fail supplier-down supplier-up reset
+.PHONY: help up down logs test smoke scenario inspector spike supplier-fail supplier-down supplier-up reset tunnel tunnel-down
 
 help:            ## list targets
 	@grep -E '^[a-z-]+:.*##' $(MAKEFILE_LIST) | sed 's/:.*##/ -/'
@@ -44,3 +44,13 @@ supplier-up:     ## bring the supplier back (also clears the failure rate)
 
 reset:           ## zero dashboard counters
 	curl -s -X POST $(DASHBOARD)/api/reset; echo
+
+tunnel:          ## PUBLIC https URL (Cloudflare quick tunnel) for a Claude custom connector - no auth!
+	docker compose --profile tunnel up -d --no-deps tunnel
+	@for i in $$(seq 1 30); do \
+	  url=$$(docker compose logs tunnel 2>&1 | grep -o 'https://[a-z0-9-]*\.trycloudflare\.com' | head -1); \
+	  if [ -n "$$url" ]; then echo "Connector URL: $$url/mcp  (stop with: make tunnel-down)"; exit 0; fi; sleep 2; \
+	done; echo "No URL yet - check: docker compose logs tunnel"
+
+tunnel-down:     ## stop the public tunnel
+	docker compose --profile tunnel rm -sf tunnel
