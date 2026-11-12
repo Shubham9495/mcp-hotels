@@ -19,6 +19,7 @@ What it demonstrates:
 New to all this? Read **[docs/CONCEPTS.md](docs/CONCEPTS.md)** (the ideas, in plain words),
 **[docs/FILES.md](docs/FILES.md)** (what every file does) and **[docs/RUNBOOK.md](docs/RUNBOOK.md)**
 (start/stop and every day-to-day command for the server, tunnel, Redis, supplier and dashboard).
+For the design (HLD + LLD with diagrams), see **[docs/ARCHITECTURE.md](docs/ARCHITECTURE.md)**.
 
 ---
 

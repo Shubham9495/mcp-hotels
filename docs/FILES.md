@@ -116,4 +116,5 @@ When Claude asks *"hotels in Goa this weekend"*, the code runs in this order:
 |---|---|
 | `docs/FILES.md` | This file. |
 | `docs/CONCEPTS.md` | Beginner explanations of MCP and each resilience technique used here. |
+| `docs/ARCHITECTURE.md` | System design: high-level (context, containers, components, decisions) and low-level (classes, sequences, state machine, Redis keys, APIs, config, failure modes). |
 | `docs/RUNBOOK.md` | How to start, stop and handle each part (MCP server, tunnel, Redis, supplier, dashboard), plus a fix-it table. |
