@@ -102,7 +102,7 @@ def make_hotel(rng: random.Random, city: str, idx: int, used_names: set[str]) ->
         "rating": rating,
         "base_price_inr": int(rng.randint(lo, hi) // 50 * 50),
         "amenities": amenities,
-        "description": f"A fictional {stars}-star {name.split()[-1].lower()} in {area}, {city}. Demo data only.",
+        "description": f"{name} is a {stars}-star property in {area}, {city}, rated {rating} by guests.",
     }
 
 

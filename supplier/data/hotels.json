@@ -16,7 +16,7 @@
       "Spa",
       "Swimming pool"
     ],
-    "description": "A fictional 4-star resort in Candolim, Goa. Demo data only."
+    "description": "The Tide Resort is a 4-star property in Candolim, Goa, rated 4.6 by guests."
   },
   {
     "id": "GOA-002",
@@ -34,7 +34,7 @@
       "Spa",
       "Swimming pool"
     ],
-    "description": "A fictional 3-star retreat in Colva, Goa. Demo data only."
+    "description": "The Sands Retreat is a 3-star property in Colva, Goa, rated 4.2 by guests."
   },
   {
     "id": "GOA-003",
@@ -52,7 +52,7 @@
       "Rooftop terrace",
       "Room service"
     ],
-    "description": "A fictional 3-star stay in Candolim, Goa. Demo data only."
+    "description": "The Saltwater Boutique Stay is a 3-star property in Candolim, Goa, rated 4.0 by guests."
   },
   {
     "id": "GOA-004",
@@ -71,7 +71,7 @@
       "Restaurant",
       "Spa"
     ],
-    "description": "A fictional 4-star suites in Baga, Goa. Demo data only."
+    "description": "The Sands Suites is a 4-star property in Baga, Goa, rated 4.6 by guests."
   },
   {
     "id": "GOA-005",
@@ -89,7 +89,7 @@
       "Restaurant",
       "Spa"
     ],
-    "description": "A fictional 3-star homestay in Baga, Goa. Demo data only."
+    "description": "The Sunset Shack Homestay is a 3-star property in Baga, Goa, rated 4.3 by guests."
   },
   {
     "id": "GOA-006",
@@ -109,7 +109,7 @@
       "Spa",
       "Swimming pool"
     ],
-    "description": "A fictional 5-star suites in Baga, Goa. Demo data only."
+    "description": "The Lagoon Suites is a 5-star property in Baga, Goa, rated 4.9 by guests."
   },
   {
     "id": "GOA-007",
@@ -127,7 +127,7 @@
       "Restaurant",
       "Spa"
     ],
-    "description": "A fictional 3-star suites in Calangute, Goa. Demo data only."
+    "description": "The Sunset Shack Suites is a 3-star property in Calangute, Goa, rated 4.3 by guests."
   },
   {
     "id": "GOA-008",
@@ -146,7 +146,7 @@
       "Spa",
       "Swimming pool"
     ],
-    "description": "A fictional 4-star hotel in Colva, Goa. Demo data only."
+    "description": "The Konkan Breeze Hotel is a 4-star property in Colva, Goa, rated 5.0 by guests."
   },
   {
     "id": "GOA-009",
@@ -164,7 +164,7 @@
       "Room service",
       "Swimming pool"
     ],
-    "description": "A fictional 3-star retreat in Candolim, Goa. Demo data only."
+    "description": "The Saltwater Retreat is a 3-star property in Candolim, Goa, rated 4.3 by guests."
   },
   {
     "id": "GOA-010",
@@ -182,7 +182,7 @@
       "Pet friendly",
       "Rooftop terrace"
     ],
-    "description": "A fictional 3-star inn in Morjim, Goa. Demo data only."
+    "description": "The Tide Inn is a 3-star property in Morjim, Goa, rated 4.3 by guests."
   },
   {
     "id": "MAN-001",
@@ -200,7 +200,7 @@
       "Rooftop terrace",
       "Swimming pool"
     ],
-    "description": "A fictional 3-star stay in Solang, Manali. Demo data only."
+    "description": "The Rohtang View Boutique Stay is a 3-star property in Solang, Manali, rated 4.0 by guests."
   },
   {
     "id": "MAN-002",
@@ -219,7 +219,7 @@
       "Spa",
       "Swimming pool"
     ],
-    "description": "A fictional 4-star homestay in Aleo, Manali. Demo data only."
+    "description": "The Snowline Homestay is a 4-star property in Aleo, Manali, rated 4.4 by guests."
   },
   {
     "id": "MAN-003",
@@ -237,7 +237,7 @@
       "Rooftop terrace",
       "Spa"
     ],
-    "description": "A fictional 3-star resort in Vashisht, Manali. Demo data only."
+    "description": "The Beas Riverside Resort is a 3-star property in Vashisht, Manali, rated 4.4 by guests."
   },
   {
     "id": "MAN-004",
@@ -256,7 +256,7 @@
       "Restaurant",
       "Swimming pool"
     ],
-    "description": "A fictional 4-star retreat in Mall Road, Manali. Demo data only."
+    "description": "The Cedar Nest Retreat is a 4-star property in Mall Road, Manali, rated 4.6 by guests."
   },
   {
     "id": "MAN-005",
@@ -275,7 +275,7 @@
       "Parking",
       "Restaurant"
     ],
-    "description": "A fictional 4-star suites in Prini, Manali. Demo data only."
+    "description": "The Cedar Nest Suites is a 4-star property in Prini, Manali, rated 4.4 by guests."
   },
   {
     "id": "MAN-006",
@@ -293,7 +293,7 @@
       "Rooftop terrace",
       "Spa"
     ],
-    "description": "A fictional 3-star retreat in Mall Road, Manali. Demo data only."
+    "description": "The Apple Orchard Retreat is a 3-star property in Mall Road, Manali, rated 4.3 by guests."
   },
   {
     "id": "MAN-007",
@@ -311,7 +311,7 @@
       "Spa",
       "Swimming pool"
     ],
-    "description": "A fictional 3-star homestay in Aleo, Manali. Demo data only."
+    "description": "The Pinecrest Homestay is a 3-star property in Aleo, Manali, rated 4.0 by guests."
   },
   {
     "id": "MAN-008",
@@ -330,7 +330,7 @@
       "Room service",
       "Spa"
     ],
-    "description": "A fictional 4-star hotel in Solang, Manali. Demo data only."
+    "description": "The Beas Riverside Hotel is a 4-star property in Solang, Manali, rated 3.8 by guests."
   },
   {
     "id": "MAN-009",
@@ -349,7 +349,7 @@
       "Rooftop terrace",
       "Spa"
     ],
-    "description": "A fictional 4-star suites in Prini, Manali. Demo data only."
+    "description": "The Pinecrest Suites is a 4-star property in Prini, Manali, rated 4.5 by guests."
   },
   {
     "id": "MAN-010",
@@ -368,7 +368,7 @@
       "Rooftop terrace",
       "Room service"
     ],
-    "description": "A fictional 4-star stay in Old Manali, Manali. Demo data only."
+    "description": "The Deodar Lodge Boutique Stay is a 4-star property in Old Manali, Manali, rated 4.7 by guests."
   },
   {
     "id": "JAI-001",
@@ -386,7 +386,7 @@
       "Spa",
       "Swimming pool"
     ],
-    "description": "A fictional 3-star hotel in MI Road, Jaipur. Demo data only."
+    "description": "The Mirror Palace Hotel is a 3-star property in MI Road, Jaipur, rated 4.4 by guests."
   },
   {
     "id": "JAI-002",
@@ -405,7 +405,7 @@
       "Spa",
       "Swimming pool"
     ],
-    "description": "A fictional 4-star homestay in MI Road, Jaipur. Demo data only."
+    "description": "The Mirror Palace Homestay is a 4-star property in MI Road, Jaipur, rated 4.4 by guests."
   },
   {
     "id": "JAI-003",
@@ -424,7 +424,7 @@
       "Room service",
       "Swimming pool"
     ],
-    "description": "A fictional 4-star retreat in C-Scheme, Jaipur. Demo data only."
+    "description": "The Pink Courtyard Retreat is a 4-star property in C-Scheme, Jaipur, rated 4.5 by guests."
   },
   {
     "id": "JAI-004",
@@ -444,7 +444,7 @@
       "Room service",
       "Spa"
     ],
-    "description": "A fictional 5-star suites in MI Road, Jaipur. Demo data only."
+    "description": "The Pink Courtyard Suites is a 5-star property in MI Road, Jaipur, rated 4.6 by guests."
   },
   {
     "id": "JAI-005",
@@ -463,7 +463,7 @@
       "Spa",
       "Swimming pool"
     ],
-    "description": "A fictional 4-star hotel in Amer Road, Jaipur. Demo data only."
+    "description": "The Rajwada Hotel is a 4-star property in Amer Road, Jaipur, rated 5.0 by guests."
   },
   {
     "id": "JAI-006",
@@ -483,7 +483,7 @@
       "Spa",
       "Swimming pool"
     ],
-    "description": "A fictional 5-star retreat in C-Scheme, Jaipur. Demo data only."
+    "description": "The Jharokha Retreat is a 5-star property in C-Scheme, Jaipur, rated 4.3 by guests."
   },
   {
     "id": "JAI-007",
@@ -501,7 +501,7 @@
       "Rooftop terrace",
       "Room service"
     ],
-    "description": "A fictional 3-star stay in Malviya Nagar, Jaipur. Demo data only."
+    "description": "The Rajwada Boutique Stay is a 3-star property in Malviya Nagar, Jaipur, rated 4.3 by guests."
   },
   {
     "id": "JAI-008",
@@ -519,7 +519,7 @@
       "Spa",
       "Swimming pool"
     ],
-    "description": "A fictional 3-star stay in C-Scheme, Jaipur. Demo data only."
+    "description": "The Haveli Boutique Stay is a 3-star property in C-Scheme, Jaipur, rated 4.1 by guests."
   },
   {
     "id": "JAI-009",
@@ -539,7 +539,7 @@
       "Pet friendly",
       "Restaurant"
     ],
-    "description": "A fictional 5-star suites in Malviya Nagar, Jaipur. Demo data only."
+    "description": "The Lotus Bagh Suites is a 5-star property in Malviya Nagar, Jaipur, rated 4.6 by guests."
   },
   {
     "id": "JAI-010",
@@ -558,7 +558,7 @@
       "Room service",
       "Swimming pool"
     ],
-    "description": "A fictional 4-star suites in Civil Lines, Jaipur. Demo data only."
+    "description": "The Haveli Suites is a 4-star property in Civil Lines, Jaipur, rated 4.5 by guests."
   },
   {
     "id": "UDA-001",
@@ -577,7 +577,7 @@
       "Restaurant",
       "Swimming pool"
     ],
-    "description": "A fictional 4-star stay in Fateh Sagar, Udaipur. Demo data only."
+    "description": "The Sajjan Retreat Boutique Stay is a 4-star property in Fateh Sagar, Udaipur, rated 4.5 by guests."
   },
   {
     "id": "UDA-002",
@@ -596,7 +596,7 @@
       "Spa",
       "Swimming pool"
     ],
-    "description": "A fictional 4-star homestay in Ambamata, Udaipur. Demo data only."
+    "description": "The Aravalli Homestay is a 4-star property in Ambamata, Udaipur, rated 4.6 by guests."
   },
   {
     "id": "UDA-003",
@@ -616,7 +616,7 @@
       "Spa",
       "Swimming pool"
     ],
-    "description": "A fictional 5-star suites in Ambamata, Udaipur. Demo data only."
+    "description": "The Ghat House Suites is a 5-star property in Ambamata, Udaipur, rated 4.8 by guests."
   },
   {
     "id": "UDA-004",
@@ -636,7 +636,7 @@
       "Spa",
       "Swimming pool"
     ],
-    "description": "A fictional 5-star stay in Fateh Sagar, Udaipur. Demo data only."
+    "description": "The Aravalli Boutique Stay is a 5-star property in Fateh Sagar, Udaipur, rated 4.5 by guests."
   },
   {
     "id": "UDA-005",
@@ -655,7 +655,7 @@
       "Rooftop terrace",
       "Swimming pool"
     ],
-    "description": "A fictional 4-star suites in Shobhagpura, Udaipur. Demo data only."
+    "description": "The Aravalli Suites is a 4-star property in Shobhagpura, Udaipur, rated 4.6 by guests."
   },
   {
     "id": "UDA-006",
@@ -673,7 +673,7 @@
       "Room service",
       "Spa"
     ],
-    "description": "A fictional 3-star inn in Hanuman Ghat, Udaipur. Demo data only."
+    "description": "The City of Lakes Inn is a 3-star property in Hanuman Ghat, Udaipur, rated 4.1 by guests."
   },
   {
     "id": "UDA-007",
@@ -692,7 +692,7 @@
       "Rooftop terrace",
       "Spa"
     ],
-    "description": "A fictional 4-star suites in Lal Ghat, Udaipur. Demo data only."
+    "description": "The Lakeview Suites is a 4-star property in Lal Ghat, Udaipur, rated 5.0 by guests."
   },
   {
     "id": "UDA-008",
@@ -711,7 +711,7 @@
       "Rooftop terrace",
       "Room service"
     ],
-    "description": "A fictional 4-star resort in Hanuman Ghat, Udaipur. Demo data only."
+    "description": "The Sajjan Retreat Resort is a 4-star property in Hanuman Ghat, Udaipur, rated 4.2 by guests."
   },
   {
     "id": "UDA-009",
@@ -729,7 +729,7 @@
       "Room service",
       "Swimming pool"
     ],
-    "description": "A fictional 3-star hotel in Shobhagpura, Udaipur. Demo data only."
+    "description": "The City of Lakes Hotel is a 3-star property in Shobhagpura, Udaipur, rated 4.1 by guests."
   },
   {
     "id": "UDA-010",
@@ -748,7 +748,7 @@
       "Room service",
       "Spa"
     ],
-    "description": "A fictional 4-star inn in Lal Ghat, Udaipur. Demo data only."
+    "description": "The Ghat House Inn is a 4-star property in Lal Ghat, Udaipur, rated 4.4 by guests."
   },
   {
     "id": "KOC-001",
@@ -767,7 +767,7 @@
       "Rooftop terrace",
       "Room service"
     ],
-    "description": "A fictional 4-star homestay in Cherai, Kochi. Demo data only."
+    "description": "The Harbour Light Homestay is a 4-star property in Cherai, Kochi, rated 4.6 by guests."
   },
   {
     "id": "KOC-002",
@@ -785,7 +785,7 @@
       "Room service",
       "Spa"
     ],
-    "description": "A fictional 3-star homestay in Fort Kochi, Kochi. Demo data only."
+    "description": "The Spice Route Homestay is a 3-star property in Fort Kochi, Kochi, rated 4.1 by guests."
   },
   {
     "id": "KOC-003",
@@ -803,7 +803,7 @@
       "Spa",
       "Swimming pool"
     ],
-    "description": "A fictional 3-star retreat in Cherai, Kochi. Demo data only."
+    "description": "The Coir House Retreat is a 3-star property in Cherai, Kochi, rated 4.6 by guests."
   },
   {
     "id": "KOC-004",
@@ -822,7 +822,7 @@
       "Rooftop terrace",
       "Spa"
     ],
-    "description": "A fictional 4-star homestay in Mattancherry, Kochi. Demo data only."
+    "description": "The Backwater Homestay is a 4-star property in Mattancherry, Kochi, rated 4.0 by guests."
   },
   {
     "id": "KOC-005",
@@ -842,7 +842,7 @@
       "Rooftop terrace",
       "Room service"
     ],
-    "description": "A fictional 5-star hotel in Cherai, Kochi. Demo data only."
+    "description": "The Monsoon Hotel is a 5-star property in Cherai, Kochi, rated 4.5 by guests."
   },
   {
     "id": "KOC-006",
@@ -861,7 +861,7 @@
       "Rooftop terrace",
       "Spa"
     ],
-    "description": "A fictional 4-star stay in Cherai, Kochi. Demo data only."
+    "description": "The Monsoon Boutique Stay is a 4-star property in Cherai, Kochi, rated 4.5 by guests."
   },
   {
     "id": "KOC-007",
@@ -879,7 +879,7 @@
       "Spa",
       "Swimming pool"
     ],
-    "description": "A fictional 3-star hotel in Marine Drive, Kochi. Demo data only."
+    "description": "The Chinese Nets Hotel is a 3-star property in Marine Drive, Kochi, rated 4.0 by guests."
   },
   {
     "id": "KOC-008",
@@ -897,7 +897,7 @@
       "Room service",
       "Spa"
     ],
-    "description": "A fictional 3-star inn in Kakkanad, Kochi. Demo data only."
+    "description": "The Monsoon Inn is a 3-star property in Kakkanad, Kochi, rated 3.7 by guests."
   },
   {
     "id": "KOC-009",
@@ -915,7 +915,7 @@
       "Restaurant",
       "Spa"
     ],
-    "description": "A fictional 3-star retreat in Fort Kochi, Kochi. Demo data only."
+    "description": "The Harbour Light Retreat is a 3-star property in Fort Kochi, Kochi, rated 3.9 by guests."
   },
   {
     "id": "KOC-010",
@@ -933,7 +933,7 @@
       "Rooftop terrace",
       "Swimming pool"
     ],
-    "description": "A fictional 3-star inn in Cherai, Kochi. Demo data only."
+    "description": "The Backwater Inn is a 3-star property in Cherai, Kochi, rated 4.2 by guests."
   },
   {
     "id": "RIS-001",
@@ -952,7 +952,7 @@
       "Room service",
       "Swimming pool"
     ],
-    "description": "A fictional 4-star retreat in Tapovan, Rishikesh. Demo data only."
+    "description": "The Himalayan Song Retreat is a 4-star property in Tapovan, Rishikesh, rated 4.4 by guests."
   },
   {
     "id": "RIS-002",
@@ -971,7 +971,7 @@
       "Restaurant",
       "Rooftop terrace"
     ],
-    "description": "A fictional 4-star stay in Shivpuri, Rishikesh. Demo data only."
+    "description": "The Riverstone Boutique Stay is a 4-star property in Shivpuri, Rishikesh, rated 4.7 by guests."
   },
   {
     "id": "RIS-003",
@@ -989,7 +989,7 @@
       "Rooftop terrace",
       "Spa"
     ],
-    "description": "A fictional 3-star stay in Tapovan, Rishikesh. Demo data only."
+    "description": "The Ganga Ghat Boutique Stay is a 3-star property in Tapovan, Rishikesh, rated 4.4 by guests."
   },
   {
     "id": "RIS-004",
@@ -1008,7 +1008,7 @@
       "Spa",
       "Swimming pool"
     ],
-    "description": "A fictional 4-star inn in Swarg Ashram, Rishikesh. Demo data only."
+    "description": "The Yoga Nest Inn is a 4-star property in Swarg Ashram, Rishikesh, rated 4.0 by guests."
   },
   {
     "id": "RIS-005",
@@ -1026,7 +1026,7 @@
       "Room service",
       "Spa"
     ],
-    "description": "A fictional 3-star stay in Tapovan, Rishikesh. Demo data only."
+    "description": "The Yoga Nest Boutique Stay is a 3-star property in Tapovan, Rishikesh, rated 4.6 by guests."
   },
   {
     "id": "RIS-006",
@@ -1045,7 +1045,7 @@
       "Pet friendly",
       "Room service"
     ],
-    "description": "A fictional 4-star resort in Ram Jhula, Rishikesh. Demo data only."
+    "description": "The Yoga Nest Resort is a 4-star property in Ram Jhula, Rishikesh, rated 4.6 by guests."
   },
   {
     "id": "RIS-007",
@@ -1062,7 +1062,7 @@
       "Gym",
       "Restaurant"
     ],
-    "description": "A fictional 2-star stay in Muni Ki Reti, Rishikesh. Demo data only."
+    "description": "The Rapids Boutique Stay is a 2-star property in Muni Ki Reti, Rishikesh, rated 3.6 by guests."
   },
   {
     "id": "RIS-008",
@@ -1081,7 +1081,7 @@
       "Spa",
       "Swimming pool"
     ],
-    "description": "A fictional 4-star inn in Shivpuri, Rishikesh. Demo data only."
+    "description": "The Bodhi Inn is a 4-star property in Shivpuri, Rishikesh, rated 4.5 by guests."
   },
   {
     "id": "RIS-009",
@@ -1100,7 +1100,7 @@
       "Room service",
       "Spa"
     ],
-    "description": "A fictional 4-star suites in Ram Jhula, Rishikesh. Demo data only."
+    "description": "The Bodhi Suites is a 4-star property in Ram Jhula, Rishikesh, rated 4.2 by guests."
   },
   {
     "id": "RIS-010",
@@ -1118,7 +1118,7 @@
       "Pet friendly",
       "Spa"
     ],
-    "description": "A fictional 3-star homestay in Shivpuri, Rishikesh. Demo data only."
+    "description": "The Himalayan Song Homestay is a 3-star property in Shivpuri, Rishikesh, rated 4.0 by guests."
   },
   {
     "id": "PDY-001",
@@ -1138,7 +1138,7 @@
       "Room service",
       "Spa"
     ],
-    "description": "A fictional 5-star retreat in White Town, Pondicherry. Demo data only."
+    "description": "The French Quarter Retreat is a 5-star property in White Town, Pondicherry, rated 4.4 by guests."
   },
   {
     "id": "PDY-002",
@@ -1156,7 +1156,7 @@
       "Room service",
       "Spa"
     ],
-    "description": "A fictional 3-star stay in Paradise Beach, Pondicherry. Demo data only."
+    "description": "The French Quarter Boutique Stay is a 3-star property in Paradise Beach, Pondicherry, rated 3.9 by guests."
   },
   {
     "id": "PDY-003",
@@ -1175,7 +1175,7 @@
       "Rooftop terrace",
       "Swimming pool"
     ],
-    "description": "A fictional 4-star stay in Paradise Beach, Pondicherry. Demo data only."
+    "description": "The Seawall Boutique Stay is a 4-star property in Paradise Beach, Pondicherry, rated 4.5 by guests."
   },
   {
     "id": "PDY-004",
@@ -1194,7 +1194,7 @@
       "Spa",
       "Swimming pool"
     ],
-    "description": "A fictional 4-star suites in Paradise Beach, Pondicherry. Demo data only."
+    "description": "The French Quarter Suites is a 4-star property in Paradise Beach, Pondicherry, rated 4.9 by guests."
   },
   {
     "id": "PDY-005",
@@ -1212,7 +1212,7 @@
       "Rooftop terrace",
       "Swimming pool"
     ],
-    "description": "A fictional 3-star stay in Promenade Beach, Pondicherry. Demo data only."
+    "description": "The Bougainvillea Boutique Stay is a 3-star property in Promenade Beach, Pondicherry, rated 4.5 by guests."
   },
   {
     "id": "PDY-006",
@@ -1232,7 +1232,7 @@
       "Spa",
       "Swimming pool"
     ],
-    "description": "A fictional 5-star suites in Serenity Beach, Pondicherry. Demo data only."
+    "description": "The Bougainvillea Suites is a 5-star property in Serenity Beach, Pondicherry, rated 4.6 by guests."
   },
   {
     "id": "PDY-007",
@@ -1250,7 +1250,7 @@
       "Room service",
       "Swimming pool"
     ],
-    "description": "A fictional 3-star inn in White Town, Pondicherry. Demo data only."
+    "description": "The Tamil Courtyard Inn is a 3-star property in White Town, Pondicherry, rated 4.4 by guests."
   },
   {
     "id": "PDY-008",
@@ -1268,7 +1268,7 @@
       "Room service",
       "Spa"
     ],
-    "description": "A fictional 3-star hotel in Serenity Beach, Pondicherry. Demo data only."
+    "description": "The French Quarter Hotel is a 3-star property in Serenity Beach, Pondicherry, rated 4.5 by guests."
   },
   {
     "id": "PDY-009",
@@ -1288,7 +1288,7 @@
       "Room service",
       "Spa"
     ],
-    "description": "A fictional 5-star stay in Serenity Beach, Pondicherry. Demo data only."
+    "description": "The Auro Garden Boutique Stay is a 5-star property in Serenity Beach, Pondicherry, rated 4.6 by guests."
   },
   {
     "id": "PDY-010",
@@ -1305,7 +1305,7 @@
       "Restaurant",
       "Room service"
     ],
-    "description": "A fictional 2-star retreat in White Town, Pondicherry. Demo data only."
+    "description": "The Bougainvillea Retreat is a 2-star property in White Town, Pondicherry, rated 4.0 by guests."
   },
   {
     "id": "TVM-001",
@@ -1324,7 +1324,7 @@
       "Room service",
       "Spa"
     ],
-    "description": "A fictional 4-star stay in Shanghumugham, Thiruvananthapuram. Demo data only."
+    "description": "The Cliffside Boutique Stay is a 4-star property in Shanghumugham, Thiruvananthapuram, rated 4.6 by guests."
   },
   {
     "id": "TVM-002",
@@ -1342,7 +1342,7 @@
       "Room service",
       "Swimming pool"
     ],
-    "description": "A fictional 3-star homestay in Kovalam, Thiruvananthapuram. Demo data only."
+    "description": "The Travancore Homestay is a 3-star property in Kovalam, Thiruvananthapuram, rated 4.3 by guests."
   },
   {
     "id": "TVM-003",
@@ -1360,7 +1360,7 @@
       "Pet friendly",
       "Room service"
     ],
-    "description": "A fictional 3-star suites in Kowdiar, Thiruvananthapuram. Demo data only."
+    "description": "The Palm Lagoon Suites is a 3-star property in Kowdiar, Thiruvananthapuram, rated 3.6 by guests."
   },
   {
     "id": "TVM-004",
@@ -1378,7 +1378,7 @@
       "Room service",
       "Spa"
     ],
-    "description": "A fictional 3-star retreat in Kovalam, Thiruvananthapuram. Demo data only."
+    "description": "The Travancore Retreat is a 3-star property in Kovalam, Thiruvananthapuram, rated 3.8 by guests."
   },
   {
     "id": "TVM-005",
@@ -1397,7 +1397,7 @@
       "Restaurant",
       "Swimming pool"
     ],
-    "description": "A fictional 4-star homestay in Kowdiar, Thiruvananthapuram. Demo data only."
+    "description": "The Lighthouse Homestay is a 4-star property in Kowdiar, Thiruvananthapuram, rated 4.7 by guests."
   },
   {
     "id": "TVM-006",
@@ -1415,7 +1415,7 @@
       "Restaurant",
       "Swimming pool"
     ],
-    "description": "A fictional 3-star inn in Shanghumugham, Thiruvananthapuram. Demo data only."
+    "description": "The Travancore Inn is a 3-star property in Shanghumugham, Thiruvananthapuram, rated 3.4 by guests."
   },
   {
     "id": "TVM-007",
@@ -1434,7 +1434,7 @@
       "Pet friendly",
       "Restaurant"
     ],
-    "description": "A fictional 4-star homestay in Kovalam, Thiruvananthapuram. Demo data only."
+    "description": "The Palm Lagoon Homestay is a 4-star property in Kovalam, Thiruvananthapuram, rated 4.1 by guests."
   },
   {
     "id": "TVM-008",
@@ -1453,7 +1453,7 @@
       "Restaurant",
       "Spa"
     ],
-    "description": "A fictional 4-star homestay in Kowdiar, Thiruvananthapuram. Demo data only."
+    "description": "The Coconut Coast Homestay is a 4-star property in Kowdiar, Thiruvananthapuram, rated 4.6 by guests."
   },
   {
     "id": "TVM-009",
@@ -1473,7 +1473,7 @@
       "Spa",
       "Swimming pool"
     ],
-    "description": "A fictional 5-star hotel in Kowdiar, Thiruvananthapuram. Demo data only."
+    "description": "The Kovalam Bay Hotel is a 5-star property in Kowdiar, Thiruvananthapuram, rated 5.0 by guests."
   },
   {
     "id": "TVM-010",
@@ -1492,7 +1492,7 @@
       "Spa",
       "Swimming pool"
     ],
-    "description": "A fictional 4-star resort in Kovalam, Thiruvananthapuram. Demo data only."
+    "description": "The Anantha Resort is a 4-star property in Kovalam, Thiruvananthapuram, rated 4.4 by guests."
   },
   {
     "id": "OOT-001",
@@ -1510,7 +1510,7 @@
       "Spa",
       "Swimming pool"
     ],
-    "description": "A fictional 3-star inn in Ooty Lake, Ooty. Demo data only."
+    "description": "The Blue Mountain Inn is a 3-star property in Ooty Lake, Ooty, rated 4.3 by guests."
   },
   {
     "id": "OOT-002",
@@ -1528,7 +1528,7 @@
       "Rooftop terrace",
       "Swimming pool"
     ],
-    "description": "A fictional 3-star inn in Ooty Lake, Ooty. Demo data only."
+    "description": "The Misty Valley Inn is a 3-star property in Ooty Lake, Ooty, rated 4.0 by guests."
   },
   {
     "id": "OOT-003",
@@ -1546,7 +1546,7 @@
       "Rooftop terrace",
       "Spa"
     ],
-    "description": "A fictional 3-star inn in Ooty Lake, Ooty. Demo data only."
+    "description": "The Rose Garden Inn is a 3-star property in Ooty Lake, Ooty, rated 4.4 by guests."
   },
   {
     "id": "OOT-004",
@@ -1565,7 +1565,7 @@
       "Spa",
       "Swimming pool"
     ],
-    "description": "A fictional 4-star homestay in Charing Cross, Ooty. Demo data only."
+    "description": "The Tea Garden Homestay is a 4-star property in Charing Cross, Ooty, rated 4.4 by guests."
   },
   {
     "id": "OOT-005",
@@ -1585,7 +1585,7 @@
       "Pet friendly",
       "Rooftop terrace"
     ],
-    "description": "A fictional 5-star retreat in Lovedale, Ooty. Demo data only."
+    "description": "The Tea Garden Retreat is a 5-star property in Lovedale, Ooty, rated 4.3 by guests."
   },
   {
     "id": "OOT-006",
@@ -1604,7 +1604,7 @@
       "Room service",
       "Swimming pool"
     ],
-    "description": "A fictional 4-star inn in Lovedale, Ooty. Demo data only."
+    "description": "The Nilgiri Inn is a 4-star property in Lovedale, Ooty, rated 4.6 by guests."
   },
   {
     "id": "OOT-007",
@@ -1623,7 +1623,7 @@
       "Room service",
       "Spa"
     ],
-    "description": "A fictional 4-star homestay in Ooty Lake, Ooty. Demo data only."
+    "description": "The Toy Train Homestay is a 4-star property in Ooty Lake, Ooty, rated 5.0 by guests."
   },
   {
     "id": "OOT-008",
@@ -1643,7 +1643,7 @@
       "Room service",
       "Swimming pool"
     ],
-    "description": "A fictional 5-star suites in Coonoor Road, Ooty. Demo data only."
+    "description": "The Toy Train Suites is a 5-star property in Coonoor Road, Ooty, rated 5.0 by guests."
   },
   {
     "id": "OOT-009",
@@ -1662,7 +1662,7 @@
       "Room service",
       "Swimming pool"
     ],
-    "description": "A fictional 4-star stay in Fern Hill, Ooty. Demo data only."
+    "description": "The Eucalyptus Boutique Stay is a 4-star property in Fern Hill, Ooty, rated 4.2 by guests."
   },
   {
     "id": "OOT-010",
@@ -1682,7 +1682,7 @@
       "Room service",
       "Spa"
     ],
-    "description": "A fictional 5-star inn in Fern Hill, Ooty. Demo data only."
+    "description": "The Tea Garden Inn is a 5-star property in Fern Hill, Ooty, rated 4.5 by guests."
   },
   {
     "id": "MNR-001",
@@ -1701,7 +1701,7 @@
       "Room service",
       "Spa"
     ],
-    "description": "A fictional 4-star suites in Chithirapuram, Munnar. Demo data only."
+    "description": "The Cloud Nine Suites is a 4-star property in Chithirapuram, Munnar, rated 4.5 by guests."
   },
   {
     "id": "MNR-002",
@@ -1719,7 +1719,7 @@
       "Rooftop terrace",
       "Room service"
     ],
-    "description": "A fictional 3-star inn in Anachal, Munnar. Demo data only."
+    "description": "The Spice Trail Inn is a 3-star property in Anachal, Munnar, rated 4.0 by guests."
   },
   {
     "id": "MNR-003",
@@ -1737,7 +1737,7 @@
       "Pet friendly",
       "Room service"
     ],
-    "description": "A fictional 3-star inn in Pothamedu, Munnar. Demo data only."
+    "description": "The High Range Inn is a 3-star property in Pothamedu, Munnar, rated 4.2 by guests."
   },
   {
     "id": "MNR-004",
@@ -1756,7 +1756,7 @@
       "Room service",
       "Swimming pool"
     ],
-    "description": "A fictional 4-star hotel in Pothamedu, Munnar. Demo data only."
+    "description": "The Cloud Nine Hotel is a 4-star property in Pothamedu, Munnar, rated 4.2 by guests."
   },
   {
     "id": "MNR-005",
@@ -1775,7 +1775,7 @@
       "Rooftop terrace",
       "Swimming pool"
     ],
-    "description": "A fictional 4-star resort in Mattupetty, Munnar. Demo data only."
+    "description": "The Neelakurinji Resort is a 4-star property in Mattupetty, Munnar, rated 4.7 by guests."
   },
   {
     "id": "MNR-006",
@@ -1795,7 +1795,7 @@
       "Pet friendly",
       "Rooftop terrace"
     ],
-    "description": "A fictional 5-star retreat in Pallivasal, Munnar. Demo data only."
+    "description": "The Plantation Retreat is a 5-star property in Pallivasal, Munnar, rated 4.9 by guests."
   },
   {
     "id": "MNR-007",
@@ -1814,7 +1814,7 @@
       "Rooftop terrace",
       "Swimming pool"
     ],
-    "description": "A fictional 4-star suites in Anachal, Munnar. Demo data only."
+    "description": "The Spice Trail Suites is a 4-star property in Anachal, Munnar, rated 4.1 by guests."
   },
   {
     "id": "MNR-008",
@@ -1832,7 +1832,7 @@
       "Gym",
       "Spa"
     ],
-    "description": "A fictional 3-star suites in Anachal, Munnar. Demo data only."
+    "description": "The High Range Suites is a 3-star property in Anachal, Munnar, rated 4.1 by guests."
   },
   {
     "id": "MNR-009",
@@ -1852,7 +1852,7 @@
       "Restaurant",
       "Rooftop terrace"
     ],
-    "description": "A fictional 5-star stay in Pallivasal, Munnar. Demo data only."
+    "description": "The Plantation Boutique Stay is a 5-star property in Pallivasal, Munnar, rated 4.7 by guests."
   },
   {
     "id": "MNR-010",
@@ -1870,7 +1870,7 @@
       "Restaurant",
       "Swimming pool"
     ],
-    "description": "A fictional 3-star resort in Pothamedu, Munnar. Demo data only."
+    "description": "The Tea Estate Resort is a 3-star property in Pothamedu, Munnar, rated 4.2 by guests."
   },
   {
     "id": "SML-001",
@@ -1888,7 +1888,7 @@
       "Restaurant",
       "Room service"
     ],
-    "description": "A fictional 3-star suites in Kufri, Shimla. Demo data only."
+    "description": "The Himachal Suites is a 3-star property in Kufri, Shimla, rated 4.4 by guests."
   },
   {
     "id": "SML-002",
@@ -1908,7 +1908,7 @@
       "Restaurant",
       "Swimming pool"
     ],
-    "description": "A fictional 5-star hotel in The Ridge, Shimla. Demo data only."
+    "description": "The Viceregal Hotel is a 5-star property in The Ridge, Shimla, rated 4.7 by guests."
   },
   {
     "id": "SML-003",
@@ -1927,7 +1927,7 @@
       "Room service",
       "Spa"
     ],
-    "description": "A fictional 4-star homestay in Mashobra, Shimla. Demo data only."
+    "description": "The Toy Train Homestay is a 4-star property in Mashobra, Shimla, rated 3.9 by guests."
   },
   {
     "id": "SML-004",
@@ -1944,7 +1944,7 @@
       "Room service",
       "Spa"
     ],
-    "description": "A fictional 2-star hotel in Chotta Shimla, Shimla. Demo data only."
+    "description": "The Pine Valley Hotel is a 2-star property in Chotta Shimla, Shimla, rated 4.7 by guests."
   },
   {
     "id": "SML-005",
@@ -1964,7 +1964,7 @@
       "Rooftop terrace",
       "Swimming pool"
     ],
-    "description": "A fictional 5-star homestay in The Ridge, Shimla. Demo data only."
+    "description": "The Cedar Ridge Homestay is a 5-star property in The Ridge, Shimla, rated 4.8 by guests."
   },
   {
     "id": "SML-006",
@@ -1982,7 +1982,7 @@
       "Restaurant",
       "Swimming pool"
     ],
-    "description": "A fictional 3-star retreat in Mall Road, Shimla. Demo data only."
+    "description": "The Cedar Ridge Retreat is a 3-star property in Mall Road, Shimla, rated 4.0 by guests."
   },
   {
     "id": "SML-007",
@@ -2001,7 +2001,7 @@
       "Room service",
       "Spa"
     ],
-    "description": "A fictional 4-star inn in Jakhoo, Shimla. Demo data only."
+    "description": "The Colonial Inn is a 4-star property in Jakhoo, Shimla, rated 4.9 by guests."
   },
   {
     "id": "SML-008",
@@ -2020,7 +2020,7 @@
       "Pet friendly",
       "Restaurant"
     ],
-    "description": "A fictional 4-star stay in The Ridge, Shimla. Demo data only."
+    "description": "The Pine Valley Boutique Stay is a 4-star property in The Ridge, Shimla, rated 4.5 by guests."
   },
   {
     "id": "SML-009",
@@ -2038,7 +2038,7 @@
       "Room service",
       "Swimming pool"
     ],
-    "description": "A fictional 3-star resort in Mall Road, Shimla. Demo data only."
+    "description": "The Colonial Resort is a 3-star property in Mall Road, Shimla, rated 3.9 by guests."
   },
   {
     "id": "SML-010",
@@ -2057,7 +2057,7 @@
       "Room service",
       "Spa"
     ],
-    "description": "A fictional 4-star retreat in The Ridge, Shimla. Demo data only."
+    "description": "The Viceregal Retreat is a 4-star property in The Ridge, Shimla, rated 4.7 by guests."
   },
   {
     "id": "DJL-001",
@@ -2077,7 +2077,7 @@
       "Room service",
       "Swimming pool"
     ],
-    "description": "A fictional 5-star stay in Lebong, Darjeeling. Demo data only."
+    "description": "The Toy Train Boutique Stay is a 5-star property in Lebong, Darjeeling, rated 4.5 by guests."
   },
   {
     "id": "DJL-002",
@@ -2097,7 +2097,7 @@
       "Rooftop terrace",
       "Swimming pool"
     ],
-    "description": "A fictional 5-star resort in Chowrasta, Darjeeling. Demo data only."
+    "description": "The Kanchenjunga Resort is a 5-star property in Chowrasta, Darjeeling, rated 4.8 by guests."
   },
   {
     "id": "DJL-003",
@@ -2116,7 +2116,7 @@
       "Rooftop terrace",
       "Room service"
     ],
-    "description": "A fictional 4-star resort in Jalapahar, Darjeeling. Demo data only."
+    "description": "The Tiger Hill Resort is a 4-star property in Jalapahar, Darjeeling, rated 4.2 by guests."
   },
   {
     "id": "DJL-004",
@@ -2136,7 +2136,7 @@
       "Room service",
       "Spa"
     ],
-    "description": "A fictional 5-star hotel in Ghoom, Darjeeling. Demo data only."
+    "description": "The Toy Train Hotel is a 5-star property in Ghoom, Darjeeling, rated 4.6 by guests."
   },
   {
     "id": "DJL-005",
@@ -2156,7 +2156,7 @@
       "Rooftop terrace",
       "Swimming pool"
     ],
-    "description": "A fictional 5-star suites in Ghoom, Darjeeling. Demo data only."
+    "description": "The Monastery View Suites is a 5-star property in Ghoom, Darjeeling, rated 4.9 by guests."
   },
   {
     "id": "DJL-006",
@@ -2175,7 +2175,7 @@
       "Room service",
       "Spa"
     ],
-    "description": "A fictional 4-star hotel in Chowrasta, Darjeeling. Demo data only."
+    "description": "The Kanchenjunga Hotel is a 4-star property in Chowrasta, Darjeeling, rated 4.1 by guests."
   },
   {
     "id": "DJL-007",
@@ -2193,7 +2193,7 @@
       "Room service",
       "Swimming pool"
     ],
-    "description": "A fictional 3-star stay in Ghoom, Darjeeling. Demo data only."
+    "description": "The Tea Garden Boutique Stay is a 3-star property in Ghoom, Darjeeling, rated 4.4 by guests."
   },
   {
     "id": "DJL-008",
@@ -2212,7 +2212,7 @@
       "Room service",
       "Spa"
     ],
-    "description": "A fictional 4-star stay in Lebong, Darjeeling. Demo data only."
+    "description": "The Kanchenjunga Boutique Stay is a 4-star property in Lebong, Darjeeling, rated 4.7 by guests."
   },
   {
     "id": "DJL-009",
@@ -2230,7 +2230,7 @@
       "Room service",
       "Spa"
     ],
-    "description": "A fictional 3-star resort in Jalapahar, Darjeeling. Demo data only."
+    "description": "The Toy Train Resort is a 3-star property in Jalapahar, Darjeeling, rated 3.8 by guests."
   },
   {
     "id": "DJL-010",
@@ -2248,7 +2248,7 @@
       "Gym",
       "Restaurant"
     ],
-    "description": "A fictional 3-star homestay in Ghoom, Darjeeling. Demo data only."
+    "description": "The Tea Garden Homestay is a 3-star property in Ghoom, Darjeeling, rated 4.4 by guests."
   },
   {
     "id": "CRG-001",
@@ -2267,7 +2267,7 @@
       "Restaurant",
       "Rooftop terrace"
     ],
-    "description": "A fictional 4-star inn in Virajpet, Coorg. Demo data only."
+    "description": "The Misty Hills Inn is a 4-star property in Virajpet, Coorg, rated 4.4 by guests."
   },
   {
     "id": "CRG-002",
@@ -2285,7 +2285,7 @@
       "Restaurant",
       "Room service"
     ],
-    "description": "A fictional 3-star homestay in Somwarpet, Coorg. Demo data only."
+    "description": "The Coffee Estate Homestay is a 3-star property in Somwarpet, Coorg, rated 3.8 by guests."
   },
   {
     "id": "CRG-003",
@@ -2303,7 +2303,7 @@
       "Restaurant",
       "Room service"
     ],
-    "description": "A fictional 3-star stay in Abbey Falls, Coorg. Demo data only."
+    "description": "The Coffee Estate Boutique Stay is a 3-star property in Abbey Falls, Coorg, rated 4.2 by guests."
   },
   {
     "id": "CRG-004",
@@ -2323,7 +2323,7 @@
       "Spa",
       "Swimming pool"
     ],
-    "description": "A fictional 5-star inn in Siddapur, Coorg. Demo data only."
+    "description": "The Coffee Estate Inn is a 5-star property in Siddapur, Coorg, rated 5.0 by guests."
   },
   {
     "id": "CRG-005",
@@ -2341,7 +2341,7 @@
       "Spa",
       "Swimming pool"
     ],
-    "description": "A fictional 3-star stay in Siddapur, Coorg. Demo data only."
+    "description": "The Plantation Boutique Stay is a 3-star property in Siddapur, Coorg, rated 4.2 by guests."
   },
   {
     "id": "CRG-006",
@@ -2359,7 +2359,7 @@
       "Rooftop terrace",
       "Room service"
     ],
-    "description": "A fictional 3-star resort in Siddapur, Coorg. Demo data only."
+    "description": "The Rainforest Resort is a 3-star property in Siddapur, Coorg, rated 4.3 by guests."
   },
   {
     "id": "CRG-007",
@@ -2377,7 +2377,7 @@
       "Rooftop terrace",
       "Room service"
     ],
-    "description": "A fictional 3-star stay in Madikeri, Coorg. Demo data only."
+    "description": "The Rainforest Boutique Stay is a 3-star property in Madikeri, Coorg, rated 4.1 by guests."
   },
   {
     "id": "CRG-008",
@@ -2394,7 +2394,7 @@
       "Rooftop terrace",
       "Room service"
     ],
-    "description": "A fictional 2-star resort in Kushalnagar, Coorg. Demo data only."
+    "description": "The Cauvery Resort is a 2-star property in Kushalnagar, Coorg, rated 4.0 by guests."
   },
   {
     "id": "CRG-009",
@@ -2413,7 +2413,7 @@
       "Room service",
       "Spa"
     ],
-    "description": "A fictional 4-star retreat in Siddapur, Coorg. Demo data only."
+    "description": "The Cauvery Retreat is a 4-star property in Siddapur, Coorg, rated 4.5 by guests."
   },
   {
     "id": "CRG-010",
@@ -2431,6 +2431,6 @@
       "Spa",
       "Swimming pool"
     ],
-    "description": "A fictional 3-star homestay in Siddapur, Coorg. Demo data only."
+    "description": "The Plantation Homestay is a 3-star property in Siddapur, Coorg, rated 4.2 by guests."
   }
 ]

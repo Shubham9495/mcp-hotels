@@ -569,7 +569,7 @@ cache, so "Goa under ₹6,000" serves every star filter and page size from one e
 ```json
 { "id": "GOA-004", "name": "The Sands Suites", "city": "Goa", "area": "Baga",
   "stars": 4, "rating": 4.6, "base_price_inr": 4250,
-  "amenities": ["…"], "description": "A fictional 4-star … Demo data only." }
+  "amenities": ["…"], "description": "The Sands Suites is a 4-star property in Baga, Goa, rated 4.6 by guests." }
 ```
 
 130 hotels = 13 cities × 10, generated deterministically by `scripts/gen_hotels.py` (seed 42).
