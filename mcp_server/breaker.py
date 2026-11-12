@@ -18,6 +18,7 @@ from dataclasses import dataclass
 from enum import StrEnum
 
 from redis.asyncio import Redis
+from redis.exceptions import RedisError
 
 
 class BreakerState(StrEnum):
@@ -62,8 +63,11 @@ class CircuitBreaker:
         return state, opened_at
 
     async def state(self) -> BreakerState:
-        """Cheap read of the current state (one HGETALL)."""
-        return (await self._load())[0]
+        """Cheap read of the current state (one HGETALL); CLOSED if Redis is unreachable."""
+        try:
+            return (await self._load())[0]
+        except RedisError:
+            return BreakerState.CLOSED
 
     async def snapshot(self) -> BreakerSnapshot:
         state, opened_at = await self._load()
@@ -77,8 +81,28 @@ class CircuitBreaker:
 
     # ----- decisions -----
 
+    # Public decisions fail OPEN on Redis errors: losing breaker state must not block traffic.
+
     async def allow(self) -> bool:
         """May this call go to the supplier?"""
+        try:
+            return await self._allow()
+        except RedisError:
+            return True
+
+    async def record_success(self) -> None:
+        try:
+            await self._record_success()
+        except RedisError:
+            pass
+
+    async def record_failure(self) -> None:
+        try:
+            await self._record_failure()
+        except RedisError:
+            pass
+
+    async def _allow(self) -> bool:
         state, opened_at = await self._load()
         if state is BreakerState.CLOSED:
             return True
@@ -90,14 +114,14 @@ class CircuitBreaker:
             await self._redis.hset(self._state_key, mapping={"state": BreakerState.HALF_OPEN})
         return bool(won)
 
-    async def record_success(self) -> None:
+    async def _record_success(self) -> None:
         # Only the half-open probe closes the breaker; a slow call that started before the
         # breaker opened and happens to succeed late is not evidence of recovery.
         state, _ = await self._load()
         if state is BreakerState.HALF_OPEN:
             await self._close()
 
-    async def record_failure(self) -> None:
+    async def _record_failure(self) -> None:
         state, _ = await self._load()
         now = self._clock()
         if state is BreakerState.HALF_OPEN:

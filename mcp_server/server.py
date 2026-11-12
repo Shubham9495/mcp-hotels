@@ -9,13 +9,16 @@ from __future__ import annotations
 
 import argparse
 import logging
+import os
+import sys
 from collections.abc import Coroutine
 from typing import Any
 
+import uvicorn
 from mcp.server.mcpserver import Context, MCPServer
 from mcp.server.mcpserver.exceptions import ToolError
 from mcp.server.transport_security import TransportSecuritySettings
-from redis.asyncio import Redis
+from starlette.applications import Starlette
 
 from mcp_server import metrics as m
 from mcp_server.breaker import CircuitBreaker
@@ -23,15 +26,27 @@ from mcp_server.cache import RedisCache
 from mcp_server.config import SUPPORTED_CITIES, Settings
 from mcp_server.metrics import Metrics
 from mcp_server.ratelimit import RateLimiter
+from mcp_server.redis_client import make_redis
 from mcp_server.search import HotelNotFound, HotelService, SupplierClient, SupplierError, SupplierUnavailable
 from mcp_server.shedding import LoadShedder
 from mcp_server.validation import InvalidInput, normalize_city, normalize_hotel_id, validate_stay
 
+# Plain, cheap logging to stderr (stdout belongs to the stdio transport). This must run before
+# MCPServer() so the SDK's pretty RichHandler is not installed: rendering rich tracebacks for
+# every failed call during a spike was measured to pin the event loop at 100 % CPU.
+logging.basicConfig(
+    level=os.getenv("LOG_LEVEL", "INFO"),
+    format="%(asctime)s %(levelname)s %(name)s: %(message)s",
+    stream=sys.stderr,
+)
+logging.getLogger("mcp").setLevel(os.getenv("MCP_SDK_LOG_LEVEL", "WARNING"))
+logging.getLogger("httpx").setLevel(logging.WARNING)
 log = logging.getLogger("mcp_hotels")
 
 CITIES = ", ".join(SUPPORTED_CITIES)
 
 mcp = MCPServer(
+    log_level="WARNING",  # also silences uvicorn's per-request access log in HTTP mode
     name="mcp-hotels",
     title="Hotel Search (demo)",
     instructions=(
@@ -53,7 +68,7 @@ class _ServiceHolder:
     @classmethod
     def _build(cls) -> None:
         settings = Settings()
-        redis = Redis.from_url(settings.redis_url, decode_responses=True)
+        redis = make_redis(settings.redis_url)
         cls.service = HotelService(
             settings,
             SupplierClient(settings.supplier_url, settings.supplier_timeout_s),
@@ -112,8 +127,7 @@ def client_id_from(ctx: Context) -> str:
 async def run_tool(tool: str, ctx: Context, coro: Coroutine[Any, Any, dict[str, Any]]) -> dict[str, Any]:
     """Count, rate-limit, run, and translate service exceptions into friendly tool errors."""
     metrics = SERVICE.get().metrics
-    await metrics.incr(m.MCP_REQUESTS)
-    await metrics.incr(f"{m.MCP_REQUESTS}:{tool}")
+    await metrics.incr_many(m.MCP_REQUESTS, f"{m.MCP_REQUESTS}:{tool}")
 
     if tool in RATE_LIMITED_TOOLS:
         decision = await SERVICE.rate_limiter().acquire(client_id_from(ctx))
@@ -135,6 +149,9 @@ async def run_tool(tool: str, ctx: Context, coro: Coroutine[Any, Any, dict[str, 
         ) from None
     except SupplierError as exc:
         raise ToolError(f"{UNAVAILABLE_MESSAGES[tool]} ({exc}). Please try again shortly.") from None
+    except Exception as exc:  # never let an internal hiccup become a traceback storm in the logs
+        log.warning("tool %s failed unexpectedly: %s: %s", tool, type(exc).__name__, exc)
+        raise ToolError("Temporary internal error - please retry in a moment.") from None
 
 
 @mcp.tool(
@@ -223,28 +240,41 @@ async def book_hotel(
     return await run_tool("book_hotel", ctx, go())
 
 
-def main() -> None:
-    parser = argparse.ArgumentParser(description="mcp-hotels MCP server (mock data)")
-    parser.add_argument("--http", action="store_true", help="serve streamable HTTP instead of stdio")
-    parser.add_argument("--host", default=None, help="HTTP bind host (default from MCP_HTTP_HOST)")
-    parser.add_argument("--port", type=int, default=None, help="HTTP port (default from MCP_HTTP_PORT)")
-    args = parser.parse_args()
-    logging.getLogger("httpx").setLevel(logging.WARNING)  # keep per-request supplier calls out of the logs
-    if not args.http:
-        mcp.run("stdio")
-        return
+def http_app() -> Starlette:
+    """ASGI app factory for streamable HTTP (used by uvicorn workers: --factory)."""
     settings = Settings()
-    mcp.run(
-        "streamable-http",
-        host=args.host or settings.http_host,
-        port=args.port or settings.http_port,
-        stateless_http=True,   # no sticky sessions -> any replica can serve any request
+    return mcp.streamable_http_app(
+        stateless_http=True,   # no sticky sessions -> any worker/replica can serve any request
         json_response=True,    # plain JSON responses: simplest for load tests and proxies
+        host=settings.http_host,
         transport_security=TransportSecuritySettings(
             enable_dns_rebinding_protection=True,
             allowed_hosts=settings.allowed_hosts,
             allowed_origins=[f"http://{h}" for h in settings.allowed_hosts],
         ),
+    )
+
+
+def main() -> None:
+    parser = argparse.ArgumentParser(description="mcp-hotels MCP server (mock data)")
+    parser.add_argument("--http", action="store_true", help="serve streamable HTTP instead of stdio")
+    parser.add_argument("--host", default=None, help="HTTP bind host (default from MCP_HTTP_HOST)")
+    parser.add_argument("--port", type=int, default=None, help="HTTP port (default from MCP_HTTP_PORT)")
+    parser.add_argument("--workers", type=int, default=None, help="HTTP worker processes (default MCP_WORKERS or 1)")
+    args = parser.parse_args()
+    if not args.http:
+        mcp.run("stdio")
+        return
+    settings = Settings()
+    # Each worker is a separate process. Cache, rate limits, breaker and metrics live in Redis,
+    # so they are shared; single-flight coalescing and load shedding are per worker.
+    uvicorn.run(
+        "mcp_server.server:http_app",
+        factory=True,
+        host=args.host or settings.http_host,
+        port=args.port or settings.http_port,
+        workers=args.workers or int(os.getenv("MCP_WORKERS", "1")),
+        log_level="warning",
     )
 
 

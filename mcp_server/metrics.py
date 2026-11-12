@@ -51,12 +51,17 @@ class Metrics:
         self._clock = clock
 
     async def incr(self, name: str, amount: int = 1) -> None:
+        await self.incr_many(name, amount=amount)
+
+    async def incr_many(self, *names: str, amount: int = 1) -> None:
+        """Increment several counters in ONE Redis round trip."""
         second = int(self._clock())
         try:
             async with self._redis.pipeline(transaction=False) as pipe:
-                pipe.incrby(_total_key(name), amount)
-                pipe.incrby(_bucket_key(name, second), amount)
-                pipe.expire(_bucket_key(name, second), BUCKET_TTL_S)
+                for name in names:
+                    pipe.incrby(_total_key(name), amount)
+                    pipe.incrby(_bucket_key(name, second), amount)
+                    pipe.expire(_bucket_key(name, second), BUCKET_TTL_S)
                 await pipe.execute()
         except Exception:  # metrics are best-effort
             pass

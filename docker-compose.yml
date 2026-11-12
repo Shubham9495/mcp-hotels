@@ -34,9 +34,24 @@ services:
       REDIS_URL: redis://redis:6379/0
       SUPPLIER_URL: http://supplier:8001
       MCP_HTTP_HOST: 0.0.0.0
+      MCP_WORKERS: ${MCP_WORKERS:-4}
     ports: ["8000:8000"]
 
   dashboard:
     <<: *app
     command: uvicorn dashboard.app:app --host 0.0.0.0 --port 8002
     ports: ["8002:8002"]
+
+  # `make spike` - runs only when asked (profile), inside the Docker network.
+  loadtest:
+    image: locustio/locust:2.47.0
+    profiles: ["loadtest"]
+    volumes: ["./loadtest:/mnt/locust:ro"]
+    environment:
+      SPIKE_USERS: ${SPIKE_USERS:-500}
+      SPIKE_RAMP_S: ${SPIKE_RAMP_S:-20}
+      SPIKE_HOLD_S: ${SPIKE_HOLD_S:-60}
+    command: >
+      -f /mnt/locust/locustfile.py --headless --host http://mcp:8000
+      --only-summary --stop-timeout 5
+    depends_on: [mcp]

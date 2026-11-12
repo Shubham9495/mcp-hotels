@@ -15,6 +15,7 @@ from dataclasses import dataclass
 from typing import Any, Generic, TypeVar
 
 from redis.asyncio import Redis
+from redis.exceptions import RedisError
 
 from mcp_server.validation import Stay
 
@@ -52,20 +53,30 @@ class RedisCache:
         self._redis = redis
         self._stale_ttl_s = stale_ttl_s
 
-    async def get_fresh(self, key: str) -> CacheEntry | None:
-        raw = await self._redis.get(FRESH_PREFIX + key)
+    # A cache must never take the service down: Redis errors degrade to "miss" / "not stored".
+
+    async def _get(self, full_key: str) -> CacheEntry | None:
+        try:
+            raw = await self._redis.get(full_key)
+        except RedisError:
+            return None
         return CacheEntry.loads(raw) if raw else None
 
+    async def get_fresh(self, key: str) -> CacheEntry | None:
+        return await self._get(FRESH_PREFIX + key)
+
     async def get_stale(self, key: str) -> CacheEntry | None:
-        raw = await self._redis.get(STALE_PREFIX + key)
-        return CacheEntry.loads(raw) if raw else None
+        return await self._get(STALE_PREFIX + key)
 
     async def put(self, key: str, entry: CacheEntry, ttl_s: int) -> None:
         payload = entry.dumps()
-        async with self._redis.pipeline(transaction=False) as pipe:
-            pipe.set(FRESH_PREFIX + key, payload, ex=ttl_s)
-            pipe.set(STALE_PREFIX + key, payload, ex=self._stale_ttl_s)
-            await pipe.execute()
+        try:
+            async with self._redis.pipeline(transaction=False) as pipe:
+                pipe.set(FRESH_PREFIX + key, payload, ex=ttl_s)
+                pipe.set(STALE_PREFIX + key, payload, ex=self._stale_ttl_s)
+                await pipe.execute()
+        except RedisError:
+            pass
 
     async def clear(self) -> None:
         for prefix in (FRESH_PREFIX, STALE_PREFIX):

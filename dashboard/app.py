@@ -9,11 +9,11 @@ from typing import Any, AsyncIterator
 
 from fastapi import FastAPI, Request
 from fastapi.responses import FileResponse
-from redis.asyncio import Redis
 
 from mcp_server import metrics as m
 from mcp_server.breaker import CircuitBreaker
 from mcp_server.config import Settings
+from mcp_server.redis_client import make_redis
 
 INDEX = Path(__file__).parent / "index.html"
 WINDOW_S = int(os.getenv("DASHBOARD_WINDOW_S", "90"))
@@ -27,7 +27,7 @@ SERIES = (
 @asynccontextmanager
 async def lifespan(app: FastAPI) -> AsyncIterator[None]:
     settings = Settings()
-    redis = Redis.from_url(settings.redis_url, decode_responses=True)
+    redis = make_redis(settings.redis_url)
     app.state.redis = redis
     app.state.metrics = m.Metrics(redis)
     app.state.breaker = CircuitBreaker(
