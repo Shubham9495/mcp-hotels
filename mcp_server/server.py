@@ -1,4 +1,4 @@
-"""MCP tool definitions â€” a thin layer over `HotelService`.
+"""MCP tool definitions - a thin layer over `HotelService`.
 
 Run:
   uv run mcp-hotels                 # stdio (Claude Desktop / Claude Code)
@@ -9,13 +9,18 @@ from __future__ import annotations
 
 import argparse
 import logging
+from collections.abc import Coroutine
 from typing import Any
 
 from mcp.server.mcpserver import Context, MCPServer
 from mcp.server.mcpserver.exceptions import ToolError
 from mcp.server.transport_security import TransportSecuritySettings
+from redis.asyncio import Redis
 
+from mcp_server import metrics as m
+from mcp_server.cache import RedisCache
 from mcp_server.config import SUPPORTED_CITIES, Settings
+from mcp_server.metrics import Metrics
 from mcp_server.search import HotelNotFound, HotelService, SupplierClient, SupplierError
 from mcp_server.validation import InvalidInput, normalize_city, normalize_hotel_id, validate_stay
 
@@ -45,7 +50,13 @@ class _ServiceHolder:
     def get(cls) -> HotelService:
         if cls.service is None:
             settings = Settings()
-            cls.service = HotelService(settings, SupplierClient(settings.supplier_url, settings.supplier_timeout_s))
+            redis = Redis.from_url(settings.redis_url, decode_responses=True)
+            cls.service = HotelService(
+                settings,
+                SupplierClient(settings.supplier_url, settings.supplier_timeout_s),
+                RedisCache(redis, settings.stale_ttl_s),
+                Metrics(redis),
+            )
         return cls.service
 
 
@@ -66,8 +77,11 @@ def client_id_from(ctx: Context) -> str:
     return "stdio"
 
 
-async def run_tool(coro: Any) -> dict[str, Any]:
-    """Translate service exceptions into friendly tool errors."""
+async def run_tool(tool: str, coro: Coroutine[Any, Any, dict[str, Any]]) -> dict[str, Any]:
+    """Count the request, then translate service exceptions into friendly tool errors."""
+    metrics = SERVICE.get().metrics
+    await metrics.incr(m.MCP_REQUESTS)
+    await metrics.incr(f"{m.MCP_REQUESTS}:{tool}")
     try:
         return await coro
     except InvalidInput as exc:
@@ -108,7 +122,7 @@ async def search_hotels(
             raise InvalidInput("min_stars must be between 1 and 5.")
         return await SERVICE.get().search(clean_city, stay, max_price_inr, min_stars, max(1, min(limit, 10)))
 
-    return await run_tool(go())
+    return await run_tool("search_hotels", go())
 
 
 @mcp.tool(
@@ -122,7 +136,7 @@ async def get_hotel_details(hotel_id: str, ctx: Context) -> dict[str, Any]:
     async def go() -> dict[str, Any]:
         return await SERVICE.get().details(normalize_hotel_id(hotel_id))
 
-    return await run_tool(go())
+    return await run_tool("get_hotel_details", go())
 
 
 @mcp.tool(
@@ -140,7 +154,7 @@ async def check_live_price(
         stay = validate_stay(check_in, check_out, guests)
         return await SERVICE.get().live_price(normalize_hotel_id(hotel_id), stay)
 
-    return await run_tool(go())
+    return await run_tool("check_live_price", go())
 
 
 @mcp.tool(
@@ -161,7 +175,7 @@ async def book_hotel(
             raise InvalidInput("guest_name is required (max 100 characters).")
         return await SERVICE.get().book(normalize_hotel_id(hotel_id), stay, name)
 
-    return await run_tool(go())
+    return await run_tool("book_hotel", go())
 
 
 def main() -> None:
